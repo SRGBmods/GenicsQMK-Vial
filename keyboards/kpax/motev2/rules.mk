@@ -28,5 +28,8 @@ NKRO_ENABLE = yes            # Enable N-Key Rollover
 
 # RP2040-specific options
 PICO_INTRINSICS_ENABLED = no # ATM Unsupported by ChibiOS.
+# 加入vial支持
+VIA_ENABLE = yes
+VIAL_ENABLE = yes
 
 
