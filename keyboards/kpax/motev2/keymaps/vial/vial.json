@@ -1,11 +1,11 @@
 {
-  "lighting": "vialrgb",
+  "lighting": "no",
   "matrix": {
       "rows": 12,
       "cols": 6
   },
   "layouts": {
-      "keymap": 
+      "keymap":
       [
         [
           {
@@ -390,7 +390,7 @@
             "x": -1
           },
           "10,2"
-        ]   
+        ]
      ]
   }
 }
