@@ -5,4 +5,4 @@ QUANTUM_PAINTER_DRIVERS = gc9a01_spi
 # 加入vial支持
 VIA_ENABLE = yes
 VIAL_ENABLE = yes
-# VIALRGB_ENABLE = yes
+VIALRGB_ENABLE = yes

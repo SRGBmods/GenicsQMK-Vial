@@ -10,10 +10,10 @@ HAPTIC_ENABLE = yes
 HAPTIC_DRIVER = solenoid
 
 
-# RGB_MATRIX_SUPPORTED = yes  # RGB matrix is supported and enabled by default
-# RGB_MATRIX_ENABLE = yes
-# RGB_MATRIX_DRIVER = ws2812
-# WS2812_DRIVER = vendor
+RGB_MATRIX_SUPPORTED = yes  # RGB matrix is supported and enabled by default
+RGB_MATRIX_ENABLE = yes
+RGB_MATRIX_DRIVER = ws2812
+WS2812_DRIVER = vendor
 
 AUDIO_ENABLE = yes
 AUDIO_DRIVER = pwm_hardware
