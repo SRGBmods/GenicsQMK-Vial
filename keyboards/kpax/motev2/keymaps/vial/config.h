@@ -8,6 +8,9 @@
 #define SPI_SCK_PIN GP22
 #define SPI_MOSI_PIN GP23
 #define SPI_MISO_PIN GP20
+
+#define POINTING_DEVICE_SCLK_PIN GP22
+#define POINTING_DEVICE_SDIO_PIN GP23
 #define POINTING_DEVICE_CS_PIN GP21
 
 
@@ -20,6 +23,10 @@
 
 // Enable use of pointing device on slave split.
 #define SPLIT_POINTING_ENABLE
+
+#define ADNS5050_SCLK_PIN POINTING_DEVICE_SCLK_PIN
+#define ADNS5050_SDIO_PIN POINTING_DEVICE_SDIO_PIN
+#define ADNS5050_CS_PIN   POINTING_DEVICE_CS_PIN
 
 // Pointing device is on the right split.
 #define POINTING_DEVICE_LEFT
