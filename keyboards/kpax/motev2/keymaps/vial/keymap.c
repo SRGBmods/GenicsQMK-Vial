@@ -25,39 +25,39 @@ const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][NUM_DIRECTIONS] = {
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [LAYER_BASE] = LAYOUT_split_6x6(
-         KC_Q,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                  KC_Q, KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,
-         KC_Q,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                  KC_Q, KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,
-         KC_Q,  KC_A,    KC_S,    KC_D,    KC_F,    KC_G,                  KC_Q, KC_H,    KC_J,    KC_K,    KC_L, KC_SCLN,
-         KC_Q,  KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,                  KC_Q, KC_N,    KC_M, KC_COMM,  KC_DOT, KC_SLSH,
-                        KC_A,     KC_Q,  KC_Q,    KC_SPC,                  KC_Q,  KC_Q,    KC_SPC,  KC_A,
-         KC_Q,  KC_Q,    KC_Q,    KC_Q,    KC_Q,                                   KC_Q,  KC_Q,    KC_Q,    KC_Q,    KC_Q
+         KC_ESC,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,                  KC_6, KC_7,    KC_8,    KC_9,    KC_0,    KC_GRV,
+         KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                  KC_Y, KC_U,    KC_I,    KC_O,    KC_P,   KC_MINS,
+         KC_LSFT,  KC_A,    KC_S,    KC_D,    KC_F,    KC_G,                 KC_H, KC_J,    KC_K,    KC_L, KC_SCLN,   KC_QUOT,
+         KC_LCTL,  KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,                 KC_N, KC_M,  KC_COMM, KC_DOT,  KC_SLSH,  KC_RCTL,
+                  KC_LALT,     KC_SPC,  KC_LGUI,    KC_SPC,                  KC_RGUI,  KC_RGUI,    KC_ENT,  KC_BSPC,
+         KC_UP,  KC_LEFT,    KC_DOWN,    KC_RGHT,    KC_ENT,                 KC_ENT,  KC_RGHT,    KC_DOWN,    KC_LEFT,   KC_UP
   ),
 
     [LAYER_NAV] = LAYOUT_split_6x6(
-         KC_Q,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                  KC_Q, KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,
-         KC_Q,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                  KC_Q, KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,
-         KC_Q,  KC_A,    KC_S,    KC_D,    KC_F,    KC_G,                  KC_Q, KC_H,    KC_J,    KC_K,    KC_L, KC_SCLN,
-         KC_Q,  KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,                  KC_Q, KC_N,    KC_M, KC_COMM,  KC_DOT, KC_SLSH,
-                        KC_A,     KC_Q,  KC_Q,    KC_SPC,                  KC_Q,  KC_Q,    KC_SPC,  KC_A,
-         KC_Q,  KC_Q,    KC_Q,    KC_Q,    KC_Q,                                   KC_Q,  KC_Q,    KC_Q,    KC_Q,    KC_Q
+        _______, _______, _______, _______, _______, _______,                _______, _______, _______, _______, _______, _______,
+        _______, _______, _______, _______, _______, _______,                _______, _______, _______, _______, _______, _______,
+        _______, _______, _______, _______, _______, _______,               _______, _______, _______, _______, _______, _______,
+        _______, _______, _______, _______, _______, _______,               _______, _______, _______, _______, _______, _______,
+                  KC_LALT,     KC_SPC,  KC_LGUI,    KC_SPC,                  KC_RGUI,  KC_RGUI,    KC_ENT,  KC_BSPC,
+         KC_UP,  KC_LEFT,    KC_DOWN,    KC_RGHT,    XXXXXXX,                XXXXXXX,  KC_RGHT,    KC_DOWN,    KC_LEFT,   KC_UP
   ),
 
   [LAYER_SYM] = LAYOUT_split_6x6(
-         KC_Q,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                  KC_Q, KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,
-         KC_Q,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                  KC_Q, KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,
-         KC_Q,  KC_A,    KC_S,    KC_D,    KC_F,    KC_G,                  KC_Q, KC_H,    KC_J,    KC_K,    KC_L, KC_SCLN,
-         KC_Q,  KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,                  KC_Q, KC_N,    KC_M, KC_COMM,  KC_DOT, KC_SLSH,
-                        KC_A,     KC_Q,  KC_Q,    KC_SPC,                  KC_Q,  KC_Q,    KC_SPC,  KC_A,
-         KC_Q,  KC_Q,    KC_Q,    KC_Q,    KC_Q,                                   KC_Q,  KC_Q,    KC_Q,    KC_Q,    KC_Q
+         KC_ESC,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,                  KC_6, KC_7,    KC_8,    KC_9,    KC_0,    KC_GRV,
+         KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                  KC_Y, KC_U,    KC_I,    KC_O,    KC_P,   KC_MINS,
+         KC_LSFT,  KC_A,    KC_S,    KC_D,    KC_F,    KC_G,                 KC_H, KC_J,    KC_K,    KC_L, KC_SCLN,   KC_QUOT,
+         KC_LCTL,  KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,                 KC_N, KC_M,  KC_COMM, KC_DOT,  KC_SLSH,  KC_RCTL,
+                  KC_LALT,     KC_SPC,  KC_LGUI,    KC_SPC,                  KC_RGUI,  KC_RGUI,    KC_ENT,  KC_BSPC,
+         KC_UP,  KC_LEFT,    KC_DOWN,    KC_RGHT,    XXXXXXX,                XXXXXXX,  KC_RGHT,    KC_DOWN,    KC_LEFT,   KC_UP
   ),
 
   [LAYER_NUM] = LAYOUT_split_6x6(
-         KC_Q,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                  KC_Q, KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,
-         KC_Q,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                  KC_Q, KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,
-         KC_Q,  KC_A,    KC_S,    KC_D,    KC_F,    KC_G,                  KC_Q, KC_H,    KC_J,    KC_K,    KC_L, KC_SCLN,
-         KC_Q,  KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,                  KC_Q, KC_N,    KC_M, KC_COMM,  KC_DOT, KC_SLSH,
-                        KC_A,     KC_Q,  KC_Q,    KC_SPC,                  KC_Q,  KC_Q,    KC_SPC,  KC_A,
-         KC_Q,  KC_Q,    KC_Q,    KC_Q,    KC_Q,                                   KC_Q,  KC_Q,    KC_Q,    KC_Q,    KC_Q
+         KC_ESC,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,                  KC_6, KC_7,    KC_8,    KC_9,    KC_0,    KC_GRV,
+         KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                  KC_Y, KC_U,    KC_I,    KC_O,    KC_P,   KC_MINS,
+         KC_LSFT,  KC_A,    KC_S,    KC_D,    KC_F,    KC_G,                 KC_H, KC_J,    KC_K,    KC_L, KC_SCLN,   KC_QUOT,
+         KC_LCTL,  KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,                 KC_N, KC_M,  KC_COMM, KC_DOT,  KC_SLSH,  KC_RCTL,
+                  KC_LALT,     KC_SPC,  KC_LGUI,    KC_SPC,                  KC_RGUI,  KC_RGUI,    KC_ENT,  KC_BSPC,
+         KC_UP,  KC_LEFT,    KC_DOWN,    KC_RGHT,    XXXXXXX,                XXXXXXX,  KC_RGHT,    KC_DOWN,    KC_LEFT,   KC_UP
   ),
 
 
