@@ -1,4 +1,6 @@
 {
+  "vendorId": "0x1981",
+  "productId":"0x0808",
   "lighting": "vialrgb",
   "matrix": {
       "rows": 12,
