@@ -10,7 +10,7 @@
 #define SPI_MISO_PIN GP20
 
 #define POINTING_DEVICE_SCLK_PIN GP22
-#define POINTING_DEVICE_SDIO_PIN GP23
+#define POINTING_DEVICE_SDIO_PIN GP20
 #define POINTING_DEVICE_CS_PIN GP21
 
 
@@ -29,7 +29,7 @@
 #define ADNS5050_CS_PIN   POINTING_DEVICE_CS_PIN
 
 // Pointing device is on the right split.
-#define POINTING_DEVICE_LEFT
+#define POINTING_DEVICE_RIGHT
 
 // Limits the frequency that the sensor is polled for motion.
 #define POINTING_DEVICE_TASK_THROTTLE_MS 10

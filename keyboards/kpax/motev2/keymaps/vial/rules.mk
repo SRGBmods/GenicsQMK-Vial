@@ -6,3 +6,6 @@ QUANTUM_PAINTER_DRIVERS = gc9a01_spi
 VIA_ENABLE = yes
 VIAL_ENABLE = yes
 VIALRGB_ENABLE = yes
+
+SRC += pic/animation.qgf.c
+

@@ -3,6 +3,7 @@
 
 #include QMK_KEYBOARD_H
 #include "qp.h"
+#include "pic/animation.qgf.h"
 
 enum dilemma_keymap_layers {
     LAYER_BASE = 0,
