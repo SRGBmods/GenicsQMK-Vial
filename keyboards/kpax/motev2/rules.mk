@@ -6,8 +6,8 @@ ENCODER_ENABLE = yes
 ENCODER_MAP_ENABLE = yes
 
 HAPTIC_ENABLE = yes
-# HAPTIC_DRIVER = drv2605l
-HAPTIC_DRIVER = solenoid
+HAPTIC_DRIVER = drv2605l
+# HAPTIC_DRIVER = solenoid
 
 
 RGB_MATRIX_SUPPORTED = yes  # RGB matrix is supported and enabled by default
@@ -33,5 +33,9 @@ PICO_INTRINSICS_ENABLED = no # ATM Unsupported by ChibiOS.
 # POINTING_DEVICE_DRIVER = cirque_pinnacle_spi
 POINTING_DEVICE_DRIVER = adns5050
 
+# 加入oled显示屏
+# OLED_ENABLE = no
+# OLED_DRIVER = SSD1306
+# OLED_TRANSPORT = i2c
 
 

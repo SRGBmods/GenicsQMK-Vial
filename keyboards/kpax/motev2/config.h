@@ -41,21 +41,48 @@
 //#define NO_ACTION_TAPPING
 //#define NO_ACTION_ONESHOT
 // 震动配置
-#define SOLENOID_PIN GP25
-#define HAPTIC_OFF_IN_LOW_POWER 1
-#define SOLENOID_RANDOM_FIRE
-#define SOLENOID_DEFAULT_BUZZ 1
-#define SOLENOID_DEFAULT_DWELL 90
-#define SOLENOID_MIN_DWELL 4
-#define SOLENOID_MAX_DWELL 100
-#define SOLENOID_DWELL_STEP_SIZE 10
-#define SOLENOID_BUZZ_ACTUATED SOLENOID_MIN_DWELL
-#define SOLENOID_BUZZ_NONACTUATED SOLENOID_MIN_DWELL
-#define NO_HAPTIC_ALPHA
-#define NO_HAPTIC_NUMERIC
-#define NO_HAPTIC_NAV
+// #define SOLENOID_PIN GP25
+// #define HAPTIC_OFF_IN_LOW_POWER 1
+// #define SOLENOID_RANDOM_FIRE
+// #define SOLENOID_DEFAULT_BUZZ 1
+// #define SOLENOID_DEFAULT_DWELL 90
+// #define SOLENOID_MIN_DWELL 4
+// #define SOLENOID_MAX_DWELL 100
+// #define SOLENOID_DWELL_STEP_SIZE 10
+// #define SOLENOID_BUZZ_ACTUATED SOLENOID_MIN_DWELL
+// #define SOLENOID_BUZZ_NONACTUATED SOLENOID_MIN_DWELL
+// #define NO_HAPTIC_ALPHA
+// #define NO_HAPTIC_NUMERIC
+// #define NO_HAPTIC_NAV
+
+// DRV2605L 普通马达设置 ERM
+// #define FB_ERM_LRA 0
+// #define FB_BRAKEFACTOR 3 /* For 1x:0, 2x:1, 3x:2, 4x:3, 6x:4, 8x:5, 16x:6, Disable Braking:7 */
+// #define FB_LOOPGAIN 1 /* For  Low:0, Medium:1, High:2, Very High:3 */
+// /* Please refer to your datasheet for the optimal setting for your specific motor. */
+// #define RATED_VOLTAGE 3
+// #define V_PEAK 5
+
+// #define I2C_DRIVER I2CD1
+// #define I2C1_SDA_PIN GP10
+// #define I2C1_SCL_PIN GP11
 
 
+
+// DRV2605L 线性马达设置 LRA
+#define FB_ERM_LRA 1
+#define FB_BRAKEFACTOR 3 /* For 1x:0, 2x:1, 3x:2, 4x:3, 6x:4, 8x:5, 16x:6, Disable Braking:7 */
+#define FB_LOOPGAIN 1 /* For  Low:0, Medium:1, High:2, Very High:3 */
+/* Please refer to your datasheet for the optimal setting for your specific motor. */
+#define RATED_VOLTAGE 3
+// #define V_PEAK 2.8
+// #define V_RMS 2.0
+#define F_LRA 160 /* resonance freq */
+
+#define I2C_DRIVER I2CD1
+#define I2C1_SCL_PIN GP7
+#define I2C1_SDA_PIN GP6
+#define MY_I2C_ADDRESS (0x5A << 1)
 
 // 灯光配置
 #ifdef RGB_MATRIX_ENABLE
@@ -172,3 +199,12 @@
 
 
 #define QUANTUM_PAINTER_DISPLAY_TIMEOUT 0
+
+
+// #ifdef OLED_ENABLE
+// #define OLED_DISPLAY_128X32
+// #define I2C1_SCL_PIN        GP11
+// #define I2C1_SDA_PIN        GP10
+// #define I2C_DRIVER I2CD1
+// #define OLED_BRIGHTNESS 128
+// #endif
