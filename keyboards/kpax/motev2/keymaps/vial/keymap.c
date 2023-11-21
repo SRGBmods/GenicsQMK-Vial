@@ -20,12 +20,12 @@ enum dilemma_keymap_layers {
 #define PT_Z LT(LAYER_POINTER, KC_Z)
 #define PT_SLSH LT(LAYER_POINTER, KC_SLSH)
 
-#ifndef POINTING_DEVICE_ENABLE
+// #ifndef POINTING_DEVICE_ENABLE
 #    define DRGSCRL KC_NO
 #    define DPI_MOD KC_NO
 #    define S_D_MOD KC_NO
 #    define SNIPING KC_NO
-#endif // !POINTING_DEVICE_ENABLE
+// #endif // !POINTING_DEVICE_ENABLE
 
 
 // clang-format off
@@ -94,6 +94,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   ),
 };
+// clang-format on
 
 #ifdef POINTING_DEVICE_ENABLE
 #    ifdef DILEMMA_AUTO_SNIPING_ON_LAYER
@@ -103,6 +104,11 @@ layer_state_t layer_state_set_user(layer_state_t state) {
 }
 #    endif // DILEMMA_AUTO_SNIPING_ON_LAYER
 #endif     // POINTING_DEVICE_ENABLEE
+
+#ifdef RGB_MATRIX_ENABLE
+// Forward-declare this helper function since it is defined in rgb_matrix.c.
+void rgb_matrix_update_pwm_buffers(void);
+#endif
 
 #ifdef ENCODER_MAP_ENABLE
 // clang-format off
@@ -114,6 +120,14 @@ const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][NUM_DIRECTIONS] = {
 };
 // clang-format on
 #endif // ENCODER_MAP_ENABLE
+
+void shutdown_user(void) {
+#ifdef RGB_MATRIX_ENABLE
+    rgb_matrix_sethsv_noeeprom(HSV_RED);
+    rgb_matrix_update_pwm_buffers();
+#endif // RGB_MATRIX_ENABLE
+};
+
 
 painter_device_t lcd;
 

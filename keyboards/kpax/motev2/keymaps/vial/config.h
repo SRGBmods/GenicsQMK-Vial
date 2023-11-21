@@ -29,7 +29,7 @@
 #define ADNS5050_CS_PIN   POINTING_DEVICE_CS_PIN
 
 // Pointing device is on the right split.
-#define POINTING_DEVICE_RIGHT
+#define POINTING_DEVICE_LEFT
 
 // Limits the frequency that the sensor is polled for motion.
 #define POINTING_DEVICE_TASK_THROTTLE_MS 10

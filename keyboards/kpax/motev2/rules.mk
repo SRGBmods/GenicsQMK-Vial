@@ -29,9 +29,6 @@ NKRO_ENABLE = yes            # Enable N-Key Rollover
 # RP2040-specific options
 PICO_INTRINSICS_ENABLED = no # ATM Unsupported by ChibiOS.
 
-# POINTING_DEVICE_ENABLE = yes
-# POINTING_DEVICE_DRIVER = cirque_pinnacle_spi
-POINTING_DEVICE_DRIVER = adns5050
 
 # 加入oled显示屏
 # OLED_ENABLE = no
