@@ -20,12 +20,12 @@ enum dilemma_keymap_layers {
 #define PT_Z LT(LAYER_POINTER, KC_Z)
 #define PT_SLSH LT(LAYER_POINTER, KC_SLSH)
 
-// #ifndef POINTING_DEVICE_ENABLE
+#ifndef POINTING_DEVICE_ENABLE
 #    define DRGSCRL KC_NO
 #    define DPI_MOD KC_NO
 #    define S_D_MOD KC_NO
 #    define SNIPING KC_NO
-// #endif // !POINTING_DEVICE_ENABLE
+#endif // !POINTING_DEVICE_ENABLE
 
 
 // clang-format off
@@ -170,5 +170,20 @@ void lv_example_arc_2(void) {
     lv_anim_start(&a);
 }
 
+bool rgb_matrix_indicators_advanced_user(uint8_t led_min, uint8_t led_max) {
+    for (uint8_t i = led_min; i < led_max; i++) {
+        switch(get_highest_layer(layer_state|default_layer_state)) {
+            case 2:
+                rgb_matrix_set_color(i, RGB_BLUE);
+                break;
+            case 1:
+                rgb_matrix_set_color(i, RGB_YELLOW);
+                break;
+            default:
+                break;
+        }
+    }
+    return false;
+}
 
 
