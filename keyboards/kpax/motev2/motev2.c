@@ -19,6 +19,22 @@
 
 #include "motev2.h"
 
+const matrix_row_t matrix_mask[] = {
+    0b11111111,
+    0b11111111,
+    0b11111111,
+    0b11111111,
+    0b01111111,
+    0b11111111,
+    0b11111111,
+    0b11111111,
+    0b11111111,
+    0b11111111,
+    0b01111111,
+    0b11111111,
+
+};
+
 #ifdef CONSOLE_ENABLE
 #    include "print.h"
 #endif // CONSOLE_ENABLE

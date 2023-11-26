@@ -42,7 +42,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   // ╰──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────╯
                          KC_LALT,  KC_SPC,   LOWER,   KC_BSPC,     KC_MUTE, RAISE,  KC_ENT, KC_DEL,
   //                    ╰───────────────────────────────────╯ ╰───────────────────────────────────╯
-  KC_UP,  KC_LEFT,    KC_DOWN,    KC_RGHT,    KC_ENT,                 KC_ENT,  KC_RGHT,    KC_DOWN,    KC_LEFT,   KC_UP
+       RAISE,   KC_LEFT,    LOWER, KC_RGHT,  KC_ENT,               KC_ENT,  KC_RGHT,    KC_DOWN,    KC_LEFT,   KC_UP
 
   ),
 
@@ -50,13 +50,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   // ╭──────────────────────────────────────────────────────╮ ╭──────────────────────────────────────────────────────╮
        KC_TILD, KC_EXLM,   KC_AT, KC_HASH,  KC_DLR, KC_PERC,    KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN, KC_UNDS,
   // ├──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────┤
-       RGB_MOD, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,    KC_LBRC,   KC_P7,   KC_P8,   KC_P9, KC_RBRC, XXXXXXX,
+       RGB_MOD, HF_PREV, HF_CONU, CK_UP, XXXXXXX, XXXXXXX,    KC_LBRC,   KC_P7,   KC_P8,   KC_P9, KC_RBRC, XXXXXXX,
   // ├──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────┤
-       RGB_TOG, KC_LGUI, KC_LALT, KC_LCTL, KC_LSFT, XXXXXXX,    KC_PPLS,   KC_P4,   KC_P5,   KC_P6, KC_PMNS, KC_PEQL,
+       RGB_TOG, HF_TOGG	, XXXXXXX, CK_TOGG, KC_LSFT, XXXXXXX,    KC_PPLS,   KC_P4,   KC_P5,   KC_P6, KC_PMNS, KC_PEQL,
   // ├──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────┤
-      RGB_RMOD, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,    KC_PAST,   KC_P1,   KC_P2,   KC_P3, KC_PSLS, KC_PDOT,
+      RGB_RMOD, HF_NEXT, HF_COND, CK_DOWN, XXXXXXX, XXXXXXX,    KC_PAST,   KC_P1,   KC_P2,   KC_P3, KC_PSLS, KC_PDOT,
   // ╰──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────╯
-                         XXXXXXX, XXXXXXX, XXXXXXX, _______,    XXXXXXX, _______, XXXXXXX, XXXXXXX,
+                         EE_CLR, QK_BOOT, XXXXXXX, _______,    _______,   XXXXXXX, QK_BOOT, EE_CLR,
   //                    ╰───────────────────────────────────╯ ╰───────────────────────────────────╯
     KC_UP,  KC_LEFT,    KC_DOWN,    KC_RGHT,    KC_ENT,                 KC_ENT,  KC_RGHT,    KC_DOWN,    KC_LEFT,   KC_UP
 
@@ -170,6 +170,7 @@ void lv_example_arc_2(void) {
     lv_anim_start(&a);
 }
 
+// 切层换色
 bool rgb_matrix_indicators_advanced_user(uint8_t led_min, uint8_t led_max) {
     for (uint8_t i = led_min; i < led_max; i++) {
         switch(get_highest_layer(layer_state|default_layer_state)) {

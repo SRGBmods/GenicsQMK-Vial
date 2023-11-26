@@ -43,31 +43,20 @@
 //#define NO_ACTION_TAPPING
 //#define NO_ACTION_ONESHOT
 // 震动配置
-// #define SOLENOID_PIN GP25
-// #define HAPTIC_OFF_IN_LOW_POWER 1
-// #define SOLENOID_RANDOM_FIRE
-// #define SOLENOID_DEFAULT_BUZZ 1
-// #define SOLENOID_DEFAULT_DWELL 90
-// #define SOLENOID_MIN_DWELL 4
-// #define SOLENOID_MAX_DWELL 100
-// #define SOLENOID_DWELL_STEP_SIZE 10
-// #define SOLENOID_BUZZ_ACTUATED SOLENOID_MIN_DWELL
-// #define SOLENOID_BUZZ_NONACTUATED SOLENOID_MIN_DWELL
-// #define NO_HAPTIC_ALPHA
-// #define NO_HAPTIC_NUMERIC
-// #define NO_HAPTIC_NAV
-
-// DRV2605L 普通马达设置 ERM
-// #define FB_ERM_LRA 0
-// #define FB_BRAKEFACTOR 3 /* For 1x:0, 2x:1, 3x:2, 4x:3, 6x:4, 8x:5, 16x:6, Disable Braking:7 */
-// #define FB_LOOPGAIN 1 /* For  Low:0, Medium:1, High:2, Very High:3 */
-// /* Please refer to your datasheet for the optimal setting for your specific motor. */
-// #define RATED_VOLTAGE 3
-// #define V_PEAK 5
-
-// #define I2C_DRIVER I2CD1
-// #define I2C1_SDA_PIN GP10
-// #define I2C1_SCL_PIN GP11
+#ifdef HAPTIC_ENABLE
+// this configuration has no effect because the haptic exclusion is implemented with
+// __attribute__((weak)) bool get_haptic_enabled_key(uint16_t keycode, keyrecord_t *record)
+// in the default keymap and reacts only to mouse clicks.
+//#define NO_HAPTIC_MOD
+#define HAPTIC_OFF_IN_LOW_POWER 1
+#define NO_HAPTIC_FN
+#define NO_HAPTIC_ALPHA
+#define NO_HAPTIC_PUNCTUATION
+#define NO_HAPTIC_NAV
+#define NO_HAPTIC_NUMERIC
+#define DRV2605L_GREETING       DRV2605L_EFFECT_750_MS_ALERT_100
+#define DRV2605L_DEFAULT_MODE   DRV2605L_EFFECT_SHARP_TICK_1_100
+#endif
 
 
 
@@ -93,7 +82,7 @@
 #    define SPLIT_TRANSPORT_MIRROR
 #    define RGB_MATRIX_LED_COUNT 100
 #    define RGB_MATRIX_SPLIT { 50, 50 }
-#    define RGB_MATRIX_MAXIMUM_BRIGHTNESS 40
+#    define RGB_MATRIX_MAXIMUM_BRIGHTNESS 80
 #    define RGB_MATRIX_DEFAULT_VAL RGB_MATRIX_MAXIMUM_BRIGHTNESS
 #    define RGB_DISABLE_WHEN_USB_SUSPENDED
 #    define RGB_MATRIX_FRAMEBUFFER_EFFECTS
@@ -166,12 +155,20 @@
 #define STARTUP_SONG SONG(ROCK_A_BYE_BABY)
 #define GOODBYE_SONG SONG(CAMPANELLA)
 #define MUSIC_ON_SONG SONG(ZELDA_PUZZLE)
+#define AUDIO_VOICES
+#define DEFAULT_LAYER_SONGS { \
+        SONG(QWERTY_SOUND),   \
+        SONG(COLEMAK_SOUND),  \
+        SONG(DVORAK_SOUND),   \
+        SONG(WORKMAN_SOUND),  \
+        }
+
 #endif
 
 
 // 分体键盘配置
-#define SPLIT_HAND_MATRIX_GRID GP18,GP9
-#define SPLIT_HAND_MATRIX_GRID_LOW_IS_RIGHT
+#define SPLIT_HAND_MATRIX_GRID GP18,GP8
+// #define SPLIT_HAND_MATRIX_GRID_LOW_IS_RIGHT
 #define SPLIT_TRANSPORT_MIRROR
 #define SPLIT_LAYER_STATE_ENABLE
 #define SPLIT_LED_STATE_ENABLE
@@ -183,10 +180,10 @@
 #define SPLIT_ACTIVITY_ENABLE
 // 左右通讯
 #define SERIAL_USART_FULL_DUPLEX
+#define SERIAL_USART_PIN_SWAP
 #define SERIAL_USART_TX_PIN GP0
 #define SERIAL_USART_RX_PIN GP1
-#define SERIAL_USART_PIN_SWAP
-#define SERIAL_PIO_USE_PIO0
+// #define SERIAL_PIO_USE_PIO0
 // 强制全键无冲
 #define FORCE_NKRO
 // 设置vbus检测
@@ -201,6 +198,8 @@
 
 
 #define QUANTUM_PAINTER_DISPLAY_TIMEOUT 0
+// 打开矩阵蒙版
+#define MATRIX_MASKED
 
 
 // #ifdef OLED_ENABLE
