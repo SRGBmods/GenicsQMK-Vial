@@ -46,6 +46,8 @@
 #define LCD_RST_PIN GP26
 #define LCD_DC_PIN GP20
 #define LCD_CS_PIN GP21
+#define STRONT_DISPLAY_LEFT
+
 // 显示屏超时关闭
 #define QUANTUM_PAINTER_DISPLAY_TIMEOUT 0
 // lvgl自定义

@@ -15,7 +15,6 @@
         "pid": "0x0808",
         "device_version": "2.0.0"
     },
-    "community_layouts": ["split_6x6"],
     "layouts": {
         "LAYOUT": {
             "layout": [
