@@ -31,6 +31,12 @@
 #define SPLIT_POINTING_ENABLE
 #define SPLIT_HAPTIC_ENABLE
 #define SPLIT_ACTIVITY_ENABLE
+// 从机能用点设备
+#define SPLIT_POINTING_ENABLE
+// 指定点设备在右边
+#define POINTING_DEVICE_RIGHT
+// 限制点设备传输速率
+#define POINTING_DEVICE_TASK_THROTTLE_MS 10
 // spi配置给lcd和触控板用
 #define SPI_DRIVER SPID0
 #define SPI_SCK_PIN GP22
