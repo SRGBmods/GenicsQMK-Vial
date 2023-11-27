@@ -3,11 +3,6 @@
 
 #pragma once
 
-/* SPI pins */
-#define SPI_DRIVER SPID0
-#define SPI_SCK_PIN GP22
-#define SPI_MOSI_PIN GP23
-#define SPI_MISO_PIN GP20
 
 // #define POINTING_DEVICE_SCLK_PIN GP22
 // #define POINTING_DEVICE_SDIO_PIN GP20
@@ -18,10 +13,7 @@
 // #define ADNS5050_CS_PIN   POINTING_DEVICE_CS_PIN
 
 
-/* LCD Configuration */
-#define LCD_RST_PIN GP26
-#define LCD_DC_PIN GP20
-#define LCD_CS_PIN GP21
+
 
 
 
@@ -52,4 +44,6 @@
 
 #define VIAL_COMBO_ENTRIES 20
 #define DYNAMIC_KEYMAP_MACRO_COUNT 50
+
+#define DYNAMIC_KEYMAP_LAYER_COUNT 8
 

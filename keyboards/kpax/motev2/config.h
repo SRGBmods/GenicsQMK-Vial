@@ -2,53 +2,59 @@
 // SPDX-License-Identifier: GPL-2.0-or-later
 
 #pragma once
-
-
-
+// 左右通讯
+#define SERIAL_USART_FULL_DUPLEX
+#define SERIAL_USART_PIN_SWAP
+#define SERIAL_USART_TX_PIN GP0
+#define SERIAL_USART_RX_PIN GP1
+#define SERIAL_PIO_USE_PIO0
+// 强制全键无冲
+#define FORCE_NKRO
+// 设置vbus检测
+#define USB_VBUS_PIN GP19
+// 定义刷机按钮位置
+#define BOOTMAGIC_LITE_ROW 0
+#define BOOTMAGIC_LITE_COLUMN 0
+#define BOOTMAGIC_LITE_ROW_RIGHT 6
+#define BOOTMAGIC_LITE_COLUMN_RIGHT 0
 // 重启功能配置
 #define RP2040_BOOTLOADER_DOUBLE_TAP_RESET
 #define RP2040_BOOTLOADER_DOUBLE_TAP_RESET_TIMEOUT 500U
+// 分体键盘配置
+#define SPLIT_HAND_MATRIX_GRID GP18,GP8
+#define SPLIT_TRANSPORT_MIRROR
+#define SPLIT_LAYER_STATE_ENABLE
+#define SPLIT_LED_STATE_ENABLE
+#define SPLIT_MODS_ENABLE
+#define SPLIT_WPM_ENABLE
+#define SPLIT_OLED_ENABLE
+#define SPLIT_POINTING_ENABLE
+#define SPLIT_HAPTIC_ENABLE
+#define SPLIT_ACTIVITY_ENABLE
+// spi配置给lcd和触控板用
+#define SPI_DRIVER SPID0
+#define SPI_SCK_PIN GP22
+#define SPI_MOSI_PIN GP23
+#define SPI_MISO_PIN GP20
+// 显示屏针脚配置
+#define LCD_RST_PIN GP26
+#define LCD_DC_PIN GP20
+#define LCD_CS_PIN GP21
+// 显示屏超时关闭
+#define QUANTUM_PAINTER_DISPLAY_TIMEOUT 0
+// lvgl自定义
+#define QUANTUM_PAINTER_LVGL_USE_CUSTOM_CONF
 
 
-/* CRC. */
-#define CRC8_USE_TABLE
-#define CRC8_OPTIMIZE_SPEED
-
-
-
-/* Mechanical locking support. Use KC_LCAP, KC_LNUM or KC_LSCR instead in keymap */
-#define LOCKING_SUPPORT_ENABLE
-/* Locking resynchronize hack */
-#define LOCKING_RESYNC_ENABLE
-
-#define PERMISSIVE_HOLD
 
 // 旋钮配置
 #define ENCODERS_PAD_A { GP3 }
 #define ENCODERS_PAD_B { GP5 }
 #define ENCODER_RESOLUTION 4
-/*
- * Feature disable options
- *  These options are also useful to firmware size reduction.
- */
 
-/* disable debug print */
-//#define NO_DEBUG
-
-/* disable print */
-//#define NO_PRINT
-
-/* disable action features */
-//#define NO_ACTION_LAYER
-//#define NO_ACTION_TAPPING
-//#define NO_ACTION_ONESHOT
 // 震动配置
 #ifdef HAPTIC_ENABLE
-// this configuration has no effect because the haptic exclusion is implemented with
-// __attribute__((weak)) bool get_haptic_enabled_key(uint16_t keycode, keyrecord_t *record)
-// in the default keymap and reacts only to mouse clicks.
-//#define NO_HAPTIC_MOD
-#define HAPTIC_OFF_IN_LOW_POWER 1
+#define HAPTIC_OFF_IN_LOW_POWER 0
 #define NO_HAPTIC_FN
 #define NO_HAPTIC_ALPHA
 #define NO_HAPTIC_PUNCTUATION
@@ -56,30 +62,23 @@
 #define NO_HAPTIC_NUMERIC
 #define DRV2605L_GREETING       DRV2605L_EFFECT_750_MS_ALERT_100
 #define DRV2605L_DEFAULT_MODE   DRV2605L_EFFECT_SHARP_TICK_1_100
-#endif
-
-
-
 // DRV2605L 线性马达设置 LRA
 #define FB_ERM_LRA 1
 #define FB_BRAKEFACTOR 3 /* For 1x:0, 2x:1, 3x:2, 4x:3, 6x:4, 8x:5, 16x:6, Disable Braking:7 */
 #define FB_LOOPGAIN 1 /* For  Low:0, Medium:1, High:2, Very High:3 */
-/* Please refer to your datasheet for the optimal setting for your specific motor. */
 #define RATED_VOLTAGE 3
-// #define V_PEAK 2.8
-// #define V_RMS 2.0
 #define F_LRA 160 /* resonance freq */
-
+// drv2605l的i2c配置
 #define I2C_DRIVER I2CD1
 #define I2C1_SCL_PIN GP7
 #define I2C1_SDA_PIN GP6
 #define MY_I2C_ADDRESS (0x5A << 1)
+#endif
 
 // 灯光配置
 #ifdef RGB_MATRIX_ENABLE
 #    define WS2812_DI_PIN GP4
 #    define WS2812_PIO_USE_PIO1
-#    define SPLIT_TRANSPORT_MIRROR
 #    define RGB_MATRIX_LED_COUNT 100
 #    define RGB_MATRIX_SPLIT { 50, 50 }
 #    define RGB_MATRIX_MAXIMUM_BRIGHTNESS 80
@@ -130,16 +129,12 @@
 #define ENABLE_RGB_MATRIX_MULTISPLASH
 #define ENABLE_RGB_MATRIX_SOLID_SPLASH
 #define ENABLE_RGB_MATRIX_SOLID_MULTISPLASH
+// 开机灯效和速度
 #    define RGB_MATRIX_DEFAULT_MODE RGB_MATRIX_CYCLE_LEFT_RIGHT
 #    define RGB_MATRIX_DEFAULT_SPD 32
-
 #endif
 
-
-
-
-
-// 定义蜂鸣器针脚
+// 音效蜂鸣器配置
 #ifdef AUDIO_ENABLE
 #define AUDIO_PIN GP2
 #define AUDIO_PWM_DRIVER PWMD1
@@ -156,50 +151,21 @@
 #define GOODBYE_SONG SONG(CAMPANELLA)
 #define MUSIC_ON_SONG SONG(ZELDA_PUZZLE)
 #define AUDIO_VOICES
-#define DEFAULT_LAYER_SONGS { \
-        SONG(QWERTY_SOUND),   \
-        SONG(COLEMAK_SOUND),  \
-        SONG(DVORAK_SOUND),   \
-        SONG(WORKMAN_SOUND),  \
-        }
-
 #endif
 
 
-// 分体键盘配置
-#define SPLIT_HAND_MATRIX_GRID GP18,GP8
-// #define SPLIT_HAND_MATRIX_GRID_LOW_IS_RIGHT
-#define SPLIT_TRANSPORT_MIRROR
-#define SPLIT_LAYER_STATE_ENABLE
-#define SPLIT_LED_STATE_ENABLE
-#define SPLIT_MODS_ENABLE
-#define SPLIT_WPM_ENABLE
-#define SPLIT_OLED_ENABLE
-#define SPLIT_POINTING_ENABLE
-#define SPLIT_HAPTIC_ENABLE
-#define SPLIT_ACTIVITY_ENABLE
-// 左右通讯
-#define SERIAL_USART_FULL_DUPLEX
-#define SERIAL_USART_PIN_SWAP
-#define SERIAL_USART_TX_PIN GP0
-#define SERIAL_USART_RX_PIN GP1
-// #define SERIAL_PIO_USE_PIO0
-// 强制全键无冲
-#define FORCE_NKRO
-// 设置vbus检测
-// #define SPLIT_USB_TIMEOUT 5000
-// #define SPLIT_USB_TIMEOUT_POLL 25
-#define USB_VBUS_PIN GP19
-// 定义刷机按钮位置
-#define BOOTMAGIC_LITE_ROW 0
-#define BOOTMAGIC_LITE_COLUMN 0
-#define BOOTMAGIC_LITE_ROW_RIGHT 6
-#define BOOTMAGIC_LITE_COLUMN_RIGHT 0
 
-
-#define QUANTUM_PAINTER_DISPLAY_TIMEOUT 0
 // 打开矩阵蒙版
 #define MATRIX_MASKED
+/* CRC. */
+#define CRC8_USE_TABLE
+#define CRC8_OPTIMIZE_SPEED
+/* Mechanical locking support. Use KC_LCAP, KC_LNUM or KC_LSCR instead in keymap */
+#define LOCKING_SUPPORT_ENABLE
+/* Locking resynchronize hack */
+#define LOCKING_RESYNC_ENABLE
+
+#define PERMISSIVE_HOLD
 
 
 // #ifdef OLED_ENABLE
