@@ -4,10 +4,15 @@
 #pragma once
 // 左右通讯
 #define SERIAL_USART_FULL_DUPLEX
-#define SERIAL_USART_PIN_SWAP
 #define SERIAL_USART_TX_PIN GP0
 #define SERIAL_USART_RX_PIN GP1
-#define SERIAL_PIO_USE_PIO0
+#define SERIAL_USART_PIN_SWAP
+#define SERIAL_PIO_USE_PIO1
+#define SELECT_SOFT_SERIAL_SPEED 1
+#define SERIAL_USART_TIMEOUT 20
+#define SERIAL_DEBUG
+#define SPLIT_USB_DETECT
+#define SPLIT_USB_TIMEOUT 2000
 // 强制全键无冲
 #define FORCE_NKRO
 // 设置vbus检测
@@ -21,7 +26,9 @@
 #define RP2040_BOOTLOADER_DOUBLE_TAP_RESET
 #define RP2040_BOOTLOADER_DOUBLE_TAP_RESET_TIMEOUT 500U
 // 分体键盘配置
-#define SPLIT_HAND_MATRIX_GRID GP18,GP8
+#define SPLIT_HAND_MATRIX_GRID GP18,GP8  //行在前，因为是行到列的二极管方向
+#define SPLIT_HAND_MATRIX_GRID_LOW_IS_LEFT  //焊接跳线就是左边，被拉低了。
+#define MATRIX_MASKED  // 打开矩阵蒙版
 #define SPLIT_TRANSPORT_MIRROR
 #define SPLIT_LAYER_STATE_ENABLE
 #define SPLIT_LED_STATE_ENABLE
@@ -163,17 +170,16 @@
 
 
 
-// 打开矩阵蒙版
-#define MATRIX_MASKED
-/* CRC. */
-#define CRC8_USE_TABLE
-#define CRC8_OPTIMIZE_SPEED
-/* Mechanical locking support. Use KC_LCAP, KC_LNUM or KC_LSCR instead in keymap */
-#define LOCKING_SUPPORT_ENABLE
-/* Locking resynchronize hack */
-#define LOCKING_RESYNC_ENABLE
 
-#define PERMISSIVE_HOLD
+// /* CRC. */
+// #define CRC8_USE_TABLE
+// #define CRC8_OPTIMIZE_SPEED
+/* Mechanical locking support. Use KC_LCAP, KC_LNUM or KC_LSCR instead in keymap */
+// #define LOCKING_SUPPORT_ENABLE
+/* Locking resynchronize hack */
+// #define LOCKING_RESYNC_ENABLE
+
+// #define PERMISSIVE_HOLD
 
 
 // #ifdef OLED_ENABLE

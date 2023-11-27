@@ -38,13 +38,13 @@ POINTING_DEVICE_DRIVER = cirque_pinnacle_spi
 BOOTMAGIC_ENABLE = yes      # Enable Bootmagic Lite
 MOUSEKEY_ENABLE = yes       # Mouse keys
 EXTRAKEY_ENABLE = yes       # Audio control and System control
-CONSOLE_ENABLE = no         # Console for debug
-COMMAND_ENABLE = no         # Commands for debug and configuration
+CONSOLE_ENABLE = yes         # Console for debug
+COMMAND_ENABLE = yes         # Commands for debug and configuration
 NKRO_ENABLE = yes            # Enable N-Key Rollover
 
 
-# RP2040-specific options
-PICO_INTRINSICS_ENABLED = no # ATM Unsupported by ChibiOS.
+# # RP2040-specific options
+# PICO_INTRINSICS_ENABLED = no # ATM Unsupported by ChibiOS.
 
 
 # 加入oled显示屏

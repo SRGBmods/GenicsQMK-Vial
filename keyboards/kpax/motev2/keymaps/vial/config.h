@@ -13,14 +13,6 @@
 // #define ADNS5050_CS_PIN   POINTING_DEVICE_CS_PIN
 
 
-
-
-
-
-
-
-
-
 // Adjust trackpad rotation.
 #define POINTING_DEVICE_ROTATION_90
 
