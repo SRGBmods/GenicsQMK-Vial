@@ -1,11 +1,11 @@
 {
 	"files": [
 		{
-			"path": "keyboards/kpax/motev2/keymaps/vial/keymap.c",
+			"path": "keyboards/kpax/motev2/config.h",
 			"bookmarks": [
 				{
-					"line": 188,
-					"column": 0,
+					"line": 170,
+					"column": 51,
 					"label": ""
 				}
 			]
