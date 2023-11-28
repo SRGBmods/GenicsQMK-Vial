@@ -13,6 +13,8 @@
 #define SERIAL_DEBUG
 #define SPLIT_USB_DETECT
 #define SPLIT_USB_TIMEOUT 2000
+#define SPLIT_WATCHDOG_ENABLE
+#define SPLIT_WATCHDOG_TIMEOUT 3000
 // 强制全键无冲
 #define FORCE_NKRO
 // 设置vbus检测
@@ -166,10 +168,15 @@
 #define GOODBYE_SONG SONG(CAMPANELLA)
 #define MUSIC_ON_SONG SONG(ZELDA_PUZZLE)
 #define AUDIO_VOICES
+#define DEFAULT_LAYER_SONGS { SONG(QWERTY_SOUND), \
+                              SONG(COLEMAK_SOUND), \
+                              SONG(DVORAK_SOUND) \
+                            }
 #endif
 
 
-
+/* Fix for Apple Silicon Macs struggling to detect board after suspend/sleep */
+#define USB_SUSPEND_WAKEUP_DELAY 200
 
 // /* CRC. */
 // #define CRC8_USE_TABLE
