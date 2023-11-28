@@ -175,10 +175,16 @@ const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][2] = {
 bool rgb_matrix_indicators_advanced_user(uint8_t led_min, uint8_t led_max) {
     if (host_keyboard_led_state().caps_lock) {
         RGB_MATRIX_INDICATOR_SET_COLOR(48, 255, 255, 255);
-        RGB_MATRIX_INDICATOR_SET_COLOR(49, 255, 255, 255); // 假定 caps lock 是在第48个灯
+        RGB_MATRIX_INDICATOR_SET_COLOR(49, 255, 255, 255);
+        RGB_MATRIX_INDICATOR_SET_COLOR(98, 255, 255, 255);
+        RGB_MATRIX_INDICATOR_SET_COLOR(99, 255, 255, 255); // 假定 caps lock 是正面四个灯
+// 假定 caps lock 是在第48个灯
     } else {
         RGB_MATRIX_INDICATOR_SET_COLOR(48, 0, 0, 0);
         RGB_MATRIX_INDICATOR_SET_COLOR(49, 0, 0, 0);
+        RGB_MATRIX_INDICATOR_SET_COLOR(98, 0, 0, 0);
+        RGB_MATRIX_INDICATOR_SET_COLOR(99, 0, 0, 0); // 假定 caps lock 是正面四个灯
+
     }
     return false;
 }
