@@ -7,11 +7,12 @@
 #define SERIAL_USART_TX_PIN GP0
 #define SERIAL_USART_RX_PIN GP1
 #define SERIAL_USART_PIN_SWAP
-#define SERIAL_PIO_USE_PIO1
-#define SELECT_SOFT_SERIAL_SPEED 1
-#define SERIAL_USART_TIMEOUT 20
-#define SERIAL_DEBUG
+// #define SERIAL_PIO_USE_PIO1
+// #define SELECT_SOFT_SERIAL_SPEED 1
+// #define SERIAL_USART_TIMEOUT 20
+// #define SERIAL_DEBUG
 #define SPLIT_USB_DETECT
+#define SPLIT_USB_TIMEOUT_POLL 10
 #define SPLIT_USB_TIMEOUT 2000
 #define SPLIT_WATCHDOG_ENABLE
 #define SPLIT_WATCHDOG_TIMEOUT 3000
@@ -81,9 +82,9 @@
 #define DRV2605L_DEFAULT_MODE   DRV2605L_EFFECT_SHARP_TICK_1_100
 // DRV2605L 线性马达设置 LRA
 #define FB_ERM_LRA 1
-#define FB_BRAKEFACTOR 3 /* For 1x:0, 2x:1, 3x:2, 4x:3, 6x:4, 8x:5, 16x:6, Disable Braking:7 */
-#define FB_LOOPGAIN 1 /* For  Low:0, Medium:1, High:2, Very High:3 */
-#define RATED_VOLTAGE 3
+#define FB_BRAKEFACTOR 6 /* For 1x:0, 2x:1, 3x:2, 4x:3, 6x:4, 8x:5, 16x:6, Disable Braking:7 */
+#define FB_LOOPGAIN 0 /* For  Low:0, Medium:1, High:2, Very High:3 */
+#define RATED_VOLTAGE 2.5
 #define F_LRA 160 /* resonance freq */
 // drv2605l的i2c配置
 #define I2C_DRIVER I2CD1
@@ -178,15 +179,15 @@
 /* Fix for Apple Silicon Macs struggling to detect board after suspend/sleep */
 #define USB_SUSPEND_WAKEUP_DELAY 200
 
-// /* CRC. */
-// #define CRC8_USE_TABLE
-// #define CRC8_OPTIMIZE_SPEED
+/* CRC. */
+#define CRC8_USE_TABLE
+#define CRC8_OPTIMIZE_SPEED
 /* Mechanical locking support. Use KC_LCAP, KC_LNUM or KC_LSCR instead in keymap */
-// #define LOCKING_SUPPORT_ENABLE
+#define LOCKING_SUPPORT_ENABLE
 /* Locking resynchronize hack */
-// #define LOCKING_RESYNC_ENABLE
+#define LOCKING_RESYNC_ENABLE
 
-// #define PERMISSIVE_HOLD
+#define PERMISSIVE_HOLD
 
 
 // #ifdef OLED_ENABLE

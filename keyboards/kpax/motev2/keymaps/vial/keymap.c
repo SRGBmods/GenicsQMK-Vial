@@ -28,7 +28,7 @@ enum layer_number {
 #define HOME_SCLN RGUI_T(KC_SCLN)
 
 // bottom mods
-#define SYM_SPC LT(_SYMBOL, KC_SPC)
+#define SYS_GUI LT(_SYS, KC_LGUI)
 #define NUM_TAB LT(_NUMBER, KC_TAB)
 #define FUNC_ESC LT(_FUNC, KC_ESC)
 #define FUNC_ENT LT(_FUNC, KC_ENT)
@@ -46,17 +46,17 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 // clang-format off
   [_QWERTY] = LAYOUT(
   // ╭──────────────────────────────────────────────────────╮ ╭──────────────────────────────────────────────────────╮
-      FUNC_ESC,   KC_1,    KC_2,    KC_3,    KC_4,    KC_5,       KC_6,    KC_7,    KC_8,    KC_9,    KC_0, NAV_BSPC,
+      FUNC_ESC,   KC_1,    KC_2,    KC_3,    KC_4,    KC_5,       KC_6,    KC_7,    KC_8,    KC_9,    KC_0, KC_BSPC,
   // ├──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────┤
-      NUM_TAB,    KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,       KC_Y,    KC_U,    KC_I,    KC_O,    KC_P, KC_BSLS,
+      KC_TAB,    KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,       KC_Y,    KC_U,    KC_I,    KC_O,    KC_P, KC_BSLS,
   // ├──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────┤
       KC_LSFT,    KC_A,    KC_S,    KC_D,    KC_F,    KC_G,       KC_H,    KC_J,    KC_K,    KC_L, KC_SCLN, KC_QUOT,
   // ├──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────┤
-      KC_LCTL,    KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,       KC_N,    KC_M, KC_COMM,  KC_DOT, KC_SLSH, KC_LALT,
+      KC_LCTL,    KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,       KC_N,    KC_M, KC_COMM,  KC_DOT, KC_SLSH, KC_RCTL,
   // ╰──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────╯
-                      KC_LALT,  SYM_SPC,  NAV_BSPC,KC_BSPC,      KC_MUTE, FUNC_ENT,  KC_ENT, RALT_DEL,
+                      KC_LALT,  KC_SPC,  SYS_GUI, KC_BSPC,      KC_MUTE, FUNC_ENT,  KC_ENT, RALT_DEL,
   //                    ╰───────────────────────────────────╯ ╰───────────────────────────────────╯
-       FUNC_ENT,   KC_LEFT,    NAV_BSPC, KC_RGHT,  KC_ENT,               KC_ENT,  KC_RGHT,    KC_DOWN,    KC_LEFT,   KC_UP
+       _FUNC,   KC_LEFT,    _NAV,        KC_RGHT,  KC_ENT,       KC_ENT,  KC_RGHT,    KC_DOWN,    KC_LEFT,   KC_UP
 
   ),
 
@@ -143,7 +143,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   // ├──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────┤
        RGB_MOD, HF_PREV, HF_CONU, CK_UP, XXXXXXX, XXXXXXX,    KC_LBRC,   KC_P7,   KC_P8,   KC_P9, KC_RBRC, XXXXXXX,
   // ├──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────┤
-       RGB_TOG, HF_TOGG	, XXXXXXX, CK_TOGG, KC_LSFT, XXXXXXX,    KC_PPLS,   KC_P4,   KC_P5,   KC_P6, KC_PMNS, KC_PEQL,
+       RGB_TOG, HF_TOGG	, XXXXXXX, CK_TOGG, XXXXXXX, XXXXXXX,    KC_PPLS,   KC_P4,   KC_P5,   KC_P6, KC_PMNS, KC_PEQL,
   // ├──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────┤
       RGB_RMOD, HF_NEXT, HF_COND, CK_DOWN, XXXXXXX, XXXXXXX,    KC_PAST,   KC_P1,   KC_P2,   KC_P3, KC_PSLS, KC_PDOT,
   // ╰──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────╯
@@ -169,22 +169,38 @@ const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][2] = {
 
 
 // 切层底光换色
-
-
-// 大写锁定灯光换色
 bool rgb_matrix_indicators_advanced_user(uint8_t led_min, uint8_t led_max) {
-    if (host_keyboard_led_state().caps_lock) {
-        RGB_MATRIX_INDICATOR_SET_COLOR(48, 255, 255, 255);
-        RGB_MATRIX_INDICATOR_SET_COLOR(49, 255, 255, 255);
-        RGB_MATRIX_INDICATOR_SET_COLOR(98, 255, 255, 255);
-        RGB_MATRIX_INDICATOR_SET_COLOR(99, 255, 255, 255); // 假定 caps lock 是正面四个灯
-// 假定 caps lock 是在第48个灯
-    } else {
-        RGB_MATRIX_INDICATOR_SET_COLOR(48, 0, 0, 0);
-        RGB_MATRIX_INDICATOR_SET_COLOR(49, 0, 0, 0);
-        RGB_MATRIX_INDICATOR_SET_COLOR(98, 0, 0, 0);
-        RGB_MATRIX_INDICATOR_SET_COLOR(99, 0, 0, 0); // 假定 caps lock 是正面四个灯
-
+    for (uint8_t i = led_min; i < led_max; i++) {
+        switch(get_highest_layer(layer_state|default_layer_state)) {
+            case 2:
+                rgb_matrix_set_color(i, RGB_BLUE);
+                break;
+            case 1:
+                rgb_matrix_set_color(i, RGB_YELLOW);
+                break;
+            default:
+                break;
+        }
+    };
+        if (host_keyboard_led_state().caps_lock) {
+        for (uint8_t i = led_min; i < led_max; i++) {
+            if (g_led_config.flags[i] & LED_FLAG_INDICATOR) {
+                rgb_matrix_set_color(i, RGB_RED);
+            }
+        }
     }
     return false;
 }
+
+
+// 大写锁定灯光换色
+// bool rgb_matrix_indicators_advanced_user(uint8_t led_min, uint8_t led_max) {
+//     if (host_keyboard_led_state().caps_lock) {
+//         for (uint8_t i = led_min; i < led_max; i++) {
+//             if (g_led_config.flags[i] & LED_FLAG_INDICATOR) {
+//                 rgb_matrix_set_color(i, RGB_RED);
+//             }
+//         }
+//     }
+//     return false;
+// }

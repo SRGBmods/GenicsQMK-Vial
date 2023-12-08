@@ -30,13 +30,14 @@ AUDIO_ENABLE = yes
 AUDIO_DRIVER = pwm_hardware
 # 打开点设备
 POINTING_DEVICE_ENABLE = yes
-POINTING_DEVICE_DRIVER = cirque_pinnacle_spi
+# POINTING_DEVICE_DRIVER = cirque_pinnacle_spi
 # POINTING_DEVICE_DRIVER = adns5050
+POINTING_DEVICE_DRIVER = pmw3389
 
 
 # 打开附加功能
 BOOTMAGIC_ENABLE = yes      # Enable Bootmagic Lite
-MOUSEKEY_ENABLE = yes       # Mouse keys
+MOUSEKEY_ENABLE = yes       # Mouse keys6
 EXTRAKEY_ENABLE = yes       # Audio control and System control
 CONSOLE_ENABLE = yes         # Console for debug
 COMMAND_ENABLE = yes         # Commands for debug and configuration
