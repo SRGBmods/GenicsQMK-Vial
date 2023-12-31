@@ -301,5 +301,6 @@ void keyboard_post_init_user() {
     // sync highest layer (a bit more performant than standard SPLIT_LAYER_STATE_ENABLE)
     transaction_register_rpc(RPC_ID_USER_LAYER_SYNC, layer_sync);
     // sync caps word state
-    transaction_register_rpc(RPC_ID_USER_CAPS_WORD_SYNC, caps_word_sync);
+    transaction_register rpc(RPC_ID_USER_CAPS_WORD_SYNC, caps_word_sync);
 }
+     
