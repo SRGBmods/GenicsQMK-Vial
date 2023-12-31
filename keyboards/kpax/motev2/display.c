@@ -14,12 +14,14 @@ lv_style_t style_button_active;
 /* screens */
 static lv_obj_t *screen_home;
 
+
 /* home screen content */
 static lv_obj_t *label_shift;
 static lv_obj_t *label_ctrl;
 static lv_obj_t *label_alt;
 static lv_obj_t *label_gui;
 static lv_obj_t *label_caps;
+
 
 void init_styles(void) {
     lv_style_init(&style_screen);

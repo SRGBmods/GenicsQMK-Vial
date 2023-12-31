@@ -3,8 +3,6 @@
 
 #pragma once
 
-/* disable default features to reduce size */
-
 /* disable some things before lv_conf include */
 #define LV_USE_CALENDAR 0
 #define LV_USE_SPAN 0
@@ -13,19 +11,73 @@
 
 #include_next <lv_conf.h>
 
-/* change default font */
-#undef LV_FONT_MONTSERRAT_14
-#define LV_FONT_MONTSERRAT_14 0
+/* Custom fonts:
+    - montserrat_20_en_ru - english/cyrillic symbols, range 0x20-0x7F,0x0410-0x044F,0x0401,0x0451
+    - montserrat_48_digits - digits, dot and colon only, range 0x2E,0x30-0x3A
+ */
 
-#undef LV_FONT_MONTSERRAT_20
-#define LV_FONT_MONTSERRAT_20 1
+#undef LV_FONT_CUSTOM_DECLARE
+#define LV_FONT_CUSTOM_DECLARE LV_FONT_DECLARE(montserrat_20_en_ru) LV_FONT_DECLARE(montserrat_48_digits)
 
 #undef LV_FONT_DEFAULT
-#define LV_FONT_DEFAULT &lv_font_montserrat_20
+#define LV_FONT_DEFAULT &montserrat_20_en_ru
 
-/* add large font */
+#undef LV_FONT_MONTSERRAT_20
+#define LV_FONT_MONTSERRAT_20 0
+
 #undef LV_FONT_MONTSERRAT_48
-#define LV_FONT_MONTSERRAT_48 1
+#define LV_FONT_MONTSERRAT_48 0
+
+// #undef LV_FONT_MONTSERRAT_16
+// #define LV_FONT_MONTSERRAT_16 1
+
+// #undef LV_FONT_MONTSERRAT_18
+// #define LV_FONT_MONTSERRAT_18 1
+
+// #undef LV_FONT_MONTSERRAT_20
+// #define LV_FONT_MONTSERRAT_20 1
+
+// #undef LV_FONT_MONTSERRAT_22
+// #define LV_FONT_MONTSERRAT_22 1
+
+// #undef LV_FONT_MONTSERRAT_24
+// #define LV_FONT_MONTSERRAT_24 1
+
+// #undef LV_FONT_MONTSERRAT_26
+// #define LV_FONT_MONTSERRAT_26 1
+
+// #undef LV_FONT_MONTSERRAT_28
+// #define LV_FONT_MONTSERRAT_28 1
+
+// #undef LV_FONT_MONTSERRAT_30
+// #define LV_FONT_MONTSERRAT_30 1
+
+// #undef LV_FONT_MONTSERRAT_32
+// #define LV_FONT_MONTSERRAT_32 1
+
+// #undef LV_FONT_MONTSERRAT_34
+// #define LV_FONT_MONTSERRAT_34 1
+
+// #undef LV_FONT_MONTSERRAT_36
+// #define LV_FONT_MONTSERRAT_36 1
+
+// #undef LV_FONT_MONTSERRAT_38
+// #define LV_FONT_MONTSERRAT_38 1
+
+// #undef LV_FONT_MONTSERRAT_40
+// #define LV_FONT_MONTSERRAT_40 1
+
+// #undef LV_FONT_MONTSERRAT_42
+// #define LV_FONT_MONTSERRAT_42 1
+
+// #undef LV_FONT_MONTSERRAT_44
+// #define LV_FONT_MONTSERRAT_44 1
+
+// #undef LV_FONT_MONTSERRAT_46
+// #define LV_FONT_MONTSERRAT_46 1
+
+// #undef LV_FONT_MONTSERRAT_48
+// #define LV_FONT_MONTSERRAT_48 1
 
 /* disable widgets*/
 #undef LV_USE_ANIMIMG
@@ -94,6 +146,3 @@
 /* disable build examples */
 #undef LV_BUILD_EXAMPLES
 #define LV_BUILD_EXAMPLES 0
-// 打开性能显示
-// #undef LV_USE_PERF_MONITOR
-// #define LV_USE_PERF_MONITOR 1
