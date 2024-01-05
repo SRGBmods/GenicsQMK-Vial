@@ -32,9 +32,10 @@ static lv_obj_t *label_volume_arc;
 /* media screen content */
 static lv_obj_t *label_media_artist;
 static lv_obj_t *label_media_title;
-
+// 声明图片资源
 LV_IMG_DECLARE(flag_ru);
 LV_IMG_DECLARE(flag_uk);
+LV_IMG_DECLARE(_my_logoalpha_alpha_150x150);
 /* can be replaced with PL flag (update rules.mk as well) */
 // LV_IMG_DECLARE(flag_pl);
 
@@ -69,6 +70,10 @@ void init_screen_home_custom(void) {
 
     label_volume_home = lv_label_create(screen_home);
     lv_label_set_text(label_volume_home, "");
+// 增加图片
+    lv_obj_t *img = lv_img_create(screen_home);
+    lv_img_set_src(img, &_my_logoalpha_alpha_150x150);
+    lv_obj_center(img);
 
     lv_obj_t *mods = lv_obj_create(screen_home);
     lv_obj_add_style(mods, &style_container, 0);
