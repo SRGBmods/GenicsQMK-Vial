@@ -66,7 +66,7 @@ void start_home_screen_timer(void) {
 void init_screen_home_custom(void) {
     screen_home = lv_scr_act();
     lv_obj_add_style(screen_home, &style_screen, 0);
-    use_flex_column(screen_home);
+    // use_flex_column(screen_home);
 
     label_volume_home = lv_label_create(screen_home);
     lv_label_set_text(label_volume_home, "");
@@ -75,38 +75,44 @@ void init_screen_home_custom(void) {
     lv_img_set_src(img, &_my_logoalpha_alpha_150x150);
     lv_obj_center(img);
 
+//Write codes screen_RING
+	lv_obj_t *ring = lv_spinner_create(screen_home,3000,120);
+	lv_obj_set_size(ring, 240, 240);
+	lv_obj_center(ring);
+    // lv_spinner_set_anim_params(ring, 10000, 200);
+
     lv_obj_t *mods = lv_obj_create(screen_home);
     lv_obj_add_style(mods, &style_container, 0);
-    use_flex_row(mods);
+    // use_flex_row(mods);
 
     label_gui   = create_button(mods, "GUI", &style_button, &style_button_active);
     label_alt   = create_button(mods, "ALT", &style_button, &style_button_active);
     label_ctrl  = create_button(mods, "CTL", &style_button, &style_button_active);
     label_shift = create_button(mods, "SFT", &style_button, &style_button_active);
 
-    label_time = lv_label_create(screen_home);
-    lv_label_set_text(label_time, "00:00");
-    lv_obj_set_style_text_font(label_time, &montserrat_48_digits, LV_PART_MAIN);
+    // label_time = lv_label_create(screen_home);
+    // lv_label_set_text(label_time, "00:00");
+    // lv_obj_set_style_text_font(label_time, &montserrat_48_digits, LV_PART_MAIN);
 
-    lv_obj_t *caps = lv_obj_create(screen_home);
-    lv_obj_add_style(caps, &style_container, 0);
-    use_flex_row(caps);
+    // lv_obj_t *caps = lv_obj_create(screen_home);
+    // lv_obj_add_style(caps, &style_container, 0);
+    // use_flex_row(caps);
 
-    label_caps      = create_button(caps, "CAPS", &style_button, &style_button_active);
-    label_caps_word = create_button(caps, "CAPS WORD", &style_button, &style_button_active);
+    // label_caps      = create_button(caps, "CAPS", &style_button, &style_button_active);
+    // label_caps_word = create_button(caps, "CAPS WORD", &style_button, &style_button_active);
 
     lv_obj_t *bottom_row = lv_obj_create(screen_home);
     lv_obj_add_style(bottom_row, &style_container, 0);
 
-    label_layer = lv_label_create(bottom_row);
-    lv_label_set_text(label_layer, "");
-    lv_obj_align(label_layer, LV_ALIGN_LEFT_MID, 10, 0);
-    display_process_layer_state(0);
+    // label_layer = lv_label_create(bottom_row);
+    // lv_label_set_text(label_layer, "");
+    // lv_obj_align(label_layer, LV_ALIGN_LEFT_MID, 10, 0);
+    // display_process_layer_state(0);
 
-    icon_layout = lv_img_create(bottom_row);
-    lv_obj_set_style_radius(icon_layout, 4, 0);
-    lv_obj_set_style_clip_corner(icon_layout, true, 0);
-    lv_obj_align(icon_layout, LV_ALIGN_RIGHT_MID, -10, 0);
+    // icon_layout = lv_img_create(bottom_row);
+    // lv_obj_set_style_radius(icon_layout, 4, 0);
+    // lv_obj_set_style_clip_corner(icon_layout, true, 0);
+    // lv_obj_align(icon_layout, LV_ALIGN_RIGHT_MID, -10, 0);
 }
 
 void init_screen_volume(void) {

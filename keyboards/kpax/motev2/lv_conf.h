@@ -73,7 +73,7 @@
 #undef LV_USE_SPINBOX
 #define LV_USE_SPINBOX 0
 #undef LV_USE_SPINNER
-#define LV_USE_SPINNER 0
+#define LV_USE_SPINNER 1
 #undef LV_USE_TABVIEW
 #define LV_USE_TABVIEW 0
 #undef LV_USE_TILEVIEW
