@@ -36,6 +36,7 @@ static lv_obj_t *label_media_title;
 LV_IMG_DECLARE(flag_ru);
 LV_IMG_DECLARE(flag_uk);
 LV_IMG_DECLARE(_my_logoalpha_alpha_150x150);
+LV_IMG_DECLARE(_ui_logo_alpha_240x240);
 /* can be replaced with PL flag (update rules.mk as well) */
 // LV_IMG_DECLARE(flag_pl);
 
@@ -72,7 +73,7 @@ void init_screen_home_custom(void) {
     lv_label_set_text(label_volume_home, "");
 // 增加图片
     lv_obj_t *img = lv_img_create(screen_home);
-    lv_img_set_src(img, &_my_logoalpha_alpha_150x150);
+    lv_img_set_src(img, &_ui_logo_alpha_240x240);
     lv_obj_center(img);
 
 //Write codes screen_RING

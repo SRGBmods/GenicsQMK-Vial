@@ -17,5 +17,6 @@ SRC +=  zzeneg_display.c \
 		icons/flag_uk.c \
 		icons/flag_ru.c \
 		pic/_my_logoalpha_alpha_150x150.c \
+		pic/_ui_logo_alpha_240x240.c \
 		pic/animation.qgf.c
 
