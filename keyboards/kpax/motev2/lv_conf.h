@@ -15,13 +15,13 @@
 
 /* change default font */
 #undef LV_FONT_MONTSERRAT_14
-#define LV_FONT_MONTSERRAT_14 0
+#define LV_FONT_MONTSERRAT_14 1
 
 #undef LV_FONT_MONTSERRAT_20
 #define LV_FONT_MONTSERRAT_20 1
 
 #undef LV_FONT_DEFAULT
-#define LV_FONT_DEFAULT &lv_font_montserrat_20
+#define LV_FONT_DEFAULT &lv_font_montserrat_14
 
 /* add large font */
 #undef LV_FONT_MONTSERRAT_48
@@ -29,11 +29,11 @@
 
 /* disable widgets*/
 #undef LV_USE_ANIMIMG
-#define LV_USE_ANIMIMG 0
+#define LV_USE_ANIMIMG 1
 #undef LV_USE_BAR
 #define LV_USE_BAR 0
 #undef LV_USE_BTN
-#define LV_USE_BTN 0
+#define LV_USE_BTN 1
 #undef LV_USE_BTNMATRIX
 #define LV_USE_BTNMATRIX 0
 #undef LV_USE_CANVAS

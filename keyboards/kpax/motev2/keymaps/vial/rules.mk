@@ -14,6 +14,8 @@ DYNAMIC_TAPPING_TERM_ENABLE = yes
 SRC +=  zzeneg_display.c \
 		fonts/montserrat_20_en_ru.c \
 		fonts/montserrat_48_digits.c \
+		fonts/lv_font_GOST_14.c \
+		fonts/lv_font_GOST_16.c \
 		icons/flag_uk.c \
 		icons/flag_ru.c \
 		pic/_my_logoalpha_alpha_150x150.c \

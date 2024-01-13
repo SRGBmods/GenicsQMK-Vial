@@ -18,9 +18,10 @@
 
 #undef LV_FONT_CUSTOM_DECLARE
 #define LV_FONT_CUSTOM_DECLARE LV_FONT_DECLARE(montserrat_20_en_ru) LV_FONT_DECLARE(montserrat_48_digits)
+// LV_FONT_DECLARE(lv_font_GOST_16)
 
 #undef LV_FONT_DEFAULT
-#define LV_FONT_DEFAULT &montserrat_20_en_ru
+#define LV_FONT_DEFAULT &lv_font_montserrat_16
 
 #undef LV_FONT_MONTSERRAT_20
 #define LV_FONT_MONTSERRAT_20 0
@@ -28,8 +29,8 @@
 #undef LV_FONT_MONTSERRAT_48
 #define LV_FONT_MONTSERRAT_48 0
 
-// #undef LV_FONT_MONTSERRAT_16
-// #define LV_FONT_MONTSERRAT_16 1
+#undef LV_FONT_MONTSERRAT_16
+#define LV_FONT_MONTSERRAT_16 1
 
 // #undef LV_FONT_MONTSERRAT_18
 // #define LV_FONT_MONTSERRAT_18 1
@@ -85,7 +86,7 @@
 #undef LV_USE_BAR
 #define LV_USE_BAR 0
 #undef LV_USE_BTN
-#define LV_USE_BTN 0
+#define LV_USE_BTN 1
 #undef LV_USE_BTNMATRIX
 #define LV_USE_BTNMATRIX 0
 #undef LV_USE_CANVAS

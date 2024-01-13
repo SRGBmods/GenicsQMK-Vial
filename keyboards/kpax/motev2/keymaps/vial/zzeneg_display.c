@@ -78,7 +78,7 @@ void init_ui_home_custom(void) {
     lv_img_set_src(img, &_ui_logo_alpha_240x240);
     lv_obj_clear_flag(img, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
     lv_obj_center(img);
-    
+
 
 //Write codes screen_RING
 	lv_obj_t *ring = lv_spinner_create(ui_home,6000,120);
@@ -109,8 +109,8 @@ void init_ui_home_custom(void) {
 
     lv_obj_t *ui_mods = lv_obj_create(ui_home);
     lv_obj_remove_style_all(ui_mods);
-    lv_obj_set_width(ui_mods, 140);
-    lv_obj_set_height(ui_mods, 20);
+    lv_obj_set_width(ui_mods, 200);
+    lv_obj_set_height(ui_mods,100);
     lv_obj_set_x(ui_mods, 0);
     lv_obj_set_y(ui_mods, 76);
     lv_obj_set_align(ui_mods, LV_ALIGN_CENTER);
@@ -121,12 +121,12 @@ void init_ui_home_custom(void) {
     lv_obj_set_style_pad_column(ui_mods, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
 
 
-
-
-    label_alt   = create_button(ui_mods, "ALT", &style_button, &style_button_active);
-    label_gui   = create_button(ui_mods, "GUI", &style_button, &style_button_active);
     label_ctrl  = create_button(ui_mods, "CTL", &style_button, &style_button_active);
+    label_alt   = create_button(ui_mods, "ALT", &style_button, &style_button_active);
     label_shift = create_button(ui_mods, "SFT", &style_button, &style_button_active);
+    label_gui   = create_button(ui_mods, "GUI", &style_button, &style_button_active);
+
+
 
     // label_time = lv_label_create(ui_home);
     // lv_label_set_text(label_time, "00:00");
