@@ -37,6 +37,107 @@ LV_IMG_DECLARE(flag_ru);
 LV_IMG_DECLARE(flag_uk);
 LV_IMG_DECLARE(_my_logoalpha_alpha_150x150);
 LV_IMG_DECLARE(_ui_logo_alpha_240x240);
+LV_IMG_DECLARE(animation_small);
+
+LV_IMG_DECLARE(idle_animimg_1animation_small_0);
+LV_IMG_DECLARE(idle_animimg_1animation_small_1);
+LV_IMG_DECLARE(idle_animimg_1animation_small_2);
+LV_IMG_DECLARE(idle_animimg_1animation_small_3);
+LV_IMG_DECLARE(idle_animimg_1animation_small_4);
+LV_IMG_DECLARE(idle_animimg_1animation_small_5);
+LV_IMG_DECLARE(idle_animimg_1animation_small_6);
+LV_IMG_DECLARE(idle_animimg_1animation_small_7);
+LV_IMG_DECLARE(idle_animimg_1animation_small_8);
+LV_IMG_DECLARE(idle_animimg_1animation_small_9);
+LV_IMG_DECLARE(idle_animimg_1animation_small_10);
+LV_IMG_DECLARE(idle_animimg_1animation_small_11);
+LV_IMG_DECLARE(idle_animimg_1animation_small_12);
+LV_IMG_DECLARE(idle_animimg_1animation_small_13);
+LV_IMG_DECLARE(idle_animimg_1animation_small_14);
+LV_IMG_DECLARE(idle_animimg_1animation_small_15);
+LV_IMG_DECLARE(idle_animimg_1animation_small_16);
+LV_IMG_DECLARE(idle_animimg_1animation_small_17);
+LV_IMG_DECLARE(idle_animimg_1animation_small_18);
+LV_IMG_DECLARE(idle_animimg_1animation_small_19);
+LV_IMG_DECLARE(idle_animimg_1animation_small_20);
+LV_IMG_DECLARE(idle_animimg_1animation_small_21);
+LV_IMG_DECLARE(idle_animimg_1animation_small_22);
+LV_IMG_DECLARE(idle_animimg_1animation_small_23);
+LV_IMG_DECLARE(idle_animimg_1animation_small_24);
+LV_IMG_DECLARE(idle_animimg_1animation_small_25);
+LV_IMG_DECLARE(idle_animimg_1animation_small_26);
+LV_IMG_DECLARE(idle_animimg_1animation_small_27);
+LV_IMG_DECLARE(idle_animimg_1animation_small_28);
+LV_IMG_DECLARE(idle_animimg_1animation_small_29);
+LV_IMG_DECLARE(idle_animimg_1animation_small_30);
+LV_IMG_DECLARE(idle_animimg_1animation_small_31);
+LV_IMG_DECLARE(idle_animimg_1animation_small_32);
+LV_IMG_DECLARE(idle_animimg_1animation_small_33);
+LV_IMG_DECLARE(idle_animimg_1animation_small_34);
+LV_IMG_DECLARE(idle_animimg_1animation_small_35);
+LV_IMG_DECLARE(idle_animimg_1animation_small_36);
+LV_IMG_DECLARE(idle_animimg_1animation_small_37);
+LV_IMG_DECLARE(idle_animimg_1animation_small_38);
+LV_IMG_DECLARE(idle_animimg_1animation_small_39);
+LV_IMG_DECLARE(idle_animimg_1animation_small_40);
+LV_IMG_DECLARE(idle_animimg_1animation_small_41);
+LV_IMG_DECLARE(idle_animimg_1animation_small_42);
+LV_IMG_DECLARE(idle_animimg_1animation_small_43);
+LV_IMG_DECLARE(idle_animimg_1animation_small_44);
+LV_IMG_DECLARE(idle_animimg_1animation_small_45);
+LV_IMG_DECLARE(idle_animimg_1animation_small_46);
+LV_IMG_DECLARE(idle_animimg_1animation_small_47);
+
+static const lv_img_dsc_t * idle_animimg_1_imgs[48] = {
+	&idle_animimg_1animation_small_0,
+	&idle_animimg_1animation_small_1,
+	&idle_animimg_1animation_small_2,
+	&idle_animimg_1animation_small_3,
+	&idle_animimg_1animation_small_4,
+	&idle_animimg_1animation_small_5,
+	&idle_animimg_1animation_small_6,
+	&idle_animimg_1animation_small_7,
+	&idle_animimg_1animation_small_8,
+	&idle_animimg_1animation_small_9,
+	&idle_animimg_1animation_small_10,
+	&idle_animimg_1animation_small_11,
+	&idle_animimg_1animation_small_12,
+	&idle_animimg_1animation_small_13,
+	&idle_animimg_1animation_small_14,
+	&idle_animimg_1animation_small_15,
+	&idle_animimg_1animation_small_16,
+	&idle_animimg_1animation_small_17,
+	&idle_animimg_1animation_small_18,
+	&idle_animimg_1animation_small_19,
+	&idle_animimg_1animation_small_20,
+	&idle_animimg_1animation_small_21,
+	&idle_animimg_1animation_small_22,
+	&idle_animimg_1animation_small_23,
+	&idle_animimg_1animation_small_24,
+	&idle_animimg_1animation_small_25,
+	&idle_animimg_1animation_small_26,
+	&idle_animimg_1animation_small_27,
+	&idle_animimg_1animation_small_28,
+	&idle_animimg_1animation_small_29,
+	&idle_animimg_1animation_small_30,
+	&idle_animimg_1animation_small_31,
+	&idle_animimg_1animation_small_32,
+	&idle_animimg_1animation_small_33,
+	&idle_animimg_1animation_small_34,
+	&idle_animimg_1animation_small_35,
+	&idle_animimg_1animation_small_36,
+	&idle_animimg_1animation_small_37,
+	&idle_animimg_1animation_small_38,
+	&idle_animimg_1animation_small_39,
+	&idle_animimg_1animation_small_40,
+	&idle_animimg_1animation_small_41,
+	&idle_animimg_1animation_small_42,
+	&idle_animimg_1animation_small_43,
+	&idle_animimg_1animation_small_44,
+	&idle_animimg_1animation_small_45,
+	&idle_animimg_1animation_small_46,
+	&idle_animimg_1animation_small_47,
+};
 /* can be replaced with PL flag (update rules.mk as well) */
 // LV_IMG_DECLARE(flag_pl);
 
@@ -78,6 +179,22 @@ void init_ui_home_custom(void) {
     lv_img_set_src(img, &_ui_logo_alpha_240x240);
     lv_obj_clear_flag(img, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
     lv_obj_center(img);
+
+
+// 增加c播放动画
+	lv_obj_t *ani2 = lv_animimg_create(ui_home);
+    lv_animimg_set_src(ani2, (lv_img_dsc_t**)idle_animimg_1_imgs, 48);
+	lv_animimg_set_duration(ani2, 90*48);
+	lv_animimg_set_repeat_count(ani2, LV_ANIM_REPEAT_INFINITE);
+	lv_animimg_start(ani2);
+	lv_obj_set_pos(ani2, 88, 88);
+	lv_obj_set_size(ani2, 64, 64);
+// 增加普通gif动画
+    // lv_obj_t *ani = lv_gif_create(ui_home);
+    // lv_gif_set_src(ani, &animation_small);
+    // lv_obj_clear_flag(ani, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
+    // lv_obj_center(ani);
+    // lv_obj_align(ani, LV_ALIGN_LEFT_MID, 20, 0);
 
 
 //Write codes screen_RING

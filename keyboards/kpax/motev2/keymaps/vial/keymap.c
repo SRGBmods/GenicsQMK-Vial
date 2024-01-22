@@ -6,7 +6,7 @@
 #include "transactions.h"
 #include "raw_hid.h"
 #include "qp.h"
-#include "pic/animation.qgf.h"
+// #include "pic/animation.qgf.h"
 
 
 

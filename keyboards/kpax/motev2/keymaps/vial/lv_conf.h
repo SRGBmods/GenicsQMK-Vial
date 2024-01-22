@@ -147,3 +147,23 @@
 /* disable build examples */
 #undef LV_BUILD_EXAMPLES
 #define LV_BUILD_EXAMPLES 0
+
+// 打开gif解码
+#undef LV_USE_GIF
+#define LV_USE_GIF 1
+
+// #undef  LV_USE_FS_STDIO
+// #define LV_USE_FS_STDIO 1
+
+// #undef LV_USE_FS_POSIX
+// #define LV_USE_FS_POSIX 1
+
+// #undef LV_USE_FS_WIN32
+// #define LV_USE_FS_WIN32 1
+
+// #undef LV_USE_FS_FATFS
+// #define LV_USE_FS_FATFS  1
+#undef LV_MEM_CUSTOM
+#define LV_MEM_CUSTOM 1
+
+#define LV_MEM_SIZE (180U * 1024U)          /*[bytes]*/

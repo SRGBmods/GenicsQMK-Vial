@@ -97,3 +97,5 @@
 // 打开性能显示
 // #undef LV_USE_PERF_MONITOR
 // #define LV_USE_PERF_MONITOR 1
+
+
