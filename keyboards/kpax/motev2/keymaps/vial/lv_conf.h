@@ -149,8 +149,8 @@
 #define LV_BUILD_EXAMPLES 0
 
 // 打开gif解码
-#undef LV_USE_GIF
-#define LV_USE_GIF 1
+// #undef LV_USE_GIF
+// #define LV_USE_GIF 1
 
 // #undef  LV_USE_FS_STDIO
 // #define LV_USE_FS_STDIO 1
