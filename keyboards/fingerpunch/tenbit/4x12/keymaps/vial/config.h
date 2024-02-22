@@ -8,7 +8,7 @@
 #define VIAL_UNLOCK_COMBO_COLS { 0, 1 }
 #endif
 
-#define DYNAMIC_KEYMAP_LAYER_COUNT 4
+#define DYNAMIC_KEYMAP_LAYER_COUNT 5
 
 #define TAP_CODE_DELAY 25
 
