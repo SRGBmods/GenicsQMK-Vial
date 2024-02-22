@@ -55,3 +55,4 @@ NKRO_ENABLE = yes            # Enable N-Key Rollover
 # OLED_TRANSPORT = i2c
 
 
+include keyboards/fingerpunch/src/rules.mk

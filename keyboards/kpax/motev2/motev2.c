@@ -23,25 +23,25 @@ bool is_display_enabled(void) {
 }
 
 /* default encoder keys */
-bool encoder_update_kb(uint8_t index, bool clockwise) {
-    if (!encoder_update_user(index, clockwise)) {
-        return false;
-    }
-    if (index == 0) {
-        if (clockwise) {
-            tap_code_delay(KC_VOLU, 10);
-        } else {
-            tap_code_delay(KC_VOLD, 10);
-        }
-    } else if (index == 1) {
-        if (clockwise) {
-            tap_code_delay(KC_RIGHT, 10);
-        } else {
-            tap_code_delay(KC_LEFT, 10);
-        }
-    }
-    return true;
-}
+// bool encoder_update_kb(uint8_t index, bool clockwise) {
+//     if (!encoder_update_user(index, clockwise)) {
+//         return false;
+//     }
+//     if (index == 0) {
+//         if (clockwise) {
+//             tap_code_delay(KC_VOLU, 10);
+//         } else {
+//             tap_code_delay(KC_VOLD, 10);
+//         }
+//     } else if (index == 1) {
+//         if (clockwise) {
+//             tap_code_delay(KC_RIGHT, 10);
+//         } else {
+//             tap_code_delay(KC_LEFT, 10);
+//         }
+//     }
+//     return true;
+// }
 
 /* Caps Lock processing */
 bool led_update_kb(led_t led_state) {
@@ -61,15 +61,15 @@ void housekeeping_task_kb(void) {
     housekeeping_task_user();
 }
 
-void keyboard_post_init_kb(void) {
-    display_enabled = false;
+// void keyboard_post_init_kb(void) {
+//     display_enabled = false;
 
-    if (is_display_side()) {
-        display_enabled = display_init_kb();
-    }
+//     if (is_display_side()) {
+//         display_enabled = display_init_kb();
+//     }
 
-    keyboard_post_init_user();
-}
+//     keyboard_post_init_user();
+// }
 // 矩阵蒙版
 const matrix_row_t matrix_mask[] = {
     0b11111111,//row0

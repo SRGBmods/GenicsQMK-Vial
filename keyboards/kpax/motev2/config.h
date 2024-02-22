@@ -2,6 +2,9 @@
 // SPDX-License-Identifier: GPL-2.0-or-later
 
 #pragma once
+// 加入fp代码支持
+#include "keyboards/fingerpunch/src/config_pre.h"
+
 // 左右通讯
 #define SERIAL_USART_FULL_DUPLEX
 #define SERIAL_USART_TX_PIN GP0
@@ -158,6 +161,8 @@
 #define AUDIO_PIN GP2
 #define AUDIO_PWM_DRIVER PWMD1
 #define AUDIO_PWM_CHANNEL RP2040_PWM_CHANNEL_A
+    #define AUDIO_ENABLE_TONE_MULTIPLEXING
+    #define AUDIO_TONE_MULTIPLEXING_RATE_DEFAULT 10
 #define AUDIO_CLICKY
 #define AUDIO_CLICKY_FREQ_DEFAULT 200.0f
 #define AUDIO_CLICKY_FREQ_MIN 61.0f
@@ -166,14 +171,16 @@
 #define AUDIO_CLICKY_FREQ_RANDOMNESS 1.0f
 #define AUDIO_CLICKY_DELAY_DURATION 6
 #define AUDIO_INIT_DELAY 2
-#define STARTUP_SONG SONG(ROCK_A_BYE_BABY)
-#define GOODBYE_SONG SONG(CAMPANELLA)
-#define MUSIC_ON_SONG SONG(ZELDA_PUZZLE)
-#define AUDIO_VOICES
-#define DEFAULT_LAYER_SONGS { SONG(QWERTY_SOUND), \
-                              SONG(COLEMAK_SOUND), \
-                              SONG(DVORAK_SOUND) \
-                            }
+// #define STARTUP_SONG SONG(ROCK_A_BYE_BABY)
+// #define GOODBYE_SONG SONG(CAMPANELLA)
+// #define MUSIC_ON_SONG SONG(ZELDA_PUZZLE)
+    #define FP_AUDIO_MOUSE_BUTTONS
+    #define FP_AUDIO_CUT_COPY_PASTE
+    #define FP_AUDIO_SAVE
+    #define FP_STARTUP_FLOW_DOWN WHOLE_NOTE(_E6), HALF_NOTE(_REST), HALF_NOTE(_C6), WHOLE_NOTE(_G5), HALF_NOTE(_A5), WHOLE_NOTE(_D5), WHOLE_NOTE(_E5), WHOLE_NOTE(_C5),
+    #define STARTUP_SONG SONG(FP_STARTUP_FLOW_DOWN)
+    #define DEFAULT_LAYER_SONGS \
+        { SONG(QWERTY_SOUND), SONG(COLEMAK_SOUND) }
 #endif
 
 
@@ -198,3 +205,7 @@
 // #define I2C_DRIVER I2CD1
 // #define OLED_BRIGHTNESS 128
 // #endif
+
+// 加入fp代码支持
+#include "keyboards/fingerpunch/src/config_post.h"
+

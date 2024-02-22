@@ -168,9 +168,9 @@ void keyboard_post_init_kb(void) {
     fp_post_init_rgb_matrix();
     #endif
 
-    #if defined(QUANTUM_PAINTER_ENABLE)
-    fp_post_init_qp();
-    #endif
+    // #if defined(QUANTUM_PAINTER_ENABLE)
+    // fp_post_init_qp();
+    // #endif
 
     keyboard_post_init_user();
 }

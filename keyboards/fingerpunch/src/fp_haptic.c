@@ -18,7 +18,7 @@
 
 #ifdef HAPTIC_ENABLE
 
-#include "drivers/haptic/DRV2605L.h"
+#include "drivers/haptic/drv2605l.h"
 
 layer_state_t fp_layer_state_set_haptic(layer_state_t state) {
     switch (get_highest_layer(state)) {
