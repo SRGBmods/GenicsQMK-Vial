@@ -175,6 +175,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 // clang-format on
 };
 // 编码器各层的按键
+#if defined(ENCODER_MAP_ENABLE)
 const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][2] = {
     // clang-format off
     [_QWERTY] = { ENCODER_CCW_CW(KC_LEFT, KC_RGHT), ENCODER_CCW_CW(KC_VOLD, KC_VOLU) },
@@ -187,6 +188,7 @@ const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][2] = {
     [_SYS]    = { ENCODER_CCW_CW(RGB_MOD, RGB_RMOD), ENCODER_CCW_CW(RGB_VAI, RGB_VAD) },
     // clang-format on
 };
+#endif
 
 
 // 切层底光换色
