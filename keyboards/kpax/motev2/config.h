@@ -94,9 +94,9 @@
 #define I2C1_SCL_PIN GP7
 #define I2C1_SDA_PIN GP6
 #define MY_I2C_ADDRESS (0x5A << 1)
-#define FP_HAPTIC_MOUSE_BUTTONS
-#define FP_HAPTIC_CUT_COPY_PASTE
-#define FP_HAPTIC_SAVE
+// #define FP_HAPTIC_MOUSE_BUTTONS
+// #define FP_HAPTIC_CUT_COPY_PASTE
+// #define FP_HAPTIC_SAVE
 #endif
 
 // 灯光配置

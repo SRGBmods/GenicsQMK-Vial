@@ -2,6 +2,7 @@
 # 加入vial支持
 VIA_ENABLE = yes
 VIAL_ENABLE = yes
+VIAL_INSECURE = yes
 # VIALRGB_ENABLE = yes
 RAW_ENABLE = yes
 EXTRAKEY_ENABLE = yes
@@ -16,7 +17,10 @@ ifeq ($(strip $(ENCODER_ENABLE)), yes)
 endif
 ifeq ($(strip $(RGB_MATRIX_ENABLE)), yes)
    VIALRGB_ENABLE := yes  # not required, but enabling for mouse button keys
+   RGB_MATRIX_CUSTOM_KB = yes
+   OPT_DEFS += -DRGB_MATRIX_CUSTOM_KB
 endif
+
 
 
 # 引用lvgl图像文件
