@@ -192,49 +192,49 @@ const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][2] = {
 
 
 // 切层底光换色
-bool rgb_matrix_indicators_advanced_user(uint8_t led_min, uint8_t led_max) {
-    for (uint8_t i = led_min; i < led_max; i++) {
-        switch(get_highest_layer(layer_state|default_layer_state)) {
-            // case 7:
-            //     rgb_matrix_set_color(i, RGB_TEAL);
-            //     break;
-            case 6:
-                rgb_matrix_set_color(i, RGB_RED);
-                break;
-            case 5:
-                rgb_matrix_set_color(i, RGB_PINK);
-                break;
-            case 4:
-                rgb_matrix_set_color(i, RGB_CORAL);
-                break;
-            case 3:
-                rgb_matrix_set_color(i, RGB_MAGENTA);
-                break;
-            case 2:
-                rgb_matrix_set_color(i, RGB_BLUE);
-                break;
-            case 1:
-                rgb_matrix_set_color(i, RGB_YELLOW);
-                break;
-            default:
-                break;
-        }
-    };
+// bool rgb_matrix_indicators_advanced_user(uint8_t led_min, uint8_t led_max) {
+//     for (uint8_t i = led_min; i < led_max; i++) {
+//         switch(get_highest_layer(layer_state|default_layer_state)) {
+//             // case 7:
+//             //     rgb_matrix_set_color(i, RGB_TEAL);
+//             //     break;
+//             case 6:
+//                 rgb_matrix_set_color(i, RGB_RED);
+//                 break;
+//             case 5:
+//                 rgb_matrix_set_color(i, RGB_PINK);
+//                 break;
+//             case 4:
+//                 rgb_matrix_set_color(i, RGB_CORAL);
+//                 break;
+//             case 3:
+//                 rgb_matrix_set_color(i, RGB_MAGENTA);
+//                 break;
+//             case 2:
+//                 rgb_matrix_set_color(i, RGB_BLUE);
+//                 break;
+//             case 1:
+//                 rgb_matrix_set_color(i, RGB_YELLOW);
+//                 break;
+//             default:
+//                 break;
+//         }
+//     };
 // 大写锁定灯光
-        if (host_keyboard_led_state().caps_lock) {
-        for (uint8_t i = led_min; i < led_max; i++) {
-            if (g_led_config.flags[i] & LED_FLAG_INDICATOR) {
-                rgb_matrix_set_color(i, RGB_RED);
-            }
-        }
-    }
-    return false;
-}
-// 鼠标自动切层
-void pointing_device_init_user(void) {
-    set_auto_mouse_layer(2); // only required if AUTO_MOUSE_DEFAULT_LAYER is not set to index of <mouse_layer>
-    set_auto_mouse_enable(true);         // always required before the auto mouse feature will work
-}
+//         if (host_keyboard_led_state().caps_lock) {
+//         for (uint8_t i = led_min; i < led_max; i++) {
+//             if (g_led_config.flags[i] & LED_FLAG_INDICATOR) {
+//                 rgb_matrix_set_color(i, RGB_RED);
+//             }
+//         }
+//     }
+//     return false;
+// }
+// // 鼠标自动切层
+// void pointing_device_init_user(void) {
+//     set_auto_mouse_layer(2); // only required if AUTO_MOUSE_DEFAULT_LAYER is not set to index of <mouse_layer>
+//     set_auto_mouse_enable(true);         // always required before the auto mouse feature will work
+// }
 // 鼠标滚动模式
 
 

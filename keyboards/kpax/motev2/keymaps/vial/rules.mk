@@ -11,15 +11,6 @@ CAPS_WORD_ENABLE = yes
 # ENCODER_MAP_ENABLE = yes
 DYNAMIC_TAPPING_TERM_ENABLE = yes
 
-ifeq ($(strip $(ENCODER_ENABLE)), yes)
-  ENCODER_MAP_ENABLE = yes
-  VIAL_ENCODERS_ENABLE = yes
-endif
-ifeq ($(strip $(RGB_MATRIX_ENABLE)), yes)
-   VIALRGB_ENABLE := yes  # not required, but enabling for mouse button keys
-   RGB_MATRIX_CUSTOM_KB = yes
-   OPT_DEFS += -DRGB_MATRIX_CUSTOM_KB
-endif
 
 
 
