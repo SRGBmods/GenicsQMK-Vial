@@ -376,3 +376,9 @@ void pointing_device_init_user(void) {
 //     // sync caps word state
 //     transaction_register_rpc(RPC_ID_USER_CAPS_WORD_SYNC, caps_word_sync);
 // }
+void keyboard_post_init_user(void) {
+ debug_enable=true;
+//   debug_matrix=true;
+  debug_keyboard=true;
+  debug_mouse=true;
+}
