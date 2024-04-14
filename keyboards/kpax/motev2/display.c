@@ -38,12 +38,12 @@ void init_styles(void) {
     lv_style_init(&style_button);
     lv_style_set_pad_all(&style_button, 4);
     lv_style_set_radius(&style_button, 4);
-    lv_style_set_text_color(&style_button, lv_palette_main(LV_PALETTE_GREEN));
+    lv_style_set_text_color(&style_button, lv_palette_main(LV_PALETTE_BROWN));
 
     lv_style_init(&style_button_active);
-    lv_style_set_bg_color(&style_button_active, lv_palette_main(LV_PALETTE_GREEN));
+    lv_style_set_bg_color(&style_button_active, lv_palette_main(LV_PALETTE_RED));
     lv_style_set_bg_opa(&style_button_active, LV_OPA_100);
-    lv_style_set_text_color(&style_button_active, lv_color_black());
+    lv_style_set_text_color(&style_button_active, lv_palette_main(LV_PALETTE_YELLOW));
 }
 
 void init_screen_home(void) {
