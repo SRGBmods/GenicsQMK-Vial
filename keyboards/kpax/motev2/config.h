@@ -90,7 +90,8 @@
 #define I2C_DRIVER I2CD1
 #define I2C1_SCL_PIN GP7
 #define I2C1_SDA_PIN GP6
-#define MY_I2C_ADDRESS (0x5A << 1)
+// #define MY_I2C_ADDRESS (0x5A << 1)
+// #define DRV2605L_I2C_ADDRESS (0x5A << 1)
 #endif
 
 // 灯光配置
@@ -193,8 +194,6 @@
 
 // #ifdef OLED_ENABLE
 // #define OLED_DISPLAY_128X32
-// #define I2C1_SCL_PIN        GP11
-// #define I2C1_SDA_PIN        GP10
 // #define I2C_DRIVER I2CD1
 // #define OLED_BRIGHTNESS 128
 // #endif
