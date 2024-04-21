@@ -83,7 +83,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   // ╭──────────────────────────────────────────────────────╮ ╭──────────────────────────────────────────────────────╮
        _______, _______, _______, _______, _______, _______,    _______, _______, _______, _______, _______, _______,
   // ├──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────┤
-       _______, _______, _______, _______, _______, _______,    _______, _______, _______, _______, _______, _______,
+       _______, KC_BTN1, KC_BTN2, _______, _______, _______,    _______, _______, _______, _______, _______, _______,
   // ├──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────┤
        _______, _______, _______, _______, _______, _______,    _______, _______, _______, _______, _______, _______,
   // ├──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────┤
@@ -234,6 +234,29 @@ void pointing_device_init_user(void) {
     set_auto_mouse_enable(true);         // always required before the auto mouse feature will work
 }
 // 鼠标滚动模式
+// enum custom_keycodes {
+//     DRAG_SCROLL = SAFE_RANGE,
+// };
+
+// bool set_scrolling = false;
+
+
+// report_mouse_t pointing_device_task_user(report_mouse_t mouse_report) {
+//     if (set_scrolling) {
+//         mouse_report.h = mouse_report.x;
+//         mouse_report.v = mouse_report.y;
+//         mouse_report.x = 0;
+//         mouse_report.y = 0;
+//     }
+//     return mouse_report;
+// }
+
+// bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+//     if (keycode == DRAG_SCROLL && record->event.pressed) {
+//         set_scrolling = !set_scrolling;
+//     }
+//     return true;
+// }
 
 
 

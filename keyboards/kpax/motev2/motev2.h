@@ -5,3 +5,5 @@
 
 bool is_display_enabled(void);
 bool is_display_side(void);
+
+

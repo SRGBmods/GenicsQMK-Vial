@@ -84,8 +84,8 @@
 #define FB_ERM_LRA 1
 #define FB_BRAKEFACTOR 6 /* For 1x:0, 2x:1, 3x:2, 4x:3, 6x:4, 8x:5, 16x:6, Disable Braking:7 */
 #define FB_LOOPGAIN 0 /* For  Low:0, Medium:1, High:2, Very High:3 */
-#define RATED_VOLTAGE 2.5
-#define F_LRA 160 /* resonance freq */
+#define RATED_VOLTAGE 5
+#define F_LRA 220 /* resonance freq */
 // drv2605l的i2c配置
 #define I2C_DRIVER I2CD1
 #define I2C1_SCL_PIN GP7
