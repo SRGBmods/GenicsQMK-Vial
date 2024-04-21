@@ -25,6 +25,8 @@
 // 移动多少开始切层
 #define AUTO_MOUSE_THRESHOLD 10 units
 
+
+
 // azoteq触控板设置
 // #define AZOTEQ_IQS5XX_TPS65
 // #define AZOTEQ_IQS5XX_TIMEOUT_MS 10

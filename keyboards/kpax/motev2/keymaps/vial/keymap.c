@@ -44,6 +44,14 @@ enum custom_keycodes {
     M_ARROW,
 };
 
+#ifndef POINTING_DEVICE_ENABLE
+#    define DRGSCRL KC_NO
+#    define DPI_MOD KC_NO
+#    define S_D_MOD KC_NO
+#    define SNIPING KC_NO
+#endif // !POINTING_DEVICE_ENABLE
+
+
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 // clang-format off
@@ -81,9 +89,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
  [_EU] = LAYOUT(
   // ╭──────────────────────────────────────────────────────╮ ╭──────────────────────────────────────────────────────╮
-       _______, _______, _______, _______, _______, _______,    _______, _______, _______, _______, _______, _______,
+       _______, DPI_MOD, S_D_MOD, _______, _______, _______,    _______, _______, _______, _______, _______, _______,
   // ├──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────┤
-       _______, KC_BTN1, KC_BTN2, _______, _______, _______,    _______, _______, _______, _______, _______, _______,
+       _______, KC_BTN1, KC_BTN2, DRG_TOG, SNP_TOG, _______,    _______, _______, _______, _______, _______, _______,
   // ├──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────┤
        _______, _______, _______, _______, _______, _______,    _______, _______, _______, _______, _______, _______,
   // ├──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────┤
@@ -229,35 +237,24 @@ bool rgb_matrix_indicators_advanced_user(uint8_t led_min, uint8_t led_max) {
     return false;
 }
 // 鼠标自动切层
+
+extern bool is_drag_scroll;
+uint16_t overall_scroll_distance = 0;
+
+
 void pointing_device_init_user(void) {
     set_auto_mouse_layer(2); // only required if AUTO_MOUSE_DEFAULT_LAYER is not set to index of <mouse_layer>
     set_auto_mouse_enable(true);         // always required before the auto mouse feature will work
 }
 // 鼠标滚动模式
-// enum custom_keycodes {
-//     DRAG_SCROLL = SAFE_RANGE,
-// };
-
-// bool set_scrolling = false;
-
-
-// report_mouse_t pointing_device_task_user(report_mouse_t mouse_report) {
-//     if (set_scrolling) {
-//         mouse_report.h = mouse_report.x;
-//         mouse_report.v = mouse_report.y;
-//         mouse_report.x = 0;
-//         mouse_report.y = 0;
-//     }
-//     return mouse_report;
-// }
-
-// bool process_record_user(uint16_t keycode, keyrecord_t *record) {
-//     if (keycode == DRAG_SCROLL && record->event.pressed) {
-//         set_scrolling = !set_scrolling;
-//     }
-//     return true;
-// }
-
+#ifdef POINTING_DEVICE_ENABLE
+#    ifdef DILEMMA_AUTO_SNIPING_ON_LAYER
+layer_state_t layer_state_set_user(layer_state_t state) {
+    dilemma_set_pointer_sniping_enabled(layer_state_cmp(state, DILEMMA_AUTO_SNIPING_ON_LAYER));
+    return state;
+}
+#    endif // DILEMMA_AUTO_SNIPING_ON_LAYER
+#endif     // POINTING_DEVICE_ENABLEE
 
 
 // bool process_record_user(uint16_t keycode, keyrecord_t *record) {
