@@ -17,7 +17,7 @@ SRC += lvgl_helpers.c \
 RGB_MATRIX_ENABLE = yes
 RGB_MATRIX_DRIVER = ws2812
 WS2812_DRIVER = vendor
-# BACKLIGHT_ENABLE = yes
+BACKLIGHT_ENABLE = yes
 
 # 打开震动功能
 HAPTIC_ENABLE = yes

@@ -8,6 +8,10 @@
 // 打开方波给rgb灯用
 #undef RP_PWM_USE_PWM1
 #define RP_PWM_USE_PWM1 TRUE
+// 打开方波给rgb灯用
+#undef RP_PWM_USE_PWM5
+#define RP_PWM_USE_PWM5 TRUE
+
 // 打开i2c给震动模块用
 #undef RP_I2C_USE_I2C1
 #define RP_I2C_USE_I2C1 TRUE
