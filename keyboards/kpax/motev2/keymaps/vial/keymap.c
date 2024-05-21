@@ -71,17 +71,17 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   ),
 
-  [_GAME] = LAYOUT(
+  [_POINT] = LAYOUT(
   // ╭──────────────────────────────────────────────────────╮ ╭──────────────────────────────────────────────────────╮
-       _______, KC_NO, KC_NO, KC_NO, KC_NO, _______,    _______, _______, _______, _______, _______, _______,
+       _______, DPI_MOD, DPI_RMOD, S_D_MOD, S_D_RMOD, _______,    _______, _______, _______, _______, _______, _______,
   // ├──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────┤
-       _______, KC_NO, KC_NO, KC_NO, KC_NO, _______,    _______,   _______,   _______,   _______, _______, _______,
+       _______, KC_BTN1, KC_BTN2, DRG_TOG, SNP_TOG, _______,    _______,   _______,   _______,   _______, _______, _______,
   // ├──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────┤
        _______, _______	, _______, _______, _______, _______,    _______,   _______,   _______,   _______, _______, _______,
   // ├──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────┤
       _______, _______, _______, _______, _______, _______,    _______,   _______,   _______,   _______, _______, _______,
   // ╰──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────╯
-                         _______, _______, _______, _______,    _______,   _______, _______, _______,
+                         DRG_TOG, KC_BTN1, KC_BTN2, _______,    _______,   _______, _______, _______,
   //                    ╰───────────────────────────────────╯ ╰───────────────────────────────────╯
     KC_UP,  KC_LEFT,    KC_DOWN,    KC_RGHT,    KC_ENT,                 KC_ENT,  KC_RGHT,    KC_DOWN,    KC_LEFT,   KC_UP
 
@@ -97,7 +97,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   // ├──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────┤
        _______, _______, _______, _______, _______, _______,    _______, _______, _______, _______, _______, _______,
   // ╰──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────╯
-                         _______, KC_BTN1, KC_BTN2, DRG_TOG,    _______,   _______, _______, _______,
+                         DRG_TOG, KC_BTN1, KC_BTN2, _______,    _______,   _______, _______, _______,
   //                    ╰───────────────────────────────────╯ ╰───────────────────────────────────╯
        _FUNC,   KC_LEFT,    _NAV,        KC_RGHT,  KC_ENT,       KC_ENT,  KC_RGHT,    KC_DOWN,    KC_LEFT,   KC_UP
 
@@ -186,7 +186,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][2] = {
     // clang-format off
     [_QWERTY] = { ENCODER_CCW_CW(KC_LEFT, KC_RGHT), ENCODER_CCW_CW(KC_VOLD, KC_VOLU) },
-    [_GAME]   = { ENCODER_CCW_CW(KC_LEFT, KC_RGHT), ENCODER_CCW_CW(KC_VOLD, KC_VOLU) },
+    [_POINT]   = { ENCODER_CCW_CW(KC_LEFT, KC_RGHT), ENCODER_CCW_CW(KC_VOLD, KC_VOLU) },
     [_EU]     = { ENCODER_CCW_CW(KC_LEFT, KC_RGHT), ENCODER_CCW_CW(KC_VOLD, KC_VOLU) },
     [_NAV]    = { ENCODER_CCW_CW(KC_LEFT, KC_RGHT), ENCODER_CCW_CW(KC_MPRV, KC_MNXT) },
     [_NUMBER] = { ENCODER_CCW_CW(KC_LEFT, KC_RGHT), ENCODER_CCW_CW(KC_MPRV, KC_MNXT) },
@@ -243,7 +243,7 @@ uint16_t overall_scroll_distance = 0;
 
 
 void pointing_device_init_user(void) {
-    set_auto_mouse_layer(2); // only required if AUTO_MOUSE_DEFAULT_LAYER is not set to index of <mouse_layer>
+    set_auto_mouse_layer(1); // only required if AUTO_MOUSE_DEFAULT_LAYER is not set to index of <mouse_layer>
     set_auto_mouse_enable(true);         // always required before the auto mouse feature will work
 }
 // 鼠标滚动模式

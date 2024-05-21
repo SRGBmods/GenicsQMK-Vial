@@ -7,15 +7,15 @@
 #define SERIAL_USART_TX_PIN GP0
 #define SERIAL_USART_RX_PIN GP1
 #define SERIAL_USART_PIN_SWAP
-#define SERIAL_PIO_USE_PIO1
-#define SELECT_SOFT_SERIAL_SPEED 2
-#define SERIAL_USART_TIMEOUT 40
-#define SERIAL_DEBUG
-#define SPLIT_USB_DETECT
-#define SPLIT_USB_TIMEOUT_POLL 10
-#define SPLIT_USB_TIMEOUT 4000
-#define SPLIT_WATCHDOG_ENABLE
-#define SPLIT_WATCHDOG_TIMEOUT 6000
+// #define SERIAL_PIO_USE_PIO1
+// #define SELECT_SOFT_SERIAL_SPEED 2
+// #define SERIAL_USART_TIMEOUT 40
+// #define SERIAL_DEBUG
+// #define SPLIT_USB_DETECT
+// #define SPLIT_USB_TIMEOUT_POLL 10
+// #define SPLIT_USB_TIMEOUT 4000
+// #define SPLIT_WATCHDOG_ENABLE
+// #define SPLIT_WATCHDOG_TIMEOUT 6000
 // 强制全键无冲
 #define FORCE_NKRO
 // 设置vbus检测
@@ -183,11 +183,11 @@
 
 
 /* Fix for Apple Silicon Macs struggling to detect board after suspend/sleep */
-#define USB_SUSPEND_WAKEUP_DELAY 200
+// #define USB_SUSPEND_WAKEUP_DELAY 200
 
 /* CRC. */
-#define CRC8_USE_TABLE
-#define CRC8_OPTIMIZE_SPEED
+// #define CRC8_USE_TABLE
+// #define CRC8_OPTIMIZE_SPEED
 /* Mechanical locking support. Use KC_LCAP, KC_LNUM or KC_LSCR instead in keymap */
 #define LOCKING_SUPPORT_ENABLE
 /* Locking resynchronize hack */
@@ -199,7 +199,7 @@
 // #ifdef OLED_ENABLE
 // #define OLED_DISPLAY_128X32
 // #define I2C_DRIVER I2CD1
-// #define OLED_BRIGHTNESS 128
+// #define OLED_BRIGostTNESS 128
 // #endif
 
 
