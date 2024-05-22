@@ -177,7 +177,7 @@ void init_ui_home_custom(void) {
     // lv_label_set_text(label_volume_home, "");
 // 增加图片
     lv_obj_t *img = lv_img_create(ui_home);
-    lv_img_set_src(img, &_ui_pikaqiu_alpha_240x240);
+    lv_img_set_src(img, &_ui_logo_alpha_240x240);
     lv_obj_clear_flag(img, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
     lv_obj_center(img);
 
@@ -204,11 +204,11 @@ void init_ui_home_custom(void) {
 	lv_obj_center(ring);
     lv_obj_set_align(ring, LV_ALIGN_CENTER);
     lv_obj_clear_flag(ring, LV_OBJ_FLAG_CLICKABLE);      /// Flags
-    lv_obj_set_style_arc_color(ring, lv_color_hex(0xffe900), LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_arc_color(ring, lv_color_hex(0x00FF03), LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_style_arc_opa(ring, 255, LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_style_arc_width(ring, 4, LV_PART_MAIN | LV_STATE_DEFAULT);
 
-    lv_obj_set_style_arc_color(ring, lv_color_hex(0xff0027), LV_PART_INDICATOR | LV_STATE_DEFAULT);
+    lv_obj_set_style_arc_color(ring, lv_color_hex(0x0077FF), LV_PART_INDICATOR | LV_STATE_DEFAULT);
     lv_obj_set_style_arc_opa(ring, 255, LV_PART_INDICATOR | LV_STATE_DEFAULT);
     lv_obj_set_style_arc_width(ring, 4, LV_PART_INDICATOR | LV_STATE_DEFAULT);
 
