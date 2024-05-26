@@ -7,15 +7,15 @@
 #define SERIAL_USART_TX_PIN GP0
 #define SERIAL_USART_RX_PIN GP1
 #define SERIAL_USART_PIN_SWAP
-#define SERIAL_PIO_USE_PIO1
-#define SELECT_SOFT_SERIAL_SPEED 2
-#define SERIAL_USART_TIMEOUT 40
-#define SERIAL_DEBUG
+// #define SERIAL_PIO_USE_PIO1
+// #define SELECT_SOFT_SERIAL_SPEED 2
+// #define SERIAL_USART_TIMEOUT 40
+// #define SERIAL_DEBUG
 #define SPLIT_USB_DETECT
-#define SPLIT_USB_TIMEOUT_POLL 10
-#define SPLIT_USB_TIMEOUT 4000
-#define SPLIT_WATCHDOG_ENABLE
-#define SPLIT_WATCHDOG_TIMEOUT 6000
+// #define SPLIT_USB_TIMEOUT_POLL 10
+// #define SPLIT_USB_TIMEOUT 4000
+// #define SPLIT_WATCHDOG_ENABLE
+// #define SPLIT_WATCHDOG_TIMEOUT 6000
 // 强制全键无冲
 #define FORCE_NKRO
 // 设置vbus检测
@@ -46,7 +46,7 @@
 // 指定点设备在右边
 #define POINTING_DEVICE_RIGHT
 // 限制点设备传输速率
-#define POINTING_DEVICE_TASK_THROTTLE_MS 10
+// #define POINTING_DEVICE_TASK_THROTTLE_MS 10
 // spi配置给lcd和触控板用
 #define SPI_DRIVER SPID0
 #define SPI_SCK_PIN GP22
@@ -154,7 +154,7 @@
 #define ENABLE_RGB_MATRIX_SOLID_MULTISPLASH
 // 开机灯效和速度
 #    define RGB_MATRIX_DEFAULT_MODE RGB_MATRIX_CYCLE_LEFT_RIGHT
-#    define RGB_MATRIX_DEFAULT_SPD 32
+#    define RGB_MATRIX_DEFAULT_SPD 64
 #endif
 
 // 音效蜂鸣器配置
@@ -189,11 +189,11 @@
 // #define CRC8_USE_TABLE
 // #define CRC8_OPTIMIZE_SPEED
 /* Mechanical locking support. Use KC_LCAP, KC_LNUM or KC_LSCR instead in keymap */
-#define LOCKING_SUPPORT_ENABLE
+// #define LOCKING_SUPPORT_ENABLE
 /* Locking resynchronize hack */
-#define LOCKING_RESYNC_ENABLE
+// #define LOCKING_RESYNC_ENABLE
 
-#define PERMISSIVE_HOLD
+// #define PERMISSIVE_HOLD
 
 
 // #ifdef OLED_ENABLE

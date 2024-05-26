@@ -8,7 +8,7 @@
 // 打开方波给rgb灯用
 #undef RP_PWM_USE_PWM1
 #define RP_PWM_USE_PWM1 TRUE
-// 打开方波给rgb灯用
+// 打开方波给lcd背光用
 #undef RP_PWM_USE_PWM5
 #define RP_PWM_USE_PWM5 TRUE
 
