@@ -11,6 +11,14 @@ CAPS_WORD_ENABLE = yes
 ENCODER_MAP_ENABLE = yes
 DYNAMIC_TAPPING_TERM_ENABLE = yes
 
+# 打开点设备
+POINTING_DEVICE_ENABLE = yes
+# POINTING_DEVICE_DRIVER = cirque_pinnacle_spi
+# POINTING_DEVICE_DRIVER = adns5050
+POINTING_DEVICE_DRIVER = pmw3389
+# POINTING_DEVICE_DRIVER = azoteq_iqs5xx
+
+
 # 引用lvgl图像文件
 # SRC +=  zzeneg_display.c \
 # 		fonts/montserrat_20_en_ru.c \

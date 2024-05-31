@@ -4,23 +4,23 @@
 #include "motev2.h"
 #include "display.h"
 
-static bool display_enabled;
+// static bool display_enabled;
 
-/* public function to be used in keymaps */
-bool is_display_side(void) {
-#ifdef STRONT_DISPLAY_RIGHT
-    return !is_keyboard_left();
-#endif
-#ifdef STRONT_DISPLAY_LEFT
-    return is_keyboard_left();
-#endif
-    return false;
-}
+// /* public function to be used in keymaps */
+// bool is_display_side(void) {
+// #ifdef STRONT_DISPLAY_RIGHT
+//     return !is_keyboard_left();
+// #endif
+// #ifdef STRONT_DISPLAY_LEFT
+//     return is_keyboard_left();
+// #endif
+//     return false;
+// }
 
-/* public function to be used in keymaps */
-bool is_display_enabled(void) {
-    return display_enabled;
-}
+// /* public function to be used in keymaps */
+// bool is_display_enabled(void) {
+//     return display_enabled;
+// }
 
 /* default encoder keys */
 bool encoder_update_kb(uint8_t index, bool clockwise) {
@@ -44,32 +44,32 @@ bool encoder_update_kb(uint8_t index, bool clockwise) {
 }
 
 /* Caps Lock processing */
-bool led_update_kb(led_t led_state) {
-    bool res = led_update_user(led_state);
-    if (res && display_enabled) {
-        display_process_caps(led_state.caps_lock);
-    }
+// bool led_update_kb(led_t led_state) {
+//     bool res = led_update_user(led_state);
+//     if (res && display_enabled) {
+//         display_process_caps(led_state.caps_lock);
+//     }
 
-    return res;
-}
+//     return res;
+// }
 
-void housekeeping_task_kb(void) {
-    if (display_enabled) {
-        display_housekeeping_task();
-    }
+// void housekeeping_task_kb(void) {
+//     if (display_enabled) {
+//         display_housekeeping_task();
+//     }
 
-    housekeeping_task_user();
-}
+//     housekeeping_task_user();
+// }
 
-void keyboard_post_init_kb(void) {
-    display_enabled = false;
+// void keyboard_post_init_kb(void) {
+//     display_enabled = false;
 
-    if (is_display_side()) {
-        display_enabled = display_init_kb();
-    }
+//     if (is_display_side()) {
+//         display_enabled = display_init_kb();
+//     }
 
-    keyboard_post_init_user();
-}
+//     keyboard_post_init_user();
+// }
 
 
 // 矩阵蒙版
