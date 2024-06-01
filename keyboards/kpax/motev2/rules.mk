@@ -15,7 +15,7 @@ SRC += lvgl_helpers.c \
 # 打开rgb灯光
 # RGB_MATRIX_SUPPORTED = yes  # RGB matrix is supported and enabled by default
 RGB_MATRIX_ENABLE = yes
-RGB_MATRIX_DRIVER = ws2812
+# RGB_MATRIX_DRIVER = ws2812
 WS2812_DRIVER = vendor
 BACKLIGHT_ENABLE = yes
 
@@ -29,11 +29,11 @@ HAPTIC_DRIVER = drv2605l
 AUDIO_ENABLE = yes
 AUDIO_DRIVER = pwm_hardware
 # 打开点设备
-POINTING_DEVICE_ENABLE = no
+POINTING_DEVICE_ENABLE = yes
 # POINTING_DEVICE_DRIVER = cirque_pinnacle_spi
 # POINTING_DEVICE_DRIVER = adns5050
-# POINTING_DEVICE_DRIVER = pmw3389
-POINTING_DEVICE_DRIVER = azoteq_iqs5xx
+POINTING_DEVICE_DRIVER = pmw3389
+# POINTING_DEVICE_DRIVER = azoteq_iqs5xx
 
 
 # 打开附加功能

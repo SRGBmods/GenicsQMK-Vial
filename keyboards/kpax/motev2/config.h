@@ -63,7 +63,7 @@
 
 
 // 显示屏超时关闭
-#define QUANTUM_PAINTER_DISPLAY_TIMEOUT 0
+#define QUANTUM_PAINTER_DISPLAY_TIMEOUT 90000
 // lvgl自定义
 #define QUANTUM_PAINTER_LVGL_USE_CUSTOM_CONF
 
@@ -106,7 +106,7 @@
 #    define RGB_MATRIX_SPLIT { 50, 50 }
 #    define RGB_MATRIX_MAXIMUM_BRIGHTNESS 80
 #    define RGB_MATRIX_DEFAULT_VAL RGB_MATRIX_MAXIMUM_BRIGHTNESS
-#    define RGB_DISABLE_WHEN_USB_SUSPENDED
+#    define RGB_MATRIX_SLEEP
 #    define RGB_MATRIX_FRAMEBUFFER_EFFECTS
 #    define RGB_MATRIX_KEYPRESSES
 #define ENABLE_RGB_MATRIX_GRADIENT_LEFT_RIGHT
@@ -155,7 +155,10 @@
 // 开机灯效和速度
 #    define RGB_MATRIX_DEFAULT_MODE RGB_MATRIX_CYCLE_LEFT_RIGHT
 #    define RGB_MATRIX_DEFAULT_SPD 64
+#    define RGB_MATRIX_TIMEOUT 300000
+#    define RGB_TRIGGER_ON_KEYDOWN
 #endif
+
 
 // 音效蜂鸣器配置
 #ifdef AUDIO_ENABLE
@@ -181,9 +184,28 @@
                             }
 #endif
 
+// 基础点设置针脚配置
+#define POINTING_DEVICE_CS_PIN GP21
+#define POINTING_DEVICE_SCLK_PIN GP22
+#define POINTING_DEVICE_SDIO_PIN GP20
+#define POINTING_DEVICE_AUTO_MOUSE_ENABLE
+
+// vial配置
+#define VIAL_KEYBOARD_UID {0x2B, 0x3C, 0x7E, 0x52, 0x60, 0x3E, 0xFE, 0x52}
+#define VIAL_UNLOCK_COMBO_ROWS { 0, 6 }
+#define VIAL_UNLOCK_COMBO_COLS { 0, 0 }
+
+#define VIAL_COMBO_ENTRIES 20
+#define DYNAMIC_KEYMAP_MACRO_COUNT 50
+// 动态键层数量
+#define DYNAMIC_KEYMAP_LAYER_COUNT 8
+// 自动切层停留时间
+// #define AUTO_MOUSE_TIME 1000
+// 移动多少开始切层
+// #define AUTO_MOUSE_THRESHOLD 10
 
 /* Fix for Apple Silicon Macs struggling to detect board after suspend/sleep */
-#define USB_SUSPEND_WAKEUP_DELAY 200
+// #define USB_SUSPEND_WAKEUP_DELAY 200
 
 /* CRC. */
 // #define CRC8_USE_TABLE
