@@ -6,7 +6,7 @@
 typedef enum {
     _QWERTY = 0,
     _POINT,
-    _EU,
+    _GAME,
     _NAV,
     _NUMBER,
     _SYMBOL,

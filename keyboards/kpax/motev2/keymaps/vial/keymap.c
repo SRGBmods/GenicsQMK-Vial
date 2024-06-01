@@ -41,7 +41,7 @@
 #define FUNC_ESC LT(_FUNC, KC_ESC)
 #define FUNC_ENT LT(_FUNC, KC_ENT)
 #define NAV_BSPC LT(_NAV, KC_BSPC)
-#define EU_DEL LT(_EU, KC_DEL)
+#define GA_DEL LT(_GAME, KC_DEL)
 
 // game layer mods
 #define LALT_Q LALT_T(KC_Q)
@@ -78,7 +78,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   // ├──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────┤
       KC_LCTL,    KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,       KC_N,    KC_M, KC_COMM,  KC_DOT, KC_SLSH, KC_QUOT,
   // ╰──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────╯
-                      KC_LALT,  KC_SPC,  SYS_GUI, KC_BSPC,      KC_MUTE, SYS_GUI,  FUNC_ENT, EU_DEL,
+                      KC_LALT,  KC_SPC,  SYS_GUI, KC_BSPC,      KC_MUTE, SYS_GUI,  FUNC_ENT, GA_DEL,
   //                    ╰───────────────────────────────────╯ ╰───────────────────────────────────╯
                MO(1),   MO(3),   MO(2),    MO(4),   MO(5),      KC_ENT,  KC_RGHT,  KC_DOWN, KC_LEFT, KC_UP
 
@@ -94,13 +94,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   // ├──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────┤
       _______, _______, _______, _______, _______, _______,    _______,   _______,   _______,   _______, _______, _______,
   // ╰──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────╯
-                      KC_LALT,  KC_SPC,  SYS_GUI, KC_BSPC,      KC_MUTE, SYS_GUI,  FUNC_ENT, EU_DEL,
+                      KC_LALT,  KC_SPC,  SYS_GUI, KC_BSPC,      KC_MUTE, SYS_GUI,  FUNC_ENT, GA_DEL,
   //                    ╰───────────────────────────────────╯ ╰───────────────────────────────────╯
     _______,  _______,    _______,    _______,    _______,                 _______,  _______,    _______,    _______,   _______
 
   ),
 
- [_EU] = LAYOUT(
+ [_GAME] = LAYOUT(
   // ╭──────────────────────────────────────────────────────╮ ╭──────────────────────────────────────────────────────╮
       FUNC_ESC,   KC_1,    KC_2,    KC_3,    KC_4,    KC_5,       KC_6,    KC_7,    KC_8,    KC_9,    KC_0, KC_BSPC,
   // ├──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────┤
@@ -110,7 +110,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   // ├──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────┤
        _______, _______, _______, _______, _______, _______,    _______, _______, _______, _______, _______, _______,
   // ╰──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────╯
-                      KC_LALT,  KC_SPC,  SYS_GUI, KC_BSPC,      KC_MUTE, SYS_GUI,  FUNC_ENT, EU_DEL,
+                      KC_LALT,  KC_SPC,  SYS_GUI, KC_BSPC,      KC_MUTE, SYS_GUI,  FUNC_ENT, GA_DEL,
   //                    ╰───────────────────────────────────╯ ╰───────────────────────────────────╯
     _______,  _______,    _______,    _______,    _______,                 _______,  _______,    _______,    _______,   _______
 
@@ -200,7 +200,7 @@ const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][2] = {
     // clang-format off
     [_QWERTY] = { ENCODER_CCW_CW(KC_LEFT, KC_RGHT), ENCODER_CCW_CW(KC_VOLD, KC_VOLU) },
     [_POINT]   = { ENCODER_CCW_CW(KC_LEFT, KC_RGHT), ENCODER_CCW_CW(KC_VOLD, KC_VOLU) },
-    [_EU]     = { ENCODER_CCW_CW(KC_LEFT, KC_RGHT), ENCODER_CCW_CW(KC_VOLD, KC_VOLU) },
+    [_GAME]     = { ENCODER_CCW_CW(KC_LEFT, KC_RGHT), ENCODER_CCW_CW(KC_VOLD, KC_VOLU) },
     [_NAV]    = { ENCODER_CCW_CW(KC_LEFT, KC_RGHT), ENCODER_CCW_CW(KC_MPRV, KC_MNXT) },
     [_NUMBER] = { ENCODER_CCW_CW(KC_LEFT, KC_RGHT), ENCODER_CCW_CW(KC_MPRV, KC_MNXT) },
     [_SYMBOL] = { ENCODER_CCW_CW(HF_PREV, HF_NEXT), ENCODER_CCW_CW(KC_MPRV, KC_MNXT) },

@@ -391,8 +391,8 @@ void display_process_layer_state(uint8_t layer) {
         case _POINT:
             lv_label_set_text(label_layer, "POINT");
             break;
-        case _EU:
-            lv_label_set_text(label_layer, "EU");
+        case _GAME:
+            lv_label_set_text(label_layer, "GAME");
             break;
         case _NAV:
             lv_label_set_text(label_layer, "NAV");
