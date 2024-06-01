@@ -26,7 +26,7 @@ static lv_obj_t *label_caps;
 void init_styles(void) {
     lv_style_init(&style_screen);
     lv_style_set_bg_color(&style_screen, lv_color_black());
-    lv_style_set_pad_all(&style_screen, 10);
+    lv_style_set_pad_all(&style_screen, 0);
 
     lv_style_init(&style_container);
     lv_style_set_pad_all(&style_container, 0);

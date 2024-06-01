@@ -323,17 +323,17 @@ layer_state_t layer_state_set_user(layer_state_t state) {
 // }
 
 // /* Active Layer processing */
-// layer_state_t layer_state_set_user(layer_state_t state) {
-//     if (is_display_enabled()) {
-//         display_process_layer_state(get_highest_layer(state));
-//     } else if (is_keyboard_master() && !is_keyboard_left()) {
-//         uint8_t layer = get_highest_layer(state);
-//         dprintf("RPC_ID_USER_LAYER_SYNC: %u\n", layer);
-//         transaction_rpc_send(RPC_ID_USER_LAYER_SYNC, 1, &layer);
-//     }
+layer_state_t layer_state_set_user(layer_state_t state) {
+    if (is_display_enabled()) {
+        display_process_layer_state(get_highest_layer(state));
+    } else if (is_keyboard_master() && !is_keyboard_left()) {
+        uint8_t layer = get_highest_layer(state);
+        dprintf("RPC_ID_USER_LAYER_SYNC: %u\n", layer);
+        transaction_rpc_send(RPC_ID_USER_LAYER_SYNC, 1, &layer);
+    }
 
-//     return state;
-// }
+    return state;
+}
 
 // /* Caps Word processing */
 // void caps_word_set_user(bool active) {

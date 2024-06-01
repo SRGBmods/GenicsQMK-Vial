@@ -198,7 +198,7 @@ void init_ui_home_custom(void) {
     // lv_obj_align(ani, LV_ALIGN_LEFT_MID, 20, 0);
 
 
-//Write codes screen_RING
+//增加圆圈动画
 	lv_obj_t *ring = lv_spinner_create(ui_home,6000,120);
 	lv_obj_set_size(ring, 240, 240);
 	lv_obj_center(ring);
@@ -226,17 +226,23 @@ void init_ui_home_custom(void) {
     // use_flex_row(mods);
 
     lv_obj_t *ui_mods = lv_obj_create(ui_home);
-    lv_obj_remove_style_all(ui_mods);
-    lv_obj_set_width(ui_mods, 200);
-    lv_obj_set_height(ui_mods,100);
-    lv_obj_set_x(ui_mods, 0);
-    lv_obj_set_y(ui_mods, 76);
-    lv_obj_set_align(ui_mods, LV_ALIGN_CENTER);
-    lv_obj_set_flex_flow(ui_mods, LV_FLEX_FLOW_ROW_WRAP);
-    lv_obj_set_flex_align(ui_mods, LV_FLEX_ALIGN_CENTER, LV_FLEX_ALIGN_CENTER, LV_FLEX_ALIGN_CENTER);
-    lv_obj_clear_flag(ui_mods, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
-    lv_obj_set_style_pad_row(ui_mods, 20, LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_column(ui_mods, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
+	lv_obj_set_pos(ui_mods, 45, 180);
+	lv_obj_set_size(ui_mods, 150, 20);
+	lv_obj_set_scrollbar_mode(ui_mods, LV_SCROLLBAR_MODE_OFF);
+    use_flex_row(ui_mods);
+
+	//Write style for home_ui_mods, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
+	lv_obj_set_style_border_width(ui_mods, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_border_opa(ui_mods, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_border_color(ui_mods, lv_color_hex(0x2195f6), LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_border_side(ui_mods, LV_BORDER_SIDE_FULL, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_radius(ui_mods, 10, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_bg_opa(ui_mods, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_pad_top(ui_mods, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_pad_bottom(ui_mods, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_pad_left(ui_mods, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_pad_right(ui_mods, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_shadow_width(ui_mods, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
 
 
     label_ctrl  = create_button(ui_mods, "CTL", &style_button, &style_button_active);
@@ -259,11 +265,30 @@ void init_ui_home_custom(void) {
 
     // lv_obj_t *bottom_row = lv_obj_create(ui_home);
     // lv_obj_add_style(bottom_row, &style_container, 0);
+// 创建层名称物体
+    label_layer = lv_label_create(ui_home);
+    lv_label_set_text(label_layer, "");
+    lv_label_set_long_mode(label_layer, LV_LABEL_LONG_WRAP);
+	lv_obj_set_pos(label_layer, 71, 201);
+	lv_obj_set_size(label_layer, 98, 18);
+    //Write style for home_label_1, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
+	lv_obj_set_style_border_width(label_layer, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_radius(label_layer, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_color(label_layer, lv_color_hex(0xd4d7ff), LV_PART_MAIN|LV_STATE_DEFAULT);
+	// lv_obj_set_style_text_font(label_layer, &lv_font_montserratMedium_14, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_opa(label_layer, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_letter_space(label_layer, 2, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_line_space(label_layer, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_align(label_layer, LV_TEXT_ALIGN_CENTER, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_bg_opa(label_layer, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_pad_top(label_layer, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_pad_right(label_layer, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_pad_bottom(label_layer, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_pad_left(label_layer, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_shadow_width(label_layer, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    // lv_obj_align(label_layer, LV_ALIGN_BOTTOM_MID, 0, 0);
+    display_process_layer_state(0);
 
-    // label_layer = lv_label_create(bottom_row);
-    // lv_label_set_text(label_layer, "");
-    // lv_obj_align(label_layer, LV_ALIGN_LEFT_MID, 10, 0);
-    // display_process_layer_state(0);
 
     // icon_layout = lv_img_create(bottom_row);
     // lv_obj_set_style_radius(icon_layout, 4, 0);
