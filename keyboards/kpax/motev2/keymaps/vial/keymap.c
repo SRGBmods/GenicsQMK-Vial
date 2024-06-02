@@ -335,36 +335,36 @@ layer_state_t layer_state_set_user(layer_state_t state) {
     return state;
 }
 
-// /* Caps Word processing */
-// void caps_word_set_user(bool active) {
-//     if (is_display_enabled()) {
-//         display_process_caps_word(active);
-//     } else if (is_keyboard_master() && !is_keyboard_left()) {
-//         dprintf("RPC_ID_USER_CAPS_WORD_SYNC: %s\n", active ? "active" : "inactive");
-//         transaction_rpc_send(RPC_ID_USER_CAPS_WORD_SYNC, 1, &active);
-//     }
-// }
+/* Caps Word processing */
+void caps_word_set_user(bool active) {
+    if (is_display_enabled()) {
+        display_process_caps_word(active);
+    } else if (is_keyboard_master() && !is_keyboard_left()) {
+        dprintf("RPC_ID_USER_CAPS_WORD_SYNC: %s\n", active ? "active" : "inactive");
+        transaction_rpc_send(RPC_ID_USER_CAPS_WORD_SYNC, 1, &active);
+    }
+}
 
-// /* default caps word logic that allows KC_MINS. Underscore can be typed with KC_RSFT + KC_MINS */
-// bool caps_word_press_user(uint16_t keycode) {
-//     switch (keycode) {
-//         // Keycodes that continue Caps Word, with shift applied.
-//         case KC_A ... KC_Z:
-//             add_weak_mods(MOD_BIT(KC_LSFT)); // Apply shift to next key.
-//             return true;
+/* default caps word logic that allows KC_MINS. Underscore can be typed with KC_RSFT + KC_MINS */
+bool caps_word_press_user(uint16_t keycode) {
+    switch (keycode) {
+        // Keycodes that continue Caps Word, with shift applied.
+        case KC_A ... KC_Z:
+            add_weak_mods(MOD_BIT(KC_LSFT)); // Apply shift to next key.
+            return true;
 
-//         // Keycodes that continue Caps Word, without shifting.
-//         case KC_1 ... KC_0:
-//         case KC_BSPC:
-//         case KC_DEL:
-//         case KC_MINS:
-//         case KC_RSFT:
-//             return true;
+        // Keycodes that continue Caps Word, without shifting.
+        case KC_1 ... KC_0:
+        case KC_BSPC:
+        case KC_DEL:
+        case KC_MINS:
+        case KC_RSFT:
+            return true;
 
-//         default:
-//             return false; // Deactivate Caps Word.
-//     }
-// }
+        default:
+            return false; // Deactivate Caps Word.
+    }
+}
 
 /* Raw HID processing*/
 // void raw_hid_receive(uint8_t *data, uint8_t length) {
@@ -384,29 +384,28 @@ layer_state_t layer_state_set_user(layer_state_t state) {
 //     }
 // }
 
-// void layer_sync(uint8_t initiator2target_buffer_size, const void *initiator2target_buffer, uint8_t target2initiator_buffer_size, void *target2initiator_buffer) {
-//     if (is_display_enabled()) {
-//         display_process_layer_state(*(uint8_t *)initiator2target_buffer);
-//     }
-// }
+void layer_sync(uint8_t initiator2target_buffer_size, const void *initiator2target_buffer, uint8_t target2initiator_buffer_size, void *target2initiator_buffer) {
+    if (is_display_enabled()) {
+        display_process_layer_state(*(uint8_t *)initiator2target_buffer);
+    }
+}
 
-// void caps_word_sync(uint8_t initiator2target_buffer_size, const void *initiator2target_buffer, uint8_t target2initiator_buffer_size, void *target2initiator_buffer) {
-//     if (is_display_enabled()) {
-//         display_process_caps_word(*(bool *)initiator2target_buffer);
-//     }
-// }
+void caps_word_sync(uint8_t initiator2target_buffer_size, const void *initiator2target_buffer, uint8_t target2initiator_buffer_size, void *target2initiator_buffer) {
+    if (is_display_enabled()) {
+        display_process_caps_word(*(bool *)initiator2target_buffer);
+    }
+}
 
-// void keyboard_post_init_user() {
-//     // sync received hid data
-//     transaction_register_rpc(RPC_ID_USER_HID_SYNC, hid_sync);
-//     // sync highest layer (a bit more performant than standard SPLIT_LAYER_STATE_ENABLE)
-//     transaction_register_rpc(RPC_ID_USER_LAYER_SYNC, layer_sync);
-//     // sync caps word state
-//     transaction_register_rpc(RPC_ID_USER_CAPS_WORD_SYNC, caps_word_sync);
-// }
+void keyboard_post_init_user() {
+    // sync received hid data
+    // transaction_register_rpc(RPC_ID_USER_HID_SYNC, hid_sync);
+    // sync highest layer (a bit more performant than standard SPLIT_LAYER_STATE_ENABLE)
+    transaction_register_rpc(RPC_ID_USER_LAYER_SYNC, layer_sync);
+    // sync caps word state
+    transaction_register_rpc(RPC_ID_USER_CAPS_WORD_SYNC, caps_word_sync);
+}
 // void keyboard_post_init_user(void) {
-//  debug_enable=true;
-// //   debug_matrix=true;
+//  debug_enable=true; //   debug_matrix=true;
 //   debug_keyboard=true;
 //   debug_mouse=true;
 // }
