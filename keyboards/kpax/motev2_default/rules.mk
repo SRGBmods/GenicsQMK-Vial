@@ -13,8 +13,8 @@ QUANTUM_PAINTER_DRIVERS = gc9a01_spi
 # 打开rgb灯光
 # RGB_MATRIX_SUPPORTED = yes  # RGB matrix is supported and enabled by default
 RGB_MATRIX_ENABLE = yes
-# RGB_MATRIX_DRIVER = ws2812
-# WS2812_DRIVER = vendor
+RGB_MATRIX_DRIVER = ws2812
+WS2812_DRIVER = vendor
 BACKLIGHT_ENABLE = yes
 
 # 打开震动功能

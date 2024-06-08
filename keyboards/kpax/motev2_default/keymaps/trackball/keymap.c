@@ -84,7 +84,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [_POINT] = LAYOUT(
   // ╭──────────────────────────────────────────────────────╮ ╭──────────────────────────────────────────────────────╮
-      FUNC_ESC,   DPI_MOD,    S_D_MOD,    DRGSCRL,    SNIPING,   KC_5,       KC_6,    KC_7,    KC_8,    KC_9,    KC_0, KC_BSPC,
+      FUNC_ESC,   KC_1,    KC_2,    KC_3,    KC_4,    KC_5,       KC_6,    KC_7,    KC_8,    KC_9,    KC_0, KC_BSPC,
   // ├──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────┤
       KC_TAB,    KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,     KC_Y,    KC_U,    KC_I,    KC_O,    KC_P, KC_MINUS,
   // ├──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────┤
@@ -248,21 +248,21 @@ bool rgb_matrix_indicators_advanced_user(uint8_t led_min, uint8_t led_max) {
     return false;
 };
 // 鼠标自动切层
-extern bool is_drag_scroll;
-uint16_t overall_scroll_distance = 0;
-void pointing_device_init_user(void) {
-    set_auto_mouse_layer(1); // only required if AUTO_MOUSE_DEFAULT_LAYER is not set to index of <mouse_layer>
-    set_auto_mouse_enable(true);         // always required before the auto mouse feature will work
-};
+// extern bool is_drag_scroll;
+// uint16_t overall_scroll_distance = 0;
+// void pointing_device_init_user(void) {
+//     set_auto_mouse_layer(1); // only required if AUTO_MOUSE_DEFAULT_LAYER is not set to index of <mouse_layer>
+//     set_auto_mouse_enable(true);         // always required before the auto mouse feature will work
+// };
 // // 鼠标滚动模式
-#ifdef POINTING_DEVICE_ENABLE
-#    ifdef DILEMMA_AUTO_SNIPING_ON_LAYER
-layer_state_t layer_state_set_user(layer_state_t state) {
-    dilemma_set_pointer_sniping_enabled(layer_state_cmp(state, DILEMMA_AUTO_SNIPING_ON_LAYER));
-    return state;
-}
-#    endif // DILEMMA_AUTO_SNIPING_ON_LAYER
-#endif     // POINTING_DEVICE_ENABLEE
+// #ifdef POINTING_DEVICE_ENABLE
+// #    ifdef DILEMMA_AUTO_SNIPING_ON_LAYER
+// layer_state_t layer_state_set_user(layer_state_t state) {
+//     dilemma_set_pointer_sniping_enabled(layer_state_cmp(state, DILEMMA_AUTO_SNIPING_ON_LAYER));
+//     return state;
+// }
+// #    endif // DILEMMA_AUTO_SNIPING_ON_LAYER
+// #endif     // POINTING_DEVICE_ENABLEE
 
 
 // bool process_record_user(uint16_t keycode, keyrecord_t *record) {

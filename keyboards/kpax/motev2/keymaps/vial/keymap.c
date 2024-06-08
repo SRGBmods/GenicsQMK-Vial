@@ -213,6 +213,7 @@ const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][2] = {
 // 切层底光换色
 bool rgb_matrix_indicators_advanced_user(uint8_t led_min, uint8_t led_max) {
     for (uint8_t i = led_min; i < led_max; i++) {
+          if (HAS_FLAGS(g_led_config.flags[i], 0x02)){
         switch(get_highest_layer(layer_state|default_layer_state)) {
             case 7:
                 rgb_matrix_set_color(i, RGB_TEAL);
@@ -238,6 +239,7 @@ bool rgb_matrix_indicators_advanced_user(uint8_t led_min, uint8_t led_max) {
             default:
                 break;
         }
+    }
     };
 // 大写锁定灯光
         if (host_keyboard_led_state().caps_lock) {
