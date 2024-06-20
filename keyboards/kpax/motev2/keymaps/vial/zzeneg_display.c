@@ -23,6 +23,7 @@ static lv_obj_t *label_gui;
 static lv_obj_t *label_layer;
 static lv_obj_t *label_caps;
 static lv_obj_t *label_caps_word;
+static lv_obj_t *label_wpm;
 // static lv_obj_t *icon_layout;
 
 /* volume screen content */
@@ -286,6 +287,14 @@ void init_ui_home_custom(void) {
 	lv_obj_set_style_pad_left(label_layer, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
 	lv_obj_set_style_shadow_width(label_layer, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
     display_process_layer_state(0);
+
+    label_wpm = lv_label_create(ui_home);
+    lv_label_set_text(label_wpm, "");
+    lv_label_set_long_mode(label_wpm, LV_LABEL_LONG_WRAP);
+	lv_obj_set_pos(label_wpm, 71, 101);
+	lv_obj_set_size(label_wpm, 98, 18);
+    get_current_wpm();
+
 
 
     // icon_layout = lv_img_create(bottom_row);
