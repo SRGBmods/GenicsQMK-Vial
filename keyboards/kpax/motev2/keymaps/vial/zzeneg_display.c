@@ -182,11 +182,6 @@ void init_ui_home_custom(void) {
     // lv_img_set_src(img, &_ui_logo_alpha_240x240);
     // lv_obj_clear_flag(img, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
     // lv_obj_center(img);
-// 增加图片两个人
-    lv_obj_t *img = lv_img_create(ui_home);
-    lv_img_set_src(img, &_ui_twoman_alpha_240x240);
-    lv_obj_clear_flag(img, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
-    lv_obj_center(img);
 
 
 
@@ -207,20 +202,20 @@ void init_ui_home_custom(void) {
 
 
 //增加圆圈动画
-	lv_obj_t *ring = lv_spinner_create(ui_home,6000,120);
-	lv_obj_set_size(ring, 240, 240);
-	lv_obj_center(ring);
-    lv_obj_set_align(ring, LV_ALIGN_CENTER);
-    lv_obj_clear_flag(ring, LV_OBJ_FLAG_CLICKABLE);      /// Flags
-    lv_obj_set_style_arc_color(ring, lv_color_hex(0x00FF03), LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_arc_opa(ring, 255, LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_arc_width(ring, 4, LV_PART_MAIN | LV_STATE_DEFAULT);
+	// lv_obj_t *ring = lv_spinner_create(ui_home,6000,120);
+	// lv_obj_set_size(ring, 240, 240);
+	// lv_obj_center(ring);
+    // lv_obj_set_align(ring, LV_ALIGN_CENTER);
+    // lv_obj_clear_flag(ring, LV_OBJ_FLAG_CLICKABLE);      /// Flags
+    // lv_obj_set_style_arc_color(ring, lv_color_hex(0x00FF03), LV_PART_MAIN | LV_STATE_DEFAULT);
+    // lv_obj_set_style_arc_opa(ring, 255, LV_PART_MAIN | LV_STATE_DEFAULT);
+    // lv_obj_set_style_arc_width(ring, 4, LV_PART_MAIN | LV_STATE_DEFAULT);
 
-    lv_obj_set_style_arc_color(ring, lv_color_hex(0x0077FF), LV_PART_INDICATOR | LV_STATE_DEFAULT);
-    lv_obj_set_style_arc_opa(ring, 255, LV_PART_INDICATOR | LV_STATE_DEFAULT);
-    lv_obj_set_style_arc_width(ring, 4, LV_PART_INDICATOR | LV_STATE_DEFAULT);
+    // lv_obj_set_style_arc_color(ring, lv_color_hex(0x0077FF), LV_PART_INDICATOR | LV_STATE_DEFAULT);
+    // lv_obj_set_style_arc_opa(ring, 255, LV_PART_INDICATOR | LV_STATE_DEFAULT);
+    // lv_obj_set_style_arc_width(ring, 4, LV_PART_INDICATOR | LV_STATE_DEFAULT);
 
-
+// 分割
     // lv_spinner_set_anim_params(ring, 10000, 200);
 
     // lv_obj_t *mods = lv_obj_create(ui_home);
@@ -320,6 +315,13 @@ void init_ui_home_custom(void) {
     // lv_obj_set_style_radius(icon_layout, 4, 0);
     // lv_obj_set_style_clip_corner(icon_layout, true, 0);
     // lv_obj_align(icon_layout, LV_ALIGN_RIGHT_MID, -10, 0);
+
+    // 增加图片两个人
+    lv_obj_t *img = lv_img_create(ui_home);
+    lv_img_set_src(img, &_ui_twoman_alpha_240x240);
+    lv_obj_clear_flag(img, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
+    lv_obj_center(img);
+
 }
 
 // void init_screen_volume(void) {
@@ -358,6 +360,8 @@ void init_ui_home_custom(void) {
 //     lv_obj_set_width(label_media_title, lv_pct(90));
 //     lv_obj_set_style_text_align(label_media_title, LV_TEXT_ALIGN_CENTER, 0);
 // }
+
+
 
 bool display_init_user(void) {
     init_ui_home_custom();
