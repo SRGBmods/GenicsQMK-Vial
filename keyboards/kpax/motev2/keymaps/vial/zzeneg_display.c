@@ -39,6 +39,7 @@ LV_IMG_DECLARE(flag_uk);
 LV_IMG_DECLARE(_my_logoalpha_alpha_150x150);
 LV_IMG_DECLARE(_ui_logo_alpha_240x240);
 LV_IMG_DECLARE(_ui_pikaqiu_alpha_240x240);
+LV_IMG_DECLARE(_ui_twoman_alpha_240x240);
 LV_IMG_DECLARE(animation_small);
 
 // LV_IMG_DECLARE(idle_animimg_1animation_small_0);
@@ -177,10 +178,16 @@ void init_ui_home_custom(void) {
     // label_volume_home = lv_label_create(ui_home);
     // lv_label_set_text(label_volume_home, "");
 // 增加图片
+    // lv_obj_t *img = lv_img_create(ui_home);
+    // lv_img_set_src(img, &_ui_logo_alpha_240x240);
+    // lv_obj_clear_flag(img, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
+    // lv_obj_center(img);
+// 增加图片两个人
     lv_obj_t *img = lv_img_create(ui_home);
-    lv_img_set_src(img, &_ui_logo_alpha_240x240);
+    lv_img_set_src(img, &_ui_twoman_alpha_240x240);
     lv_obj_clear_flag(img, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
     lv_obj_center(img);
+
 
 
 // 增加c播放动画
@@ -287,13 +294,25 @@ void init_ui_home_custom(void) {
 	lv_obj_set_style_pad_left(label_layer, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
 	lv_obj_set_style_shadow_width(label_layer, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
     display_process_layer_state(0);
-
+// 增加wpm显示
     label_wpm = lv_label_create(ui_home);
     lv_label_set_text(label_wpm, "");
     lv_label_set_long_mode(label_wpm, LV_LABEL_LONG_WRAP);
 	lv_obj_set_pos(label_wpm, 71, 101);
 	lv_obj_set_size(label_wpm, 98, 18);
-    get_current_wpm();
+    lv_obj_set_style_border_width(label_wpm, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_radius(label_wpm, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_color(label_wpm, lv_color_hex(0xd4d7ff), LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_opa(label_wpm, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_letter_space(label_wpm, 2, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_line_space(label_wpm, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_align(label_wpm, LV_TEXT_ALIGN_LEFT, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_bg_opa(label_wpm, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_pad_top(label_wpm, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_pad_right(label_wpm, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_pad_bottom(label_wpm, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_pad_left(label_wpm, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_shadow_width(label_wpm, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
 
 
 
