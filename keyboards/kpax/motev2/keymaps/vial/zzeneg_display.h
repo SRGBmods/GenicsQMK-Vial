@@ -26,5 +26,5 @@ void display_process_raw_hid_data(uint8_t *data, uint8_t length);
 void display_process_layer_state(uint8_t layer);
 void display_process_caps_word(bool active);
 
-void get_wpm(uint8_t layer);
+void get_wpm(uint8_t wpm);
 
