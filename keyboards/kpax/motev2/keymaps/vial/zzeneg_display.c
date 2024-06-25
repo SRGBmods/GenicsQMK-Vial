@@ -291,7 +291,7 @@ void init_ui_home_custom(void) {
     display_process_layer_state(0);
 // 增加wpm显示
     label_wpm = lv_label_create(ui_home);
-    lv_label_set_text(label_wpm,get_u8_str(get_current_wpm(),'0'));
+    lv_label_set_text(label_wpm, "");
     lv_label_set_long_mode(label_wpm, LV_LABEL_LONG_WRAP);
 	lv_obj_set_pos(label_wpm, 25, 142);
 	lv_obj_set_size(label_wpm, 98, 18);
@@ -452,6 +452,7 @@ void display_housekeeping_task(void) {
     toggle_state(label_ctrl, LV_STATE_PRESSED, MODS_CTRL);
     toggle_state(label_alt, LV_STATE_PRESSED, MODS_ALT);
     toggle_state(label_gui, LV_STATE_PRESSED, MODS_GUI);
+
 }
 
 void display_process_caps(bool active) {

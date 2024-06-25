@@ -21,8 +21,6 @@
 //     // clang-format on
 // };
 
-
-
 // Left-hand home row mods
 #define HOME_A LGUI_T(KC_A)
 #define HOME_S LALT_T(KC_S)
@@ -64,10 +62,8 @@
 #    define SNIPING KC_NO
 #endif // !POINTING_DEVICE_ENABLE
 
-
-
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-// clang-format off
+    // clang-format off
   [_QWERTY] = LAYOUT(
   // ╭──────────────────────────────────────────────────────╮ ╭──────────────────────────────────────────────────────╮
       FUNC_ESC,   KC_1,    KC_2,    KC_3,    KC_4,    KC_5,       KC_6,    KC_7,    KC_8,    KC_9,    KC_0, KC_BSPC,
@@ -193,7 +189,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     _______,  _______,    _______,    _______,    _______,                 _______,  _______,    _______,    _______,   _______
 
   ),
-// clang-format on
+    // clang-format on
 };
 // 编码器各层的按键
 const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][2] = {
@@ -209,40 +205,39 @@ const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][2] = {
     // clang-format on
 };
 
-
 // 切层底光换色
 bool rgb_matrix_indicators_advanced_user(uint8_t led_min, uint8_t led_max) {
     for (uint8_t i = led_min; i < led_max; i++) {
-          if (HAS_FLAGS(g_led_config.flags[i], 0x02)){
-        switch(get_highest_layer(layer_state|default_layer_state)) {
-            case 7:
-                rgb_matrix_set_color(i, RGB_TEAL);
-                break;
-            case 6:
-                rgb_matrix_set_color(i, RGB_YELLOW);
-                break;
-            case 5:
-                rgb_matrix_set_color(i, RGB_PINK);
-                break;
-            case 4:
-                rgb_matrix_set_color(i, RGB_CORAL);
-                break;
-            case 3:
-                rgb_matrix_set_color(i, RGB_MAGENTA);
-                break;
-            case 2:
-                rgb_matrix_set_color(i, RGB_BLUE);
-                break;
-            case 1:
-                rgb_matrix_set_color(i, RGB_RED);
-                break;
-            default:
-                break;
+        if (HAS_FLAGS(g_led_config.flags[i], 0x02)) {
+            switch (get_highest_layer(layer_state | default_layer_state)) {
+                case 7:
+                    rgb_matrix_set_color(i, RGB_TEAL);
+                    break;
+                case 6:
+                    rgb_matrix_set_color(i, RGB_YELLOW);
+                    break;
+                case 5:
+                    rgb_matrix_set_color(i, RGB_PINK);
+                    break;
+                case 4:
+                    rgb_matrix_set_color(i, RGB_CORAL);
+                    break;
+                case 3:
+                    rgb_matrix_set_color(i, RGB_MAGENTA);
+                    break;
+                case 2:
+                    rgb_matrix_set_color(i, RGB_BLUE);
+                    break;
+                case 1:
+                    rgb_matrix_set_color(i, RGB_RED);
+                    break;
+                default:
+                    break;
+            }
         }
-    }
     };
-// 大写锁定灯光
-        if (host_keyboard_led_state().caps_lock) {
+    // 大写锁定灯光
+    if (host_keyboard_led_state().caps_lock) {
         for (uint8_t i = led_min; i < led_max; i++) {
             if (g_led_config.flags[i] & LED_FLAG_INDICATOR) {
                 rgb_matrix_set_color(i, RGB_RED);
@@ -254,7 +249,7 @@ bool rgb_matrix_indicators_advanced_user(uint8_t led_min, uint8_t led_max) {
 // 鼠标自动切层
 void pointing_device_init_user(void) {
     set_auto_mouse_layer(_POINT); // only required if AUTO_MOUSE_DEFAULT_LAYER is not set to index of <mouse_layer>
-    set_auto_mouse_enable(true);         // always required before the auto mouse feature will work
+    set_auto_mouse_enable(true);  // always required before the auto mouse feature will work
 }
 // 鼠标滚动模式
 #ifdef POINTING_DEVICE_ENABLE
@@ -265,7 +260,6 @@ layer_state_t layer_state_set_user(layer_state_t state) {
 }
 #    endif // DILEMMA_AUTO_SNIPING_ON_LAYER
 #endif     // POINTING_DEVICE_ENABLEE
-
 
 // bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 //     dprintf("process_record_user %u %s %s %d\n", keycode, record->event.pressed ? "pressed" : "depressed", record->tap.interrupted ? "interrupted" : "not interrupted", record->tap.count);
@@ -427,4 +421,3 @@ void keyboard_pre_init_kb(void) {
 
     keyboard_pre_init_user();
 }
-

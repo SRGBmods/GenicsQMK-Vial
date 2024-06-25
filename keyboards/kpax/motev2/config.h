@@ -215,8 +215,8 @@
 // #define USB_SUSPEND_WAKEUP_DELAY 200
 
 /* CRC. */
-// #define CRC8_USE_TABLE
-// #define CRC8_OPTIMIZE_SPEED
+#define CRC8_USE_TABLE
+#define CRC8_OPTIMIZE_SPEED
 /* Mechanical locking support. Use KC_LCAP, KC_LNUM or KC_LSCR instead in keymap */
 // #define LOCKING_SUPPORT_ENABLE
 /* Locking resynchronize hack */
