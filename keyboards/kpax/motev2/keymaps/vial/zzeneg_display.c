@@ -3,6 +3,7 @@
 
 #include "zzeneg_display.h"
 #include "display.h"
+#include "quantum.h"
 #include "raw_hid.h"
 #include "lvgl_helpers.h"
 
@@ -291,7 +292,7 @@ void init_ui_home_custom(void) {
     display_process_layer_state(0);
 // 增加wpm显示
     label_wpm = lv_label_create(ui_home);
-    lv_label_set_text(label_wpm, refresh_wpm());
+    lv_label_set_text(label_wpm, "");
     lv_label_set_long_mode(label_wpm, LV_LABEL_LONG_WRAP);
 	lv_obj_set_pos(label_wpm, 25, 142);
 	lv_obj_set_size(label_wpm, 98, 18);
@@ -308,6 +309,7 @@ void init_ui_home_custom(void) {
 	lv_obj_set_style_pad_bottom(label_wpm, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
 	lv_obj_set_style_pad_left(label_wpm, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
 	lv_obj_set_style_shadow_width(label_wpm, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    refresh_wpm();
 
 
 
@@ -440,6 +442,11 @@ void display_process_layer_state(uint8_t layer) {
             lv_label_set_text(label_layer, "SYSTEM");
             break;
     }
+}
+
+// 增加刷新wpm的函数
+void refresh_wpm(void){
+    lv_label_set_text(label_wpm, get_u8_str(get_current_wpm(), '0'));
 }
 
 void display_housekeeping_task(void) {

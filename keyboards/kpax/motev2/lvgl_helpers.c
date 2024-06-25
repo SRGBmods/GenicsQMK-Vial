@@ -22,13 +22,6 @@ void use_flex_column(void *obj) {
     lv_obj_set_flex_flow(obj, LV_FLEX_FLOW_COLUMN);
     lv_obj_set_flex_align(obj, LV_FLEX_ALIGN_SPACE_AROUND, LV_FLEX_ALIGN_CENTER, LV_FLEX_ALIGN_CENTER);
 }
-// 增加刷新wpm的函数
-void refresh_wpm(void){
-    char wpm[32];
-    sprintf(wpm, "WPM: %d", get_current_wpm());
-    send_string(wpm);
-    // lv_label_set_text(wpm_label, (get_current_wpm()));
-}
 
 void toggle_state(void *obj, lv_state_t state, bool enabled) {
     if (enabled) {
