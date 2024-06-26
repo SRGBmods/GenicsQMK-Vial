@@ -207,6 +207,10 @@ const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][2] = {
 
 // 切层底光换色
 bool rgb_matrix_indicators_advanced_user(uint8_t led_min, uint8_t led_max) {
+    HSV hsv = {0,255,255};
+    // some math?
+    RGB rgb = hsv_to_rgb(hsv);
+    rgb_matrix_set_color(32, rgb.r, rgb.g, rgb.b);
     for (uint8_t i = led_min; i < led_max; i++) {
         if (HAS_FLAGS(g_led_config.flags[i], 0x02)) {
             switch (get_highest_layer(layer_state | default_layer_state)) {
