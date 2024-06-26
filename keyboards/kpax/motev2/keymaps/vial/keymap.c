@@ -206,34 +206,50 @@ const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][2] = {
 };
 
 // 切层底光换色
-bool rgb_matrix_indicators_advanced_user(uint8_t led_min, uint8_t led_max) {
-    for (uint8_t i = led_min; i < led_max; i++) {
-        if (HAS_FLAGS(g_led_config.flags[i], 0x02)) {
-            switch (get_highest_layer(layer_state | default_layer_state)) {
-                case 7:
-                    rgb_matrix_set_color(i, RGB_TEAL);
-                    break;
-                case 6:
-                    rgb_matrix_set_color(i, RGB_YELLOW);
-                    break;
-                case 5:
-                    rgb_matrix_set_color(i, RGB_PINK);
-                    break;
-                case 4:
-                    rgb_matrix_set_color(i, RGB_CORAL);
-                    break;
-                case 3:
-                    rgb_matrix_set_color(i, RGB_MAGENTA);
-                    break;
-                case 2:
-                    rgb_matrix_set_color(i, RGB_BLUE);
-                    break;
-                case 1:
-                    rgb_matrix_set_color(i, RGB_RED);
-                    break;
-                default:
-                    break;
+#ifdef RGB_MATRIX_ENABLE
+// Layer state indicator
+bool rgb_matrix_indicators_advanced_kb(uint8_t led_min, uint8_t led_max) {
+    if (!rgb_matrix_indicators_advanced_user(led_min, led_max)) {
+        return false;
+    }
+    if (host_keyboard_led_state().caps_lock) {
+        for (int i = led_min; i <= led_max; i++) {
+            if (HAS_FLAGS(g_led_config.flags[i], LED_FLAG_INDICATOR)) {
+                rgb_matrix_set_color(i, MIN(rgb_matrix_get_val() + 76, 255), 0x00, 0x00);
             }
+        }
+    }
+
+    uint8_t layer = get_highest_layer(layer_state);
+    if (layer > 0) {
+        HSV hsv = rgb_matrix_get_hsv();
+        switch (get_highest_layer(layer_state)) {
+            case 1:
+                hsv = (HSV){HSV_BLUE};
+                break;
+            case 2:
+                hsv = (HSV){HSV_AZURE};
+                break;
+            case 3:
+                hsv = (HSV){HSV_ORANGE};
+                break;
+            case 4:
+                hsv = (HSV){HSV_GREEN};
+                break;
+            case 5:
+                hsv = (HSV){HSV_TEAL};
+                break;
+            case 6:
+                hsv = (HSV){HSV_PURPLE};
+                break;
+            case 7:
+            default:
+                hsv = (HSV){HSV_RED};
+                break;
+        };
+
+        if (hsv.v > rgb_matrix_get_val()) {
+            hsv.v = MIN(rgb_matrix_get_val() + 22, 255);
         }
         RGB rgb = hsv_to_rgb(hsv);
 
@@ -246,7 +262,6 @@ bool rgb_matrix_indicators_advanced_user(uint8_t led_min, uint8_t led_max) {
     return false;
 };
 #endif // RGB_MATRIX_ENABLE
-
 
 // 鼠标自动切层
 void pointing_device_init_user(void) {
