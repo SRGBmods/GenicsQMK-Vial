@@ -67,7 +67,7 @@
 // lvgl自定义
 #define QUANTUM_PAINTER_LVGL_USE_CUSTOM_CONF
 // 限制lvgl的刷新速率
-#define QP_LVGL_TASK_PERIOD 40
+#define QP_LVGL_TASK_PERIOD 80
 
 // 旋钮配置
 #define ENCODERS_PAD_A \
@@ -169,7 +169,7 @@
 #    define AUDIO_PWM_DRIVER PWMD1
 #    define AUDIO_PWM_CHANNEL RP2040_PWM_CHANNEL_A
 #    define AUDIO_CLICKY
-#    define AUDIO_CLICKY_FREQ_DEFAULT 200.0f
+#    define AUDIO_CLICKY_FREQ_DEFAULT 61.0f
 #    define AUDIO_CLICKY_FREQ_MIN 61.0f
 #    define AUDIO_CLICKY_FREQ_MAX 1500.0f
 #    define AUDIO_CLICKY_FREQ_FACTOR 1.18921f
@@ -212,7 +212,7 @@
 // #define AUTO_MOUSE_THRESHOLD 10
 
 /* Fix for Apple Silicon Macs struggling to detect board after suspend/sleep */
-// #define USB_SUSPEND_WAKEUP_DELAY 200
+#define USB_SUSPEND_WAKEUP_DELAY 200
 
 /* CRC. */
 #define CRC8_USE_TABLE
