@@ -1,6 +1,7 @@
 // Copyright 2022 Jose Pablo Ramirez (@jpe230)
 // SPDX-License-Identifier: GPL-2.0-or-later
 
+#include "keycodes.h"
 #include QMK_KEYBOARD_H
 #include "zzeneg_display.h"
 #include "transactions.h"
@@ -39,7 +40,7 @@
 #define FUNC_ESC LT(_FUNC, KC_ESC)
 #define FUNC_ENT LT(_FUNC, KC_ENT)
 #define NAV_BSPC LT(_NAV, KC_BSPC)
-#define GA_DEL LT(_GAME, KC_DEL)
+#define SYMBOL_DEL LT(_SYMBOL, KC_DEL)
 
 // game layer mods
 #define LALT_Q LALT_T(KC_Q)
@@ -74,7 +75,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   // ├──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────┤
       KC_LCTL,    KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,       KC_N,    KC_M, KC_COMM,  KC_DOT, KC_SLSH, KC_QUOT,
   // ╰──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────╯
-                      KC_LALT,  KC_SPC,  SYS_GUI, KC_BSPC,      KC_MUTE, SYS_GUI,  FUNC_ENT, GA_DEL,
+                      KC_LALT,  KC_SPC,  SYS_GUI, KC_BSPC,      KC_MUTE, SYS_GUI,  FUNC_ENT, SYMBOL_DEL,
   //                    ╰───────────────────────────────────╯ ╰───────────────────────────────────╯
                MO(1),   MO(3),   MO(2),    MO(4),   MO(5),      KC_ENT,  KC_RGHT,  KC_DOWN, KC_LEFT, KC_UP
 
@@ -90,7 +91,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   // ├──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────┤
       _______, _______, _______, _______, _______, _______,    _______,   _______,   _______,   _______, _______, _______,
   // ╰──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────╯
-                      KC_LALT,  KC_SPC,  SYS_GUI, KC_BSPC,      KC_MUTE, SYS_GUI,  FUNC_ENT, GA_DEL,
+                      KC_LALT,  KC_SPC,  SYS_GUI, KC_BSPC,      KC_MUTE, SYS_GUI,  FUNC_ENT, SYMBOL_DEL,
   //                    ╰───────────────────────────────────╯ ╰───────────────────────────────────╯
     _______,  _______,    _______,    _______,    _______,                 _______,  _______,    _______,    _______,   _______
 
@@ -106,7 +107,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   // ├──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────┤
        _______, _______, _______, _______, _______, _______,    _______, _______, _______, _______, _______, _______,
   // ╰──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────╯
-                      KC_LALT,  KC_SPC,  SYS_GUI, KC_BSPC,      KC_MUTE, SYS_GUI,  FUNC_ENT, GA_DEL,
+                      KC_LALT,  KC_SPC,  SYS_GUI, KC_BSPC,      KC_MUTE, SYS_GUI,  FUNC_ENT, SYMBOL_DEL,
   //                    ╰───────────────────────────────────╯ ╰───────────────────────────────────╯
     _______,  _______,    _______,    _______,    _______,                 _______,  _______,    _______,    _______,   _______
 
@@ -146,13 +147,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
     [_SYMBOL] = LAYOUT(
   // ╭──────────────────────────────────────────────────────╮ ╭──────────────────────────────────────────────────────╮
-       KC_GRV, KC_EXLM, KC_AT, KC_HASH, KC_DLR, KC_PERC,    _______, _______, _______, KC_LBRC, KC_RBRC, _______,
+       KC_GRV, KC_EXLM, KC_AT, KC_HASH, KC_DLR, KC_PERC,    KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN, _______,
   // ├──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────┤
-       _______, _______, _______, _______, _______, _______,    _______, _______, _______, _______, _______, KC_PLUS,
+       KC_CAPS_LOCK, _______, _______, _______, _______, _______,    _______, _______, _______, _______, _______, KC_PLUS,
   // ├──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────┤
         KC_GRV, KC_EXLM, KC_AT,   KC_HASH, KC_DLR,  KC_PERC,    KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN, KC_TILD,
   // ├──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────┤
-       _______, _______, _______, _______,  _______, _______,   KC_PLUS, KC_UNDS, KC_LCBR, KC_RCBR, KC_PIPE, KC_PIPE,
+       _______, _______, _______, _______,  _______, _______,   KC_PLUS, KC_UNDS, KC_LBRC, KC_RBRC, KC_PIPE, KC_PIPE,
   // ╰──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────╯
                          _______, _______, _______, _______,    _______, _______, _______, _______,
   //                    ╰───────────────────────────────────╯ ╰───────────────────────────────────╯
@@ -215,7 +216,7 @@ bool rgb_matrix_indicators_advanced_kb(uint8_t led_min, uint8_t led_max) {
     if (host_keyboard_led_state().caps_lock) {
         for (int i = led_min; i <= led_max; i++) {
             if (HAS_FLAGS(g_led_config.flags[i], LED_FLAG_INDICATOR)) {
-                rgb_matrix_set_color(i, MIN(rgb_matrix_get_val() + 76, 255), 0x00, 0x00);
+                rgb_matrix_set_color(i, 15, 255, 247);
             }
         }
     }
