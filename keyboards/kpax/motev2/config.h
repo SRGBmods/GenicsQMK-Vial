@@ -30,8 +30,8 @@
 #define RP2040_BOOTLOADER_DOUBLE_TAP_RESET
 #define RP2040_BOOTLOADER_DOUBLE_TAP_RESET_TIMEOUT 500U
 // 分体键盘配置
-#define SPLIT_HAND_MATRIX_GRID GP18, GP8   //行在前，因为是行到列的二极管方向
-#define SPLIT_HAND_MATRIX_GRID_LOW_IS_LEFT //焊接跳线就是左边，被拉低了。
+#define SPLIT_HAND_MATRIX_GRID GP18, GP8   // 行在前，因为是行到列的二极管方向
+#define SPLIT_HAND_MATRIX_GRID_LOW_IS_LEFT // 焊接跳线就是左边，被拉低了。
 #define MATRIX_MASKED                      // 打开矩阵蒙版
 #define SPLIT_TRANSPORT_MIRROR
 #define SPLIT_LAYER_STATE_ENABLE
@@ -63,7 +63,7 @@
 #define BACKLIGHT_PWM_CHANNEL RP2040_PWM_CHANNEL_B
 
 // 显示屏超时关闭
-#define QUANTUM_PAINTER_DISPLAY_TIMEOUT 0
+#define QUANTUM_PAINTER_DISPLAY_TIMEOUT 90000
 // lvgl自定义
 #define QUANTUM_PAINTER_LVGL_USE_CUSTOM_CONF
 // 限制lvgl的刷新速率

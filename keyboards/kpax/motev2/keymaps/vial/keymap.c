@@ -336,6 +336,8 @@ layer_state_t layer_state_set_user(layer_state_t state) {
 
 //     return true;
 // }
+// 加入切层音效
+float gitar_song[][2] = SONG(QWERTY_SOUND);
 
 // /* Active Layer processing */
 layer_state_t layer_state_set_user(layer_state_t state) {
@@ -345,6 +347,15 @@ layer_state_t layer_state_set_user(layer_state_t state) {
         uint8_t layer = get_highest_layer(state);
         dprintf("RPC_ID_USER_LAYER_SYNC: %u\n", layer);
         transaction_rpc_send(RPC_ID_USER_LAYER_SYNC, 1, &layer);
+    }
+    // 切层音效
+    static bool is_sys_enabled = false, is_game_enabled = false;
+    if (layer_state_cmp(state, _SYS) != is_sys_enabled || layer_state_cmp(state, _GAME) != is_game_enabled) {
+        is_sys_enabled  = layer_state_cmp(state, _SYS);
+        is_game_enabled = layer_state_cmp(state, _GAME);
+        if (is_sys_enabled || is_game_enabled) {
+            PLAY_SONG(gitar_song);
+        }
     }
 
     return state;
