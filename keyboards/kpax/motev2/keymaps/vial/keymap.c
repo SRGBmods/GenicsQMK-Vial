@@ -339,6 +339,7 @@ layer_state_t layer_state_set_user(layer_state_t state) {
 // 加入切层音效
 float gitar_song[][2] = SONG(GUITAR_SOUND);
 float qwert_song[][2] = SONG(QWERTY_SOUND);
+float game_song[][2]  = SONG(PLANCK_SOUND);
 
 // /* Active Layer processing */
 layer_state_t layer_state_set_user(layer_state_t state) {
@@ -358,6 +359,10 @@ layer_state_t layer_state_set_user(layer_state_t state) {
 
         if (is_sys_enabled) {
             PLAY_SONG(gitar_song);
+        } else if (is_symbol_enabled) {
+            PLAY_SONG(qwert_song);
+        } else if (is_game_enabled) {
+            PLAY_SONG(game_song);
         }
     }
 
