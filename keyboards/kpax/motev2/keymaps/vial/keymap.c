@@ -337,7 +337,8 @@ layer_state_t layer_state_set_user(layer_state_t state) {
 //     return true;
 // }
 // 加入切层音效
-float gitar_song[][2] = SONG(QWERTY_SOUND);
+float gitar_song[][2] = SONG(GUITAR_SOUND);
+float qwert_song[][2] = SONG(QWERTY_SOUND);
 
 // /* Active Layer processing */
 layer_state_t layer_state_set_user(layer_state_t state) {
@@ -349,11 +350,13 @@ layer_state_t layer_state_set_user(layer_state_t state) {
         transaction_rpc_send(RPC_ID_USER_LAYER_SYNC, 1, &layer);
     }
     // 切层音效
-    static bool is_sys_enabled = false, is_game_enabled = false;
-    if (layer_state_cmp(state, _SYS) != is_sys_enabled || layer_state_cmp(state, _GAME) != is_game_enabled) {
-        is_sys_enabled  = layer_state_cmp(state, _SYS);
-        is_game_enabled = layer_state_cmp(state, _GAME);
-        if (is_sys_enabled || is_game_enabled) {
+    static bool is_sys_enabled = false, is_game_enabled = false, is_symbol_enabled = false;
+    if (layer_state_cmp(state, _SYS) != is_sys_enabled || layer_state_cmp(state, _GAME) != is_game_enabled || layer_state_cmp(state, _SYMBOL) != is_symbol_enabled) {
+        is_sys_enabled    = layer_state_cmp(state, _SYS);
+        is_game_enabled   = layer_state_cmp(state, _GAME);
+        is_symbol_enabled = layer_state_cmp(state, _SYMBOL);
+
+        if (is_sys_enabled) {
             PLAY_SONG(gitar_song);
         }
     }
