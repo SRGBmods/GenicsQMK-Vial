@@ -8,10 +8,10 @@
 #define SERIAL_USART_RX_PIN GP1
 #define SERIAL_USART_PIN_SWAP
 // 不打开左右显示屏传输的数据会不正常，rgb方波也会不正常
-#define SERIAL_PIO_USE_PIO0
+#define SERIAL_PIO_USE_PIO1
 #define SELECT_SOFT_SERIAL_SPEED 1
 #define SERIAL_USART_TIMEOUT 20
-// #define SERIAL_DEBUG
+#define SERIAL_DEBUG
 #define SPLIT_USB_DETECT
 // #define SPLIT_USB_TIMEOUT_POLL 10
 // #define SPLIT_USB_TIMEOUT 4000
@@ -66,6 +66,7 @@
 #define QUANTUM_PAINTER_DISPLAY_TIMEOUT 90000
 // lvgl自定义
 #define QUANTUM_PAINTER_LVGL_USE_CUSTOM_CONF
+#define QUANTUM_PAINTER_TASK_THROTTLE 2
 // 限制lvgl的刷新速率
 #define QP_LVGL_TASK_PERIOD 50
 
@@ -96,8 +97,6 @@
 #    define I2C_DRIVER I2CD1
 #    define I2C1_SCL_PIN GP7
 #    define I2C1_SDA_PIN GP6
-// #define MY_I2C_ADDRESS (0x5A << 1)
-// #define DRV2605L_I2C_ADDRESS (0x5A << 1)
 #endif
 
 // 灯光配置
@@ -218,11 +217,11 @@
 #define CRC8_USE_TABLE
 #define CRC8_OPTIMIZE_SPEED
 /* Mechanical locking support. Use KC_LCAP, KC_LNUM or KC_LSCR instead in keymap */
-// #define LOCKING_SUPPORT_ENABLE
+#define LOCKING_SUPPORT_ENABLE
 /* Locking resynchronize hack */
-// #define LOCKING_RESYNC_ENABLE
+#define LOCKING_RESYNC_ENABLE
 
-// #define PERMISSIVE_HOLD
+#define PERMISSIVE_HOLD
 
 // #ifdef OLED_ENABLE
 // #define OLED_DISPLAY_128X32
