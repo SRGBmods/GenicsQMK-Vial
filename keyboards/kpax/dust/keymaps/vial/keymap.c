@@ -1,6 +1,7 @@
 // Copyright 2022 Jose Pablo Ramirez (@jpe230)
 // SPDX-License-Identifier: GPL-2.0-or-later
 
+#include "keycodes.h"
 #include QMK_KEYBOARD_H
 // #include "zzeneg_display.h"
 // #include "transactions.h"
@@ -64,13 +65,13 @@ enum layer_number {
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_QWERTY] = LAYOUT(
   // ╭──────────────────────────────────────────────────────╮
-      FUNC_ESC,   KC_1,    KC_2,    KC_3,    KC_4,  KC_4,
+      KC_0,   KC_1,    KC_2,    KC_3,    KC_4,  KC_R,
   // ├──────────────────────────────────────────────────────┤
-      KC_TAB,    KC_Q,    KC_W,    KC_E,    KC_R,
+      KC_5,    KC_6,    KC_7,    KC_8,    KC_9,
   // ├──────────────────────────────────────────────────────┤
-      KC_LSFT,    KC_A,    KC_S,    KC_D,    KC_F,
+      KC_W,    KC_A,    KC_S,    KC_D,    KC_ENT,
   // ├──────────────────────────────────────────────────────┤
-      KC_LCTL,    KC_Z,    KC_X,    KC_C,    KC_V
+      KC_LEFT,    KC_RIGHT,    KC_X,    KC_C,    KC_V
 
   ),
 
