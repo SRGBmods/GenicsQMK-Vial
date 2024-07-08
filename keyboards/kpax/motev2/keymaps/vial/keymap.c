@@ -375,14 +375,14 @@ layer_state_t layer_state_set_user(layer_state_t state) {
 }
 
 /* Caps Word processing */
-// void caps_word_set_user(bool active) {
-//     if (is_display_enabled()) {
-//         display_process_caps_word(active);
-//     } else if (is_keyboard_master() && !is_keyboard_left()) {
-//         dprintf("RPC_ID_USER_CAPS_WORD_SYNC: %s\n", active ? "active" : "inactive");
-//         transaction_rpc_send(RPC_ID_USER_CAPS_WORD_SYNC, 1, &active);
-//     }
-// }
+void caps_word_set_user(bool active) {
+    if (is_display_enabled()) {
+        display_process_caps_word(active);
+    } else if (is_keyboard_master() && !is_keyboard_left()) {
+        dprintf("RPC_ID_USER_CAPS_WORD_SYNC: %s\n", active ? "active" : "inactive");
+        transaction_rpc_send(RPC_ID_USER_CAPS_WORD_SYNC, 1, &active);
+    }
+}
 
 /* default caps word logic that allows KC_MINS. Underscore can be typed with KC_RSFT + KC_MINS */
 // bool caps_word_press_user(uint16_t keycode) {
@@ -423,31 +423,32 @@ layer_state_t layer_state_set_user(layer_state_t state) {
 //     }
 // }
 
+// 层同步函数
 void layer_sync(uint8_t initiator2target_buffer_size, const void *initiator2target_buffer, uint8_t target2initiator_buffer_size, void *target2initiator_buffer) {
     if (is_display_enabled()) {
         display_process_layer_state(*(uint8_t *)initiator2target_buffer);
     }
 }
+// caps同步函数
+void caps_word_sync(uint8_t initiator2target_buffer_size, const void *initiator2target_buffer, uint8_t target2initiator_buffer_size, void *target2initiator_buffer) {
+    if (is_display_enabled()) {
+        display_process_caps_word(*(bool *)initiator2target_buffer);
+    }
+}
 
-// void caps_word_sync(uint8_t initiator2target_buffer_size, const void *initiator2target_buffer, uint8_t target2initiator_buffer_size, void *target2initiator_buffer) {
-//     if (is_display_enabled()) {
-//         display_process_caps_word(*(bool *)initiator2target_buffer);
-//     }
-// }
-
-// void keyboard_post_init_user() {
-//     sync received hid data
-//     transaction_register_rpc(RPC_ID_USER_HID_SYNC, hid_sync);
-//     sync highest layer (a bit more performant than standard SPLIT_LAYER_STATE_ENABLE)
-//     transaction_register_rpc(RPC_ID_USER_LAYER_SYNC, layer_sync);
-//     sync caps word state
-//     transaction_register_rpc(RPC_ID_USER_CAPS_WORD_SYNC, caps_word_sync);
-// }
-// void keyboard_post_init_user(void) {
-//  debug_enable=true; //   debug_matrix=true;
-//   debug_keyboard=true;
-//   debug_mouse=true;
-// }
+// 键盘后处理任务
+void keyboard_post_init_user() {
+    //同步收到的 hid 数据
+    //     transaction_register_rpc(RPC_ID_USER_HID_SYNC, hid_sync);
+    //同步层状态 (a bit more performant than standard SPLIT_LAYER_STATE_ENABLE)
+    transaction_register_rpc(RPC_ID_USER_LAYER_SYNC, layer_sync);
+    //同步 caps word 状态
+    transaction_register_rpc(RPC_ID_USER_CAPS_WORD_SYNC, caps_word_sync);
+    //   debug_enable=true;
+    //   debug_matrix=true;
+    //   debug_keyboard=true;
+    //   debug_mouse=true;
+}
 
 // Forward declare RP2040 SDK declaration.
 void gpio_init(uint gpio);

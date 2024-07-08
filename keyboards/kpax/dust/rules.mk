@@ -1,5 +1,3 @@
-SPLIT_KEYBOARD = yes
-SERIAL_DRIVER = vendor
 
 # 打开旋钮编码器
 ENCODER_ENABLE = yes

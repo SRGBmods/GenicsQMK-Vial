@@ -22,8 +22,8 @@ static lv_obj_t *label_ctrl;
 static lv_obj_t *label_alt;
 static lv_obj_t *label_gui;
 static lv_obj_t *label_layer;
-// static lv_obj_t *label_caps;
-// static lv_obj_t *label_caps_word;
+static lv_obj_t *label_caps;
+static lv_obj_t *label_caps_word;
 static lv_obj_t *label_wpm;
 // static lv_obj_t *icon_layout;
 
@@ -253,12 +253,15 @@ void init_ui_home_custom(void) {
     // label_time = lv_label_create(ui_home);
     // lv_label_set_text(label_time, "00:00");
     // lv_obj_set_style_text_font(label_time, &montserrat_48_digits, LV_PART_MAIN);
-
-    // lv_obj_t *caps = lv_obj_create(ui_home);
+    // 创建caps物体
+    lv_obj_t *caps = lv_obj_create(ui_home);
     // lv_obj_add_style(caps, &style_container, 0);
-    // use_flex_row(caps);
+    lv_obj_set_pos(caps, 176, 140);
+    lv_obj_set_size(caps, 100, 20);
+    lv_obj_set_scrollbar_mode(ui_mods, LV_SCROLLBAR_MODE_OFF);
+    use_flex_row(caps);
 
-    // label_caps      = create_button(caps, "CAPS", &style_button, &style_button_active);
+    label_caps      = create_button(caps, "CAPS", &style_button, &style_button_active);
     // label_caps_word = create_button(caps, "CAPS WORD", &style_button, &style_button_active);
 
     // lv_obj_t *bottom_row = lv_obj_create(ui_home);
@@ -451,9 +454,9 @@ void display_housekeeping_task(void) {
     refresh_wpm();
 }
 
-// void display_process_caps(bool active) {
-//     toggle_state(label_caps, LV_STATE_PRESSED, active);
-// }
+void display_process_caps(bool active) {
+    toggle_state(label_caps, LV_STATE_PRESSED, active);
+}
 
 // void display_process_caps_word(bool active) {
 //     dprint("display_process_caps_word\n");
