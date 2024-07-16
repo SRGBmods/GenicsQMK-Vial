@@ -65,89 +65,160 @@ enum layer_number {
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_QWERTY] = LAYOUT(
   // ╭──────────────────────────────────────────────────────╮
-      KC_0,   KC_1,    KC_2,    KC_3,    KC_4,  KC_R,
+      KC_Q,   KC_W,    KC_E,    KC_3,    KC_4,
   // ├──────────────────────────────────────────────────────┤
-      KC_5,    KC_6,    KC_7,    KC_8,    KC_9,
+      KC_LCTL,    KC_LALT,    KC_LSFT,    KC_C,    KC_5,
   // ├──────────────────────────────────────────────────────┤
-      KC_W,    KC_A,    KC_S,    KC_D,    KC_ENT,
+                                     KC_MUTE,
+                                     KC_MUTE,
+                  KC_LGUI,
   // ├──────────────────────────────────────────────────────┤
-      KC_LEFT,    KC_RIGHT,    KC_X,    KC_C,    KC_V
+                                     KC_UP,
+          KC_LEFT,
+                            KC_LEFT, KC_ENT,   KC_RIGHT,
+           KC_ENT,
+                KC_RIGHT,
+                                     KC_DOWN
 
+  // ├──────────────────────────────────────────────────────┤
   ),
 
   [_POINT] = LAYOUT(
   // ╭──────────────────────────────────────────────────────╮
-      FUNC_ESC,   KC_1,    KC_2,    KC_3,    KC_4,  KC_4,
+      KC_Q,   KC_W,    KC_E,    KC_3,    KC_4,
   // ├──────────────────────────────────────────────────────┤
-      KC_TAB,    KC_Q,    KC_W,    KC_E,    KC_R,
+      KC_LCTL,    KC_LALT,    KC_LSFT,    KC_C,    KC_5,
   // ├──────────────────────────────────────────────────────┤
-      KC_LSFT,    KC_A,    KC_S,    KC_D,    KC_F,
+                                     KC_MUTE,
+                                     KC_MUTE,
+                  KC_LGUI,
   // ├──────────────────────────────────────────────────────┤
-      KC_LCTL,    KC_Z,    KC_X,    KC_C,    KC_V
+                                     KC_UP,
+          KC_LEFT,
+                            KC_LEFT, KC_ENT,   KC_RIGHT,
+           KC_ENT,
+                KC_RIGHT,
+                                     KC_DOWN
+
+  // ├──────────────────────────────────────────────────────┤
   ),
 
  [_EU] = LAYOUT(
   // ╭──────────────────────────────────────────────────────╮
-      FUNC_ESC,   KC_1,    KC_2,    KC_3,    KC_4,  KC_4,
+      KC_Q,   KC_W,    KC_E,    KC_3,    KC_4,
   // ├──────────────────────────────────────────────────────┤
-      KC_TAB,    KC_Q,    KC_W,    KC_E,    KC_R,
+      KC_LCTL,    KC_LALT,    KC_LSFT,    KC_C,    KC_5,
   // ├──────────────────────────────────────────────────────┤
-      KC_LSFT,    KC_A,    KC_S,    KC_D,    KC_F,
+                                     KC_MUTE,
+                                     KC_MUTE,
+                  KC_LGUI,
   // ├──────────────────────────────────────────────────────┤
-      KC_LCTL,    KC_Z,    KC_X,    KC_C,    KC_V
+                                     KC_UP,
+          KC_LEFT,
+                            KC_LEFT, KC_ENT,   KC_RIGHT,
+           KC_ENT,
+                KC_RIGHT,
+                                     KC_DOWN
+
+  // ├──────────────────────────────────────────────────────┤
   ),
 
 
   [_NAV] = LAYOUT(
   // ╭──────────────────────────────────────────────────────╮
-      FUNC_ESC,   KC_1,    KC_2,    KC_3,    KC_4,  KC_4,
+      KC_Q,   KC_W,    KC_E,    KC_3,    KC_4,
   // ├──────────────────────────────────────────────────────┤
-      KC_TAB,    KC_Q,    KC_W,    KC_E,    KC_R,
+      KC_LCTL,    KC_LALT,    KC_LSFT,    KC_C,    KC_5,
   // ├──────────────────────────────────────────────────────┤
-      KC_LSFT,    KC_A,    KC_S,    KC_D,    KC_F,
+                                     KC_MUTE,
+                                     KC_MUTE,
+                  KC_LGUI,
   // ├──────────────────────────────────────────────────────┤
-      KC_LCTL,    KC_Z,    KC_X,    KC_C,    KC_V
+                                     KC_UP,
+          KC_LEFT,
+                            KC_LEFT, KC_ENT,   KC_RIGHT,
+           KC_ENT,
+                KC_RIGHT,
+                                     KC_DOWN
+
+  // ├──────────────────────────────────────────────────────┤
   ),
 
   [_NUMBER] = LAYOUT(
   // ╭──────────────────────────────────────────────────────╮
-      FUNC_ESC,   KC_1,    KC_2,    KC_3,    KC_4,  KC_4,
+      KC_Q,   KC_W,    KC_E,    KC_3,    KC_4,
   // ├──────────────────────────────────────────────────────┤
-      KC_TAB,    KC_Q,    KC_W,    KC_E,    KC_R,
+      KC_LCTL,    KC_LALT,    KC_LSFT,    KC_C,    KC_5,
   // ├──────────────────────────────────────────────────────┤
-      KC_LSFT,    KC_A,    KC_S,    KC_D,    KC_F,
+                                     KC_MUTE,
+                                     KC_MUTE,
+                  KC_LGUI,
   // ├──────────────────────────────────────────────────────┤
-      KC_LCTL,    KC_Z,    KC_X,    KC_C,    KC_V
+                                     KC_UP,
+          KC_LEFT,
+                            KC_LEFT, KC_ENT,   KC_RIGHT,
+           KC_ENT,
+                KC_RIGHT,
+                                     KC_DOWN
+
+  // ├──────────────────────────────────────────────────────┤
   ),
     [_SYMBOL] = LAYOUT(
   // ╭──────────────────────────────────────────────────────╮
-      FUNC_ESC,   KC_1,    KC_2,    KC_3,    KC_4,  KC_4,
+      KC_Q,   KC_W,    KC_E,    KC_3,    KC_4,
   // ├──────────────────────────────────────────────────────┤
-      KC_TAB,    KC_Q,    KC_W,    KC_E,    KC_R,
+      KC_LCTL,    KC_LALT,    KC_LSFT,    KC_C,    KC_5,
   // ├──────────────────────────────────────────────────────┤
-      KC_LSFT,    KC_A,    KC_S,    KC_D,    KC_F,
+                                     KC_MUTE,
+                                     KC_MUTE,
+                  KC_LGUI,
   // ├──────────────────────────────────────────────────────┤
-      KC_LCTL,    KC_Z,    KC_X,    KC_C,    KC_V
+                                     KC_UP,
+          KC_LEFT,
+                            KC_LEFT, KC_ENT,   KC_RIGHT,
+           KC_ENT,
+                KC_RIGHT,
+                                     KC_DOWN
+
+  // ├──────────────────────────────────────────────────────┤
   ),
   [_FUNC] = LAYOUT(
   // ╭──────────────────────────────────────────────────────╮
-      FUNC_ESC,   KC_1,    KC_2,    KC_3,    KC_4,  KC_4,
+      KC_Q,   KC_W,    KC_E,    KC_3,    KC_4,
   // ├──────────────────────────────────────────────────────┤
-      KC_TAB,    KC_Q,    KC_W,    KC_E,    KC_R,
+      KC_LCTL,    KC_LALT,    KC_LSFT,    KC_C,    KC_5,
   // ├──────────────────────────────────────────────────────┤
-      KC_LSFT,    KC_A,    KC_S,    KC_D,    KC_F,
+                                     KC_MUTE,
+                                     KC_MUTE,
+                  KC_LGUI,
   // ├──────────────────────────────────────────────────────┤
-      KC_LCTL,    KC_Z,    KC_X,    KC_C,    KC_V
+                                     KC_UP,
+          KC_LEFT,
+                            KC_LEFT, KC_ENT,   KC_RIGHT,
+           KC_ENT,
+                KC_RIGHT,
+                                     KC_DOWN
+
+  // ├──────────────────────────────────────────────────────┤
   ),
   [_SYS] = LAYOUT(
   // ╭──────────────────────────────────────────────────────╮
-      FUNC_ESC,   KC_1,    KC_2,    KC_3,    KC_4,  KC_4,
+      KC_Q,   KC_W,    KC_E,    KC_3,    KC_4,
   // ├──────────────────────────────────────────────────────┤
-      KC_TAB,    KC_Q,    KC_W,    KC_E,    KC_R,
+      KC_LCTL,    KC_LALT,    KC_LSFT,    KC_C,    KC_5,
   // ├──────────────────────────────────────────────────────┤
-      KC_LSFT,    KC_A,    KC_S,    KC_D,    KC_F,
+                                     KC_MUTE,
+                                     KC_MUTE,
+                  KC_LGUI,
   // ├──────────────────────────────────────────────────────┤
-      KC_LCTL,    KC_Z,    KC_X,    KC_C,    KC_V
+                                     KC_UP,
+          KC_LEFT,
+                            KC_LEFT, KC_ENT,   KC_RIGHT,
+           KC_ENT,
+                KC_RIGHT,
+                                     KC_DOWN
+
+  // ├──────────────────────────────────────────────────────┤
   ),
     // clang-format on
 };
@@ -155,7 +226,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][2] = {
     // clang-format off
     [_QWERTY] = { ENCODER_CCW_CW(KC_LEFT, KC_RGHT), ENCODER_CCW_CW(KC_VOLD, KC_VOLU) },
-    [_POINT]   = { ENCODER_CCW_CW(KC_LEFT, KC_RGHT), ENCODER_CCW_CW(KC_VOLD, KC_VOLU) },
+    [_POINT]  = { ENCODER_CCW_CW(KC_LEFT, KC_RGHT), ENCODER_CCW_CW(KC_VOLD, KC_VOLU) },
     [_EU]     = { ENCODER_CCW_CW(KC_LEFT, KC_RGHT), ENCODER_CCW_CW(KC_VOLD, KC_VOLU) },
     [_NAV]    = { ENCODER_CCW_CW(KC_LEFT, KC_RGHT), ENCODER_CCW_CW(KC_MPRV, KC_MNXT) },
     [_NUMBER] = { ENCODER_CCW_CW(KC_LEFT, KC_RGHT), ENCODER_CCW_CW(KC_MPRV, KC_MNXT) },
@@ -166,44 +237,67 @@ const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][2] = {
 };
 
 // 切层底光换色
-bool rgb_matrix_indicators_advanced_user(uint8_t led_min, uint8_t led_max) {
-    for (uint8_t i = led_min; i < led_max; i++) {
-        switch (get_highest_layer(layer_state | default_layer_state)) {
-            case 7:
-                rgb_matrix_set_color(i, RGB_TEAL);
-                break;
-            case 6:
-                rgb_matrix_set_color(i, RGB_YELLOW);
-                break;
-            case 5:
-                rgb_matrix_set_color(i, RGB_PINK);
-                break;
-            case 4:
-                rgb_matrix_set_color(i, RGB_CORAL);
-                break;
-            case 3:
-                rgb_matrix_set_color(i, RGB_MAGENTA);
+#ifdef RGB_MATRIX_ENABLE
+// Layer state indicator
+bool rgb_matrix_indicators_advanced_kb(uint8_t led_min, uint8_t led_max) {
+    if (!rgb_matrix_indicators_advanced_user(led_min, led_max)) {
+        return false;
+    }
+    if (host_keyboard_led_state().caps_lock) {
+        for (int i = led_min; i <= led_max; i++) {
+            if (HAS_FLAGS(g_led_config.flags[i], LED_FLAG_INDICATOR)) {
+                rgb_matrix_set_color(i, 15, 255, 247);
+            }
+        }
+    }
+
+    uint8_t layer = get_highest_layer(layer_state);
+    if (layer > 0) {
+        HSV hsv = rgb_matrix_get_hsv();
+        switch (get_highest_layer(layer_state)) {
+            case 1:
+                hsv = (HSV){HSV_BLUE};
                 break;
             case 2:
-                rgb_matrix_set_color(i, RGB_BLUE);
+                hsv = (HSV){HSV_AZURE};
                 break;
-            case 1:
-                rgb_matrix_set_color(i, RGB_RED);
+            case 3:
+                hsv = (HSV){HSV_ORANGE};
                 break;
+            case 4:
+                hsv = (HSV){HSV_GREEN};
+                break;
+            case 5:
+                hsv = (HSV){HSV_TEAL};
+                break;
+            case 6:
+                hsv = (HSV){HSV_PURPLE};
+                break;
+            case 7:
             default:
+                hsv = (HSV){HSV_RED};
                 break;
+        };
+
+        if (hsv.v > rgb_matrix_get_val()) {
+            hsv.v = MIN(rgb_matrix_get_val() + 22, 255);
         }
-    };
-    // 大写锁定灯光
-    if (host_keyboard_led_state().caps_lock) {
+        RGB rgb = hsv_to_rgb(hsv);
+
         for (uint8_t i = led_min; i < led_max; i++) {
-            if (g_led_config.flags[i] & LED_FLAG_INDICATOR) {
-                rgb_matrix_set_color(i, RGB_RED);
+            if (HAS_FLAGS(g_led_config.flags[i], LED_FLAG_INDICATOR)) {
+                rgb_matrix_set_color(i, rgb.r, rgb.g, rgb.b);
+            }
+            if (HAS_FLAGS(g_led_config.flags[i], LED_FLAG_UNDERGLOW)) {
+                rgb_matrix_set_color(i, rgb.r, rgb.g, rgb.b);
             }
         }
     }
     return false;
 };
+#endif // RGB_MATRIX_ENABLE
+
+
 // 鼠标自动切层
 // extern bool is_drag_scroll;
 // uint16_t overall_scroll_distance = 0;

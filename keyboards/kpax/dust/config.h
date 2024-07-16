@@ -36,7 +36,9 @@
     { GP3, GP24 }
 #define ENCODERS_PAD_B \
     { GP5, GP25 }
-#define ENCODER_RESOLUTION 4
+// #define ENCODER_RESOLUTION 4
+#define ENCODER_RESOLUTIONS \
+    { 4, 8 }
 
 // 震动配置
 #ifdef HAPTIC_ENABLE
@@ -49,11 +51,14 @@
 #    define DRV2605L_GREETING 7
 #    define DRV2605L_DEFAULT_MODE DRV2605L_EFFECT_SHARP_TICK_1_100
 // DRV2605L 线性马达设置 LRA
-#    define FB_ERM_LRA 1
-#    define FB_BRAKEFACTOR 6 /* For 1x:0, 2x:1, 3x:2, 4x:3, 6x:4, 8x:5, 16x:6, Disable Braking:7 */
-#    define FB_LOOPGAIN 0    /* For  Low:0, Medium:1, High:2, Very High:3 */
-#    define RATED_VOLTAGE 5
-#    define F_LRA 220 /* resonance freq */
+#    define DRV2605L_FB_ERM_LRA 1
+#    define DRV2605L_FB_BRAKEFACTOR 3 /* For 1x:0, 2x:1, 3x:2, 4x:3, 6x:4, 8x:5, 16x:6, Disable Braking:7 */
+#    define DRV2605L_FB_LOOPGAIN 1    /* For  Low:0, Medium:1, High:2, Very High:3 */
+
+#    define DRV2605L_RATED_VOLTAGE 5
+#    define DRV2605L_V_PEAK 2.8
+#    define DRV2605L_V_RMS 2.0
+#    define DRV2605L_F_LRA 220 /* resonance freq */
 // drv2605l的i2c配置
 #    define I2C_DRIVER I2CD1
 #    define I2C1_SCL_PIN GP7
@@ -67,7 +72,7 @@
 #    define WS2812_DI_PIN GP4
 #    define WS2812_PIO_USE_PIO1
 #    define RGB_MATRIX_LED_COUNT 21
-#    define RGB_MATRIX_MAXIMUM_BRIGHTNESS 80
+#    define RGB_MATRIX_MAXIMUM_BRIGHTNESS 200
 #    define RGB_MATRIX_DEFAULT_VAL RGB_MATRIX_MAXIMUM_BRIGHTNESS
 #    define RGB_MATRIX_SLEEP
 #    define RGB_MATRIX_FRAMEBUFFER_EFFECTS
@@ -127,7 +132,7 @@
 #    define AUDIO_PWM_DRIVER PWMD1
 #    define AUDIO_PWM_CHANNEL RP2040_PWM_CHANNEL_A
 #    define AUDIO_CLICKY
-#    define AUDIO_CLICKY_FREQ_DEFAULT 200.0f
+#    define AUDIO_CLICKY_FREQ_DEFAULT 1500.0f
 #    define AUDIO_CLICKY_FREQ_MIN 61.0f
 #    define AUDIO_CLICKY_FREQ_MAX 1500.0f
 #    define AUDIO_CLICKY_FREQ_FACTOR 1.18921f
@@ -163,13 +168,17 @@
 
 // vial配置
 #define VIAL_KEYBOARD_UID \
-    { 0x2B, 0x3C, 0x7E, 0x52, 0x60, 0x3E, 0xFE, 0x52 }
+    { 0xF6, 0x56, 0xB6, 0x63, 0x1A, 0xFA, 0x56, 0x30 }
 #define VIAL_UNLOCK_COMBO_ROWS \
     { 0, 6 }
 #define VIAL_UNLOCK_COMBO_COLS \
     { 0, 0 }
 
 #define VIAL_COMBO_ENTRIES 20
+
 #define DYNAMIC_KEYMAP_MACRO_COUNT 50
 
 #define DYNAMIC_KEYMAP_LAYER_COUNT 8
+
+// 定义去抖
+#define DEBOUNCE 10

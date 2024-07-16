@@ -23,7 +23,7 @@ static lv_obj_t *label_alt;
 static lv_obj_t *label_gui;
 static lv_obj_t *label_layer;
 static lv_obj_t *label_caps;
-static lv_obj_t *label_caps_word;
+// static lv_obj_t *label_caps_word;
 static lv_obj_t *label_wpm;
 // static lv_obj_t *icon_layout;
 
