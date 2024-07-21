@@ -46,7 +46,7 @@
 #    define CIRQUE_PINNACLE_DIAMETER_MM 40
 // #    define CIRQUE_PINNACLE_ATTENUATION EXTREG__TRACK_ADCCONFIG__ADC_ATTENUATE_2X // enable for curved overlay
 #    ifdef POINTING_DEVICE_RIGHT
-#        define POINTING_DEVICE_ROTATION_180
+// #        define POINTING_DEVICE_ROTATION_180
 #    endif
 #endif
 
