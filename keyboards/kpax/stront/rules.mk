@@ -14,3 +14,8 @@ SRC += lvgl_helpers.c \
 	   display.c
 
 DEFAULT_FOLDER = stront/40keys
+
+# 打开音频功能
+AUDIO_ENABLE = yes
+AUDIO_DRIVER = pwm_hardware
+
