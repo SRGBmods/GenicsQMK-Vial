@@ -1,4 +1,4 @@
-// Copyright 2023 zzeneg (@zzeneg)
+// Copyright 2022 Stefan Kerkmann
 // SPDX-License-Identifier: GPL-2.0-or-later
 
 #pragma once
@@ -18,3 +18,4 @@
 // 打开spi给lcd和触控板用
 #undef RP_SPI_USE_SPI0
 #define RP_SPI_USE_SPI0 TRUE
+

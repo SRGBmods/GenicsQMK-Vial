@@ -14,6 +14,7 @@ lv_style_t style_button_active;
 /* screens */
 static lv_obj_t *screen_home;
 
+
 /* home screen content */
 static lv_obj_t *label_shift;
 static lv_obj_t *label_ctrl;
@@ -21,10 +22,11 @@ static lv_obj_t *label_alt;
 static lv_obj_t *label_gui;
 static lv_obj_t *label_caps;
 
+
 void init_styles(void) {
     lv_style_init(&style_screen);
     lv_style_set_bg_color(&style_screen, lv_color_black());
-    lv_style_set_pad_all(&style_screen, 10);
+    lv_style_set_pad_all(&style_screen, 0);
 
     lv_style_init(&style_container);
     lv_style_set_pad_all(&style_container, 0);
@@ -35,13 +37,13 @@ void init_styles(void) {
 
     lv_style_init(&style_button);
     lv_style_set_pad_all(&style_button, 4);
-    lv_style_set_radius(&style_button, 6);
-    lv_style_set_text_color(&style_button, lv_palette_main(LV_PALETTE_AMBER));
+    lv_style_set_radius(&style_button, 4);
+    lv_style_set_text_color(&style_button, lv_palette_main(LV_PALETTE_GREEN));
 
     lv_style_init(&style_button_active);
-    lv_style_set_bg_color(&style_button_active, lv_palette_main(LV_PALETTE_AMBER));
+    lv_style_set_bg_color(&style_button_active, lv_palette_main(LV_PALETTE_GREEN));
     lv_style_set_bg_opa(&style_button_active, LV_OPA_100);
-    lv_style_set_text_color(&style_button_active, lv_color_black());
+    lv_style_set_text_color(&style_button_active, lv_palette_main(LV_PALETTE_NONE));
 }
 
 void init_screen_home(void) {
@@ -68,7 +70,7 @@ void init_screen_home(void) {
     label_shift = create_button(mods_row2, "SFT", &style_button, &style_button_active);
 
     lv_obj_t *label_stront = lv_label_create(screen_home);
-    lv_label_set_text(label_stront, "stront");
+    lv_label_set_text(label_stront, "MOTE");
 #if LV_FONT_MONTSERRAT_48
     lv_obj_set_style_text_font(label_stront, &lv_font_montserrat_48, LV_PART_MAIN);
 #endif
@@ -82,18 +84,18 @@ bool display_init_kb(void) {
     backlight_enable();
 
 #ifdef QUANTUM_PAINTER_ST7789_SPI_ENABLE
-    painter_device_t display = qp_st7789_make_spi_device(STRONT_DISPLAY_WIDTH, STRONT_DISPLAY_HEIGHT, LCD_CS_PIN, LCD_DC_PIN, LCD_RST_PIN, 16, 3);
-    qp_set_viewport_offsets(display, STRONT_DISPLAY_OFFSET_X, STRONT_DISPLAY_OFFSET_Y);
+    painter_device_t display = qp_st7789_make_spi_device(240, 300, LCD_CS_PIN, LCD_DC_PIN, LCD_RST_PIN, 16, 3);
+    qp_set_viewport_offsets(display, 0, 20);
 #elif QUANTUM_PAINTER_GC9A01_SPI_ENABLE
     painter_device_t display = qp_gc9a01_make_spi_device(240, 240, LCD_CS_PIN, LCD_DC_PIN, LCD_RST_PIN, 16, 3);
 #endif
 
-    if (!qp_init(display, STRONT_DISPLAY_ROTATION) || !qp_power(display, true) || !qp_lvgl_attach(display)) return false;
+    if (!qp_init(display, QP_ROTATION_180) || !qp_power(display, true) || !qp_lvgl_attach(display)) return false;
 
     dprint("display_init_kb - initialised\n");
 
     lv_disp_t  *lv_display = lv_disp_get_default();
-    lv_theme_t *lv_theme   = lv_theme_default_init(lv_display, lv_palette_main(LV_PALETTE_AMBER), lv_palette_main(LV_PALETTE_BLUE), true, LV_FONT_DEFAULT);
+    lv_theme_t *lv_theme   = lv_theme_default_init(lv_display, lv_palette_main(LV_PALETTE_GREEN), lv_palette_main(LV_PALETTE_BLUE), true, LV_FONT_DEFAULT);
     lv_disp_set_theme(lv_display, lv_theme);
     init_styles();
 
@@ -111,6 +113,8 @@ __attribute__((weak)) bool display_init_user(void) {
 }
 
 __attribute__((weak)) void display_housekeeping_task(void) {
+    dprint("display_housekeeping_task_kb\n");
+
     toggle_state(label_shift, LV_STATE_PRESSED, MODS_SHIFT);
     toggle_state(label_ctrl, LV_STATE_PRESSED, MODS_CTRL);
     toggle_state(label_alt, LV_STATE_PRESSED, MODS_ALT);

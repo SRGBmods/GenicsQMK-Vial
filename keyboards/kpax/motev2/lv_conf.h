@@ -15,13 +15,13 @@
 
 /* change default font */
 #undef LV_FONT_MONTSERRAT_14
-#define LV_FONT_MONTSERRAT_14 1
+#define LV_FONT_MONTSERRAT_14 0
 
 #undef LV_FONT_MONTSERRAT_20
 #define LV_FONT_MONTSERRAT_20 1
 
 #undef LV_FONT_DEFAULT
-#define LV_FONT_DEFAULT &lv_font_montserrat_14
+#define LV_FONT_DEFAULT &lv_font_montserrat_20
 
 /* add large font */
 #undef LV_FONT_MONTSERRAT_48
@@ -29,11 +29,11 @@
 
 /* disable widgets*/
 #undef LV_USE_ANIMIMG
-#define LV_USE_ANIMIMG 1
+#define LV_USE_ANIMIMG 0
 #undef LV_USE_BAR
 #define LV_USE_BAR 0
 #undef LV_USE_BTN
-#define LV_USE_BTN 1
+#define LV_USE_BTN 0
 #undef LV_USE_BTNMATRIX
 #define LV_USE_BTNMATRIX 0
 #undef LV_USE_CANVAS
@@ -73,7 +73,7 @@
 #undef LV_USE_SPINBOX
 #define LV_USE_SPINBOX 0
 #undef LV_USE_SPINNER
-#define LV_USE_SPINNER 1
+#define LV_USE_SPINNER 0
 #undef LV_USE_TABVIEW
 #define LV_USE_TABVIEW 0
 #undef LV_USE_TILEVIEW
@@ -94,8 +94,3 @@
 /* disable build examples */
 #undef LV_BUILD_EXAMPLES
 #define LV_BUILD_EXAMPLES 0
-// 打开性能显示
-// #undef LV_USE_PERF_MONITOR
-// #define LV_USE_PERF_MONITOR 1
-
-
