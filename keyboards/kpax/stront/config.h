@@ -77,4 +77,26 @@
         { SONG(QWERTY_SOUND), SONG(COLEMAK_SOUND), SONG(DVORAK_SOUND) }
 #endif
 
+// 震动配置
+#ifdef HAPTIC_ENABLE
+#    define HAPTIC_OFF_IN_LOW_POWER 0
+#    define NO_HAPTIC_FN
+#    define NO_HAPTIC_ALPHA
+#    define NO_HAPTIC_PUNCTUATION
+#    define NO_HAPTIC_NAV
+#    define NO_HAPTIC_NUMERIC
+#    define DRV2605L_GREETING 7
+#    define DRV2605L_DEFAULT_MODE DRV2605L_EFFECT_SHARP_TICK_1_100
+// DRV2605L 线性马达设置 LRA
+#    define FB_ERM_LRA 1
+#    define FB_BRAKEFACTOR 6 /* For 1x:0, 2x:1, 3x:2, 4x:3, 6x:4, 8x:5, 16x:6, Disable Braking:7 */
+#    define FB_LOOPGAIN 0    /* For  Low:0, Medium:1, High:2, Very High:3 */
+#    define RATED_VOLTAGE 5
+#    define F_LRA 220 /* resonance freq */
+// drv2605l的i2c配置
+// #    define I2C_DRIVER I2CD1
+// #    define I2C1_SCL_PIN GP7
+// #    define I2C1_SDA_PIN GP6
+#endif
+
 #define RGB_MATRIX_MAXIMUM_BRIGHTNESS 100

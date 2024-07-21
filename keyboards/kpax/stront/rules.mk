@@ -19,3 +19,8 @@ DEFAULT_FOLDER = stront/40keys
 AUDIO_ENABLE = yes
 AUDIO_DRIVER = pwm_hardware
 
+# 打开震动功能
+HAPTIC_ENABLE = yes
+HAPTIC_DRIVER = drv2605l
+
+
