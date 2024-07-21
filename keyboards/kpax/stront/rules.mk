@@ -13,4 +13,4 @@ QUANTUM_PAINTER_DRIVERS = st7789_spi # rectangular display
 SRC += lvgl_helpers.c \
 	   display.c
 
-DEFAULT_FOLDER = stront/38keys
+DEFAULT_FOLDER = stront/40keys

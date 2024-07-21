@@ -419,6 +419,7 @@ layer_state_t layer_state_set_user(layer_state_t state) {
 
 // void hid_sync(uint8_t initiator2target_buffer_size, const void *initiator2target_buffer, uint8_t target2initiator_buffer_size, void *target2initiator_buffer) {
 //     if (is_display_enabled()) {
+
 //         display_process_raw_hid_data((uint8_t *)initiator2target_buffer, initiator2target_buffer_size);
 //     }
 // }

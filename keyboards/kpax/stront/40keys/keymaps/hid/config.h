@@ -3,11 +3,14 @@
 
 #pragma once
 
-#define VIAL_KEYBOARD_UID { 0xF6, 0xFA, 0xD8, 0x61, 0xDE, 0xD5, 0x4A, 0x85 }
+#define VIAL_KEYBOARD_UID \
+    { 0x2B, 0x3C, 0x7E, 0x52, 0x60, 0x3E, 0xFE, 0x52 }
 
 /* VIAL secure unlock keystroke - currently both inner thumb keys (typ. SPACE/ENTER) */
-#define VIAL_UNLOCK_COMBO_ROWS { 3, 7 }
-#define VIAL_UNLOCK_COMBO_COLS { 4, 4 }
+#define VIAL_UNLOCK_COMBO_ROWS \
+    { 0, 6 }
+#define VIAL_UNLOCK_COMBO_COLS \
+    { 0, 0 }
 
 #define DYNAMIC_KEYMAP_LAYER_COUNT 8
 

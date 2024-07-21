@@ -28,17 +28,17 @@
 #define SPLIT_POINTING_ENABLE
 
 /* common SPI/I2C config */
-#define SPI_DRIVER SPID1
-#define SPI_SCK_PIN GP10
-#define SPI_MOSI_PIN GP11
-#define SPI_MISO_PIN GP12
+#define SPI_DRIVER SPID0
+#define SPI_SCK_PIN GP22
+#define SPI_MOSI_PIN GP23
+#define SPI_MISO_PIN GP20
 #define I2C_DRIVER I2CD1
-#define I2C1_SDA_PIN GP10
-#define I2C1_SCL_PIN GP11
+#define I2C1_SDA_PIN GP7
+#define I2C1_SCL_PIN GP6
 
 /* common touchpad config */
 #define POINTING_DEVICE_RIGHT // touchpad is right by default
-#define POINTING_DEVICE_CS_PIN GP9
+#define POINTING_DEVICE_CS_PIN GP21
 #ifdef POINTING_DEVICE_DRIVER_azoteq_iqs5xx
 #    define AZOTEQ_IQS5XX_TPS43
 #    define AZOTEQ_IQS5XX_ROTATION_270
@@ -51,6 +51,6 @@
 #endif
 
 /* common LCD config */
-#define LCD_CS_PIN GP9
-#define BACKLIGHT_PWM_CHANNEL RP2040_PWM_CHANNEL_A
+#define LCD_CS_PIN GP21
+#define BACKLIGHT_PWM_CHANNEL RP2040_PWM_CHANNEL_B
 #define QUANTUM_PAINTER_DISPLAY_TIMEOUT 0
