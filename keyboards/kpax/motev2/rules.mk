@@ -23,4 +23,7 @@ AUDIO_DRIVER = pwm_hardware
 HAPTIC_ENABLE = yes
 HAPTIC_DRIVER = drv2605l
 
+# 关闭vial的安全模式
+VIAL_INSECURE = yes
+
 

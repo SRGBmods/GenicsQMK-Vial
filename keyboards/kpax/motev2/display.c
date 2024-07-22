@@ -24,7 +24,7 @@ static lv_obj_t *label_caps;
 void init_styles(void) {
     lv_style_init(&style_screen);
     lv_style_set_bg_color(&style_screen, lv_color_black());
-    lv_style_set_pad_all(&style_screen, 10);
+    lv_style_set_pad_all(&style_screen, 0);
 
     lv_style_init(&style_container);
     lv_style_set_pad_all(&style_container, 0);
@@ -92,7 +92,7 @@ bool display_init_kb(void) {
 
     dprint("display_init_kb - initialised\n");
 
-    lv_disp_t  *lv_display = lv_disp_get_default();
+    lv_disp_t * lv_display = lv_disp_get_default();
     lv_theme_t *lv_theme   = lv_theme_default_init(lv_display, lv_palette_main(LV_PALETTE_AMBER), lv_palette_main(LV_PALETTE_BLUE), true, LV_FONT_DEFAULT);
     lv_disp_set_theme(lv_display, lv_theme);
     init_styles();
