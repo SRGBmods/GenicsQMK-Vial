@@ -108,7 +108,7 @@ void init_screen_home_custom(void) {
     label_time = lv_label_create(screen_home);
     lv_label_set_text(label_time, "hh:mm");
     // lv_label_set_long_mode(label_time, LV_LABEL_LONG_SCROLL_CIRCULAR);
-    lv_obj_set_pos(label_time, 22, 25);
+    lv_obj_set_pos(label_time, 22, 21);
     lv_obj_set_size(label_time, 198, 32);
 
     // Write style for home_label_time, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
