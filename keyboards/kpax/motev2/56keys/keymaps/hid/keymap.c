@@ -7,6 +7,7 @@
 #include "display.h"
 #include "raw_hid.h"
 #include "transactions.h"
+#include "user_song_list.h"
 
 // Left-hand home row mods
 #define HOME_A LGUI_T(KC_A)
@@ -181,6 +182,11 @@ void caps_word_set_user(bool active) {
 }
 #endif
 
+// 加入切层音效
+float gitar_song[][2] = SONG(GUITAR_SOUND);
+float qwert_song[][2] = SONG(QWERTY_SOUND);
+float game_song[][2]  = SONG(TETRIS_SONG);
+
 /* Active Layer processing */
 layer_state_t layer_state_set_user(layer_state_t state) {
     if (is_display_enabled()) {
@@ -189,6 +195,21 @@ layer_state_t layer_state_set_user(layer_state_t state) {
         uint8_t layer = get_highest_layer(state);
         dprintf("RPC_ID_USER_LAYER_SYNC: %u\n", layer);
         transaction_rpc_send(RPC_ID_USER_LAYER_SYNC, 1, &layer);
+    }
+    // 切层音效
+    static bool is_sys_enabled = false, is_game_enabled = false, is_symbol_enabled = false;
+    if (layer_state_cmp(state, _SYS) != is_sys_enabled || layer_state_cmp(state, _GAME) != is_game_enabled || layer_state_cmp(state, _SYMBOL) != is_symbol_enabled) {
+        is_sys_enabled    = layer_state_cmp(state, _SYS);
+        is_game_enabled   = layer_state_cmp(state, _GAME);
+        is_symbol_enabled = layer_state_cmp(state, _SYMBOL);
+
+        if (is_sys_enabled) {
+            PLAY_SONG(gitar_song);
+        } else if (is_symbol_enabled) {
+            PLAY_SONG(qwert_song);
+        } else if (is_game_enabled) {
+            PLAY_SONG(game_song);
+        }
     }
 
     return state;
@@ -232,3 +253,67 @@ void keyboard_post_init_user() {
     // sync caps word state
     transaction_register_rpc(RPC_ID_USER_CAPS_WORD_SYNC, caps_word_sync);
 }
+
+// 切层底光换色
+#ifdef RGB_MATRIX_ENABLE
+// Layer state indicator
+bool rgb_matrix_indicators_advanced_kb(uint8_t led_min, uint8_t led_max) {
+    if (!rgb_matrix_indicators_advanced_user(led_min, led_max)) {
+        return false;
+    }
+    if (host_keyboard_led_state().caps_lock) {
+        for (int i = led_min; i <= led_max; i++) {
+            if (HAS_FLAGS(g_led_config.flags[i], LED_FLAG_INDICATOR)) {
+                rgb_matrix_set_color(i, 15, 255, 247);
+            }
+        }
+    }
+
+    uint8_t layer = get_highest_layer(layer_state);
+    if (layer > 0) {
+        HSV hsv = rgb_matrix_get_hsv();
+        switch (get_highest_layer(layer_state)) {
+            case 1:
+                hsv = (HSV){HSV_BLUE};
+                break;
+            case 2:
+                hsv = (HSV){HSV_AZURE};
+                break;
+            case 3:
+                hsv = (HSV){HSV_ORANGE};
+                break;
+            case 4:
+                hsv = (HSV){HSV_GREEN};
+                break;
+            case 5:
+                hsv = (HSV){HSV_TEAL};
+                break;
+            case 6:
+                hsv = (HSV){HSV_PURPLE};
+                break;
+            case 7:
+            default:
+                hsv = (HSV){HSV_RED};
+                break;
+        };
+
+        if (hsv.v > rgb_matrix_get_val()) {
+            hsv.v = MIN(rgb_matrix_get_val() + 22, 255);
+        }
+        RGB rgb = hsv_to_rgb(hsv);
+
+        for (uint8_t i = led_min; i < led_max; i++) {
+            if (HAS_FLAGS(g_led_config.flags[i], LED_FLAG_UNDERGLOW)) {
+                rgb_matrix_set_color(i, rgb.r, rgb.g, rgb.b);
+            }
+        }
+    }
+    return false;
+};
+#endif // RGB_MATRIX_ENABLE
+
+// 鼠标自动切层
+// void pointing_device_init_user(void) {
+//     set_auto_mouse_layer(_NAV);  // only required if AUTO_MOUSE_DEFAULT_LAYER is not set to index of <mouse_layer>
+//     set_auto_mouse_enable(true); // always required before the auto mouse feature will work
+// };

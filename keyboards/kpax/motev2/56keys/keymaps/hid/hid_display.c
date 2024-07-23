@@ -132,18 +132,18 @@ void init_screen_home_custom(void) {
     // lv_obj_set_style_text_font(label_time, &lv_font_montserrat_48, LV_PART_MAIN);
 
     // 增加圆圈动画
-    //  lv_obj_t *ring = lv_spinner_create(screen_home, 6000, 120);
-    //  lv_obj_set_size(ring, 240, 240);
-    //  lv_obj_center(ring);
-    //  lv_obj_set_align(ring, LV_ALIGN_CENTER);
-    //  lv_obj_clear_flag(ring, LV_OBJ_FLAG_CLICKABLE); /// Flags
-    //  lv_obj_set_style_arc_color(ring, lv_color_hex(0x00FF03), LV_PART_MAIN | LV_STATE_DEFAULT);
-    //  lv_obj_set_style_arc_opa(ring, 255, LV_PART_MAIN | LV_STATE_DEFAULT);
-    //  lv_obj_set_style_arc_width(ring, 4, LV_PART_MAIN | LV_STATE_DEFAULT);
+     lv_obj_t *ring = lv_spinner_create(screen_home, 6000, 120);
+     lv_obj_set_size(ring, 240, 240);
+     lv_obj_center(ring);
+     lv_obj_set_align(ring, LV_ALIGN_CENTER);
+     lv_obj_clear_flag(ring, LV_OBJ_FLAG_CLICKABLE); /// Flags
+     lv_obj_set_style_arc_color(ring, lv_color_hex(0x00FF03), LV_PART_MAIN | LV_STATE_DEFAULT);
+     lv_obj_set_style_arc_opa(ring, 255, LV_PART_MAIN | LV_STATE_DEFAULT);
+     lv_obj_set_style_arc_width(ring, 4, LV_PART_MAIN | LV_STATE_DEFAULT);
 
-    // lv_obj_set_style_arc_color(ring, lv_color_hex(0x0077FF), LV_PART_INDICATOR | LV_STATE_DEFAULT);
-    // lv_obj_set_style_arc_opa(ring, 255, LV_PART_INDICATOR | LV_STATE_DEFAULT);
-    // lv_obj_set_style_arc_width(ring, 4, LV_PART_INDICATOR | LV_STATE_DEFAULT);
+    lv_obj_set_style_arc_color(ring, lv_color_hex(0x0077FF), LV_PART_INDICATOR | LV_STATE_DEFAULT);
+    lv_obj_set_style_arc_opa(ring, 255, LV_PART_INDICATOR | LV_STATE_DEFAULT);
+    lv_obj_set_style_arc_width(ring, 4, LV_PART_INDICATOR | LV_STATE_DEFAULT);
 
     lv_obj_t *ui_mods = lv_obj_create(screen_home);
     lv_obj_set_pos(ui_mods, 45, 180);
