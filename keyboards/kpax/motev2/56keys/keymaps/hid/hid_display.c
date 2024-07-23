@@ -38,6 +38,7 @@ LV_IMG_DECLARE(flag_ru);
 LV_IMG_DECLARE(flag_uk);
 LV_IMG_DECLARE(_my_logoalpha_alpha_150x150);
 LV_IMG_DECLARE(_ui_logo_alpha_240x240);
+LV_IMG_DECLARE(_ui_vol_alpha_240x240);
 LV_IMG_DECLARE(_ui_pikaqiu_alpha_240x240);
 LV_IMG_DECLARE(_ui_twoman_alpha_240x240);
 LV_IMG_DECLARE(animation_small);
@@ -106,7 +107,7 @@ void init_screen_home_custom(void) {
 
     // Write codes home_label_time
     label_time = lv_label_create(screen_home);
-    lv_label_set_text(label_time, "hh:mm");
+    lv_label_set_text(label_time, "00:00");
     // lv_label_set_long_mode(label_time, LV_LABEL_LONG_SCROLL_CIRCULAR);
     lv_obj_set_pos(label_time, 22, 21);
     lv_obj_set_size(label_time, 198, 32);
@@ -132,18 +133,18 @@ void init_screen_home_custom(void) {
     // lv_obj_set_style_text_font(label_time, &lv_font_montserrat_48, LV_PART_MAIN);
 
     // 增加圆圈动画
-     lv_obj_t *ring = lv_spinner_create(screen_home, 6000, 120);
-     lv_obj_set_size(ring, 240, 240);
-     lv_obj_center(ring);
-     lv_obj_set_align(ring, LV_ALIGN_CENTER);
-     lv_obj_clear_flag(ring, LV_OBJ_FLAG_CLICKABLE); /// Flags
-     lv_obj_set_style_arc_color(ring, lv_color_hex(0x00FF03), LV_PART_MAIN | LV_STATE_DEFAULT);
-     lv_obj_set_style_arc_opa(ring, 255, LV_PART_MAIN | LV_STATE_DEFAULT);
-     lv_obj_set_style_arc_width(ring, 4, LV_PART_MAIN | LV_STATE_DEFAULT);
+    //  lv_obj_t *ring = lv_spinner_create(screen_home, 6000, 120);
+    //  lv_obj_set_size(ring, 240, 240);
+    //  lv_obj_center(ring);
+    //  lv_obj_set_align(ring, LV_ALIGN_CENTER);
+    //  lv_obj_clear_flag(ring, LV_OBJ_FLAG_CLICKABLE); /// Flags
+    //  lv_obj_set_style_arc_color(ring, lv_color_hex(0x00FF03), LV_PART_MAIN | LV_STATE_DEFAULT);
+    //  lv_obj_set_style_arc_opa(ring, 255, LV_PART_MAIN | LV_STATE_DEFAULT);
+    //  lv_obj_set_style_arc_width(ring, 4, LV_PART_MAIN | LV_STATE_DEFAULT);
 
-    lv_obj_set_style_arc_color(ring, lv_color_hex(0x0077FF), LV_PART_INDICATOR | LV_STATE_DEFAULT);
-    lv_obj_set_style_arc_opa(ring, 255, LV_PART_INDICATOR | LV_STATE_DEFAULT);
-    lv_obj_set_style_arc_width(ring, 4, LV_PART_INDICATOR | LV_STATE_DEFAULT);
+    // lv_obj_set_style_arc_color(ring, lv_color_hex(0x0077FF), LV_PART_INDICATOR | LV_STATE_DEFAULT);
+    // lv_obj_set_style_arc_opa(ring, 255, LV_PART_INDICATOR | LV_STATE_DEFAULT);
+    // lv_obj_set_style_arc_width(ring, 4, LV_PART_INDICATOR | LV_STATE_DEFAULT);
 
     lv_obj_t *ui_mods = lv_obj_create(screen_home);
     lv_obj_set_pos(ui_mods, 45, 180);
@@ -225,9 +226,18 @@ void init_screen_home_custom(void) {
 void init_screen_volume(void) {
     screen_volume = lv_obj_create(NULL);
     lv_obj_add_style(screen_volume, &style_screen, 0);
+    // Write codes vol_img_1
+
+    lv_obj_t *vol_img_1 = lv_img_create(screen_volume);
+    lv_obj_add_flag(vol_img_1, LV_OBJ_FLAG_CLICKABLE);
+    lv_img_set_src(vol_img_1, &_ui_vol_alpha_240x240);
+    lv_img_set_pivot(vol_img_1, 50, 50);
+    lv_img_set_angle(vol_img_1, 0);
+    lv_obj_set_pos(vol_img_1, 0, 0);
+    lv_obj_set_size(vol_img_1, 240, 240);
 
     arc_volume = lv_arc_create(screen_volume);
-    lv_obj_set_size(arc_volume, 200, 200);
+    lv_obj_set_size(arc_volume, 180, 180);
     lv_obj_center(arc_volume);
 
     label_volume_arc = lv_label_create(screen_volume);
@@ -237,7 +247,7 @@ void init_screen_volume(void) {
 
     lv_obj_t *volume_text_label = lv_label_create(screen_volume);
     lv_label_set_text(volume_text_label, "Volume");
-    lv_obj_align(volume_text_label, LV_ALIGN_BOTTOM_MID, 0, -10);
+    lv_obj_align(volume_text_label, LV_ALIGN_BOTTOM_MID, 0, -40);
 }
 
 void init_screen_media(void) {
