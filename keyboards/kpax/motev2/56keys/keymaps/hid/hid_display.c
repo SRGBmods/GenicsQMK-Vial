@@ -23,6 +23,7 @@ static lv_obj_t *label_gui;
 static lv_obj_t *label_layer;
 static lv_obj_t *label_caps;
 static lv_obj_t *label_layout;
+static lv_obj_t *label_wpm;
 
 /* volume screen content */
 static lv_obj_t *arc_volume;
@@ -130,15 +131,15 @@ void init_screen_home_custom(void) {
     // lv_label_set_text(label_time, "hh:mm");
     // lv_obj_set_style_text_font(label_time, &lv_font_montserrat_48, LV_PART_MAIN);
 
-    //增加圆圈动画
-    // lv_obj_t *ring = lv_spinner_create(screen_home, 6000, 120);
-    // lv_obj_set_size(ring, 240, 240);
-    // lv_obj_center(ring);
-    // lv_obj_set_align(ring, LV_ALIGN_CENTER);
-    // lv_obj_clear_flag(ring, LV_OBJ_FLAG_CLICKABLE); /// Flags
-    // lv_obj_set_style_arc_color(ring, lv_color_hex(0x00FF03), LV_PART_MAIN | LV_STATE_DEFAULT);
-    // lv_obj_set_style_arc_opa(ring, 255, LV_PART_MAIN | LV_STATE_DEFAULT);
-    // lv_obj_set_style_arc_width(ring, 4, LV_PART_MAIN | LV_STATE_DEFAULT);
+    // 增加圆圈动画
+    //  lv_obj_t *ring = lv_spinner_create(screen_home, 6000, 120);
+    //  lv_obj_set_size(ring, 240, 240);
+    //  lv_obj_center(ring);
+    //  lv_obj_set_align(ring, LV_ALIGN_CENTER);
+    //  lv_obj_clear_flag(ring, LV_OBJ_FLAG_CLICKABLE); /// Flags
+    //  lv_obj_set_style_arc_color(ring, lv_color_hex(0x00FF03), LV_PART_MAIN | LV_STATE_DEFAULT);
+    //  lv_obj_set_style_arc_opa(ring, 255, LV_PART_MAIN | LV_STATE_DEFAULT);
+    //  lv_obj_set_style_arc_width(ring, 4, LV_PART_MAIN | LV_STATE_DEFAULT);
 
     // lv_obj_set_style_arc_color(ring, lv_color_hex(0x0077FF), LV_PART_INDICATOR | LV_STATE_DEFAULT);
     // lv_obj_set_style_arc_opa(ring, 255, LV_PART_INDICATOR | LV_STATE_DEFAULT);
@@ -191,6 +192,27 @@ void init_screen_home_custom(void) {
     lv_obj_set_style_pad_left(label_layer, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_style_shadow_width(label_layer, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
     display_process_layer_state(0);
+
+    // 增加wpm显示
+    label_wpm = lv_label_create(screen_home);
+    lv_label_set_text(label_wpm, "");
+    lv_label_set_long_mode(label_wpm, LV_LABEL_LONG_WRAP);
+    lv_obj_set_pos(label_wpm, 25, 142);
+    lv_obj_set_size(label_wpm, 98, 18);
+    lv_obj_set_style_border_width(label_wpm, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_radius(label_wpm, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_text_color(label_wpm, lv_color_hex(0xd4d7ff), LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_text_opa(label_wpm, 255, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_text_letter_space(label_wpm, 2, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_text_line_space(label_wpm, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_text_align(label_wpm, LV_TEXT_ALIGN_LEFT, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_opa(label_wpm, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_top(label_wpm, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_right(label_wpm, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_bottom(label_wpm, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_left(label_wpm, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_shadow_width(label_wpm, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
+    refresh_wpm();
 
     label_layout = lv_label_create(bottom_row);
     lv_label_set_text(label_layout, "");
@@ -321,6 +343,11 @@ void display_process_layer_state(uint8_t layer) {
             lv_label_set_text(label_layer, "SYSTEM");
             break;
     }
+}
+
+// 增加刷新wpm的函数
+void refresh_wpm(void) {
+    lv_label_set_text(label_wpm, get_u8_str(get_current_wpm(), '0'));
 }
 
 void display_housekeeping_task(void) {
