@@ -360,6 +360,7 @@ void display_housekeeping_task(void) {
     toggle_state(label_ctrl, LV_STATE_PRESSED, MODS_CTRL);
     toggle_state(label_alt, LV_STATE_PRESSED, MODS_ALT);
     toggle_state(label_gui, LV_STATE_PRESSED, MODS_GUI);
+    refresh_wpm();
 }
 
 void display_process_caps(bool active) {

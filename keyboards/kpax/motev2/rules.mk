@@ -26,4 +26,6 @@ HAPTIC_DRIVER = drv2605l
 # 关闭vial的安全模式
 VIAL_INSECURE = yes
 
+WPM_ENABLE = yes
+
 
