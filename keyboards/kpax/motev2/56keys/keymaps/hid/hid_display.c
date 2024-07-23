@@ -82,8 +82,8 @@ void init_screen_home_custom(void) {
     label_volume_home = lv_label_create(screen_home);
     lv_label_set_text(label_volume_home, "N/A");
     lv_label_set_long_mode(label_volume_home, LV_LABEL_LONG_WRAP);
-    lv_obj_set_pos(label_volume_home, 100, 140);
-    lv_obj_set_size(label_volume_home, 100, 16);
+    lv_obj_set_pos(label_volume_home, 180, 142);
+    lv_obj_set_size(label_volume_home, 44, 16);
 
     // Write style for home_label_3, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
     lv_obj_set_style_border_width(label_volume_home, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
@@ -107,14 +107,14 @@ void init_screen_home_custom(void) {
     // Write codes home_label_time
     label_time = lv_label_create(screen_home);
     lv_label_set_text(label_time, "hh:mm");
-    lv_label_set_long_mode(label_time, LV_LABEL_LONG_SCROLL_CIRCULAR);
-    lv_obj_set_pos(label_time, 23, 15);
-    lv_obj_set_size(label_time, 200, 66);
+    // lv_label_set_long_mode(label_time, LV_LABEL_LONG_SCROLL_CIRCULAR);
+    lv_obj_set_pos(label_time, 22, 25);
+    lv_obj_set_size(label_time, 198, 32);
 
     // Write style for home_label_time, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
     lv_obj_set_style_border_width(label_time, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_style_radius(label_time, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_text_color(label_time, lv_color_hex(0xd4d7ff), LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_text_color(label_time, lv_color_hex(0x00ff8c), LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_style_text_font(label_time, &lv_font_montserrat_36, LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_style_text_opa(label_time, 255, LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_style_text_letter_space(label_time, 2, LV_PART_MAIN | LV_STATE_DEFAULT);
@@ -282,7 +282,7 @@ void display_process_raw_hid_data(uint8_t *data, uint8_t length) {
             if (lv_scr_act() != screen_volume) {
                 lv_scr_load(screen_volume);
             }
-            lv_label_set_text_fmt(label_volume_home, "Vol: %d%%", data[1]);
+            lv_label_set_text_fmt(label_volume_home, " %d%%", data[1]);
             lv_label_set_text_fmt(label_volume_arc, "%d", data[1]);
             if (timer_elapsed(volume_timer) > 100) {
                 // arc rendering is slow, add delay to overcome issues with fast changing volume
