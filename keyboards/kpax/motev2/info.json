@@ -1,7 +1,7 @@
 {
-    "manufacturer": "zzeneg",
-    "keyboard_name": "stront",
-    "maintainer": "zzeneg",
+    "manufacturer": "kpaxart",
+    "keyboard_name": "MOTE-V2",
+    "maintainer": "kpaxart",
     "bootloader": "rp2040",
     "diode_direction": "COL2ROW",
     "encoder": {
@@ -80,7 +80,7 @@
             }
         }
     },
-    "url": "https://github.com/zzeneg/stront",
+    "url": "https://github.com/",
     "usb": {
         "device_version": "1.0.0",
         "pid": "0x0844",
