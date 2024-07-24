@@ -130,3 +130,4 @@
 // 定义wpm周期
 #define WPM_SAMPLE_SECONDS 5
 #define WPM_SAMPLE_PERIODS 25
+

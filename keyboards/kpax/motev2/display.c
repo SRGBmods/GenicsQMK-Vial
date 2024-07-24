@@ -85,14 +85,14 @@ bool display_init_kb(void) {
     painter_device_t display = qp_st7789_make_spi_device(STRONT_DISPLAY_WIDTH, STRONT_DISPLAY_HEIGHT, LCD_CS_PIN, LCD_DC_PIN, LCD_RST_PIN, 16, 3);
     qp_set_viewport_offsets(display, STRONT_DISPLAY_OFFSET_X, STRONT_DISPLAY_OFFSET_Y);
 #elif QUANTUM_PAINTER_GC9A01_SPI_ENABLE
-    painter_device_t display = qp_gc9a01_make_spi_device(240, 240, LCD_CS_PIN, LCD_DC_PIN, LCD_RST_PIN, 16, 3);
+    painter_device_t display = qp_gc9a01_make_spi_device(240, 240, LCD_CS_PIN, LCD_DC_PIN, LCD_RST_PIN, 4, 3);
 #endif
 
     if (!qp_init(display, STRONT_DISPLAY_ROTATION) || !qp_power(display, true) || !qp_lvgl_attach(display)) return false;
 
     dprint("display_init_kb - initialised\n");
 
-    lv_disp_t * lv_display = lv_disp_get_default();
+    lv_disp_t  *lv_display = lv_disp_get_default();
     lv_theme_t *lv_theme   = lv_theme_default_init(lv_display, lv_palette_main(LV_PALETTE_LIGHT_GREEN), lv_palette_main(LV_PALETTE_BLUE), true, LV_FONT_DEFAULT);
     lv_disp_set_theme(lv_display, lv_theme);
     init_styles();
