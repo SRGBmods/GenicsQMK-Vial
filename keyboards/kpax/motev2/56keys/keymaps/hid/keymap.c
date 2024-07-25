@@ -35,6 +35,10 @@
 #define LCTL_ESC LCTL_T(KC_ESC)
 #define LGUI_GRV LGUI_T(KC_GRV)
 
+enum custom_keycodes {
+    DRAG_SCROLL = SAFE_RANGE,
+};
+
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     /* QWERTY
      *        .----------------------------------.                    .----------------------------------.
@@ -89,7 +93,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   // ├──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────┤
        KC_MPRV, KC_HOME, KC_PGUP, KC_PGDN,  KC_END, _______,    _______, _______, _______, _______, _______, KC_VOLD,
   // ╰──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────╯
-                         _______, _______, _______, _______,    _______, _______, _______, _______,
+                         DRAG_SCROLL, _______, _______, _______,    _______, _______, _______, _______,
   //                    ╰───────────────────────────────────╯ ╰───────────────────────────────────╯
     _______,  _______,    _______,    _______,    _______,                 _______,  _______,    _______,    _______,   _______
     ),
@@ -187,6 +191,52 @@ void caps_word_set_user(bool active) {
 float gitar_song[][2] = SONG(GUITAR_SOUND);
 float qwert_song[][2] = SONG(QWERTY_SOUND);
 float game_song[][2]  = SONG(TETRIS_SONG);
+// 鼠标拖拽滚动
+bool set_scrolling = false;
+
+// Modify these values to adjust the scrolling speed
+#define SCROLL_DIVISOR_H 8.0
+#define SCROLL_DIVISOR_V 8.0
+
+// Variables to store accumulated scroll values
+float scroll_accumulated_h = 0;
+float scroll_accumulated_v = 0;
+
+// Function to handle mouse reports and perform drag scrolling
+report_mouse_t pointing_device_task_user(report_mouse_t mouse_report) {
+    // Check if drag scrolling is active
+    if (set_scrolling) {
+        // Calculate and accumulate scroll values based on mouse movement and divisors
+        scroll_accumulated_h += (float)mouse_report.x / SCROLL_DIVISOR_H;
+        scroll_accumulated_v += (float)mouse_report.y / SCROLL_DIVISOR_V;
+
+        // Assign integer parts of accumulated scroll values to the mouse report
+        mouse_report.h = (int8_t)scroll_accumulated_h;
+        mouse_report.v = (int8_t)scroll_accumulated_v;
+
+        // Update accumulated scroll values by subtracting the integer parts
+        scroll_accumulated_h -= (int8_t)scroll_accumulated_h;
+        scroll_accumulated_v -= (int8_t)scroll_accumulated_v;
+
+        // Clear the X and Y values of the mouse report
+        mouse_report.x = 0;
+        mouse_report.y = 0;
+    }
+    return mouse_report;
+}
+
+// Function to handle key events and enable/disable drag scrolling
+bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+    switch (keycode) {
+        case DRAG_SCROLL:
+            // Toggle set_scrolling when DRAG_SCROLL key is pressed or released
+            set_scrolling = record->event.pressed;
+            break;
+        default:
+            break;
+    }
+    return true;
+}
 
 /* Active Layer processing */
 layer_state_t layer_state_set_user(layer_state_t state) {
@@ -211,6 +261,10 @@ layer_state_t layer_state_set_user(layer_state_t state) {
         } else if (is_game_enabled) {
             PLAY_SONG(game_song);
         }
+    }
+    // Disable set_scrolling if the current layer is not the AUTO_MOUSE_DEFAULT_LAYER
+    if (get_highest_layer(state) != AUTO_MOUSE_DEFAULT_LAYER) {
+        set_scrolling = false;
     }
 
     return state;
@@ -253,6 +307,12 @@ void keyboard_post_init_user() {
     transaction_register_rpc(RPC_ID_USER_LAYER_SYNC, layer_sync);
     // sync caps word state
     transaction_register_rpc(RPC_ID_USER_CAPS_WORD_SYNC, caps_word_sync);
+}
+
+// 鼠标自动切层
+void pointing_device_init_user(void) {
+    set_auto_mouse_layer(_NAV);  // only required if AUTO_MOUSE_DEFAULT_LAYER is not set to index of <mouse_layer>
+    set_auto_mouse_enable(true); // always required before the auto mouse feature will work
 }
 
 // 切层底光换色
@@ -312,9 +372,3 @@ bool rgb_matrix_indicators_advanced_kb(uint8_t led_min, uint8_t led_max) {
     return false;
 };
 #endif // RGB_MATRIX_ENABLE
-
-// 鼠标自动切层
-// void pointing_device_init_user(void) {
-//     set_auto_mouse_layer(_NAV);  // only required if AUTO_MOUSE_DEFAULT_LAYER is not set to index of <mouse_layer>
-//     set_auto_mouse_enable(true); // always required before the auto mouse feature will work
-// };

@@ -3,10 +3,9 @@
 ENCODER_ENABLE = yes
 ENCODER_MAP_ENABLE = yes
 # 打开lcd和lvgl
-QUANTUM_PAINTER_ENABLE = no
+QUANTUM_PAINTER_ENABLE = yes
 QUANTUM_PAINTER_LVGL_INTEGRATION = yes
-QUANTUM_PAINTER_DRIVERS = gc9a01_spi
-# 引用lvgl文件
+QUANTUM_PAINTER_DRIVERS = st7789_spi# 引用lvgl文件
 
 # 打开rgb灯光
 # RGB_MATRIX_SUPPORTED = yes  # RGB matrix is supported and enabled by default
