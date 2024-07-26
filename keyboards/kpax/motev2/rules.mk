@@ -13,7 +13,7 @@ QUANTUM_PAINTER_DRIVERS = st7789_spi # rectangular display
 SRC += lvgl_helpers.c \
 	   display.c
 
-DEFAULT_FOLDER = stront/40keys
+DEFAULT_FOLDER = stront/58keys
 
 # 打开音频功能
 AUDIO_ENABLE = yes

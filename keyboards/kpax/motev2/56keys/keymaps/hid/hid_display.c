@@ -43,15 +43,15 @@ LV_IMG_DECLARE(_ui_pikaqiu_alpha_240x240);
 LV_IMG_DECLARE(_ui_twoman_alpha_240x240);
 LV_IMG_DECLARE(animation_small);
 
-enum layout { _EN = 0, _RU };
+enum layout { _EN = 0, _CN };
 void set_layout_label(uint8_t layout) {
     switch (layout) {
         case _EN:
             lv_label_set_text(label_layout, "EN");
             break;
 
-        case _RU:
-            lv_label_set_text(label_layout, "RU");
+        case _CN:
+            lv_label_set_text(label_layout, "CN");
             break;
     }
 }
@@ -148,7 +148,7 @@ void init_screen_home_custom(void) {
 
     lv_obj_t *ui_mods = lv_obj_create(screen_home);
     lv_obj_set_pos(ui_mods, 45, 180);
-    lv_obj_set_size(ui_mods, 150, 20);
+    lv_obj_set_size(ui_mods, 170, 20);
     lv_obj_set_scrollbar_mode(ui_mods, LV_SCROLLBAR_MODE_OFF);
     use_flex_row(ui_mods);
     // Write style for home_ui_mods, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
@@ -215,12 +215,14 @@ void init_screen_home_custom(void) {
     lv_obj_set_style_shadow_width(label_wpm, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
     refresh_wpm();
 
-    label_layout = lv_label_create(bottom_row);
+    label_layout = lv_label_create(screen_home);
     lv_label_set_text(label_layout, "");
-    lv_obj_align(label_layout, LV_ALIGN_RIGHT_MID, -10, 0);
+    // lv_obj_align(label_layout, LV_ALIGN_RIGHT_MID, -10, 0);
+    lv_obj_set_pos(label_layout, 18, 90);
     set_layout_label(0);
 
     label_caps = create_button(screen_home, "CAPS", &style_button, &style_button_active);
+    lv_obj_set_pos(label_caps, 187, 90);
 }
 
 void init_screen_volume(void) {
