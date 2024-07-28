@@ -215,14 +215,15 @@ void init_screen_home_custom(void) {
     lv_obj_set_style_shadow_width(label_wpm, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
     refresh_wpm();
 
-    label_layout = lv_label_create(screen_home);
-    lv_label_set_text(label_layout, "");
-    // lv_obj_align(label_layout, LV_ALIGN_RIGHT_MID, -10, 0);
-    lv_obj_set_pos(label_layout, 18, 90);
-    set_layout_label(0);
+    // en和caps
+    // label_layout = lv_label_create(screen_home);
+    // lv_label_set_text(label_layout, "");
+    // // lv_obj_align(label_layout, LV_ALIGN_RIGHT_MID, -10, 0);
+    // lv_obj_set_pos(label_layout, 18, 90);
+    // set_layout_label(0);
 
-    label_caps = create_button(screen_home, "CAPS", &style_button, &style_button_active);
-    lv_obj_set_pos(label_caps, 187, 90);
+    // label_caps = create_button(screen_home, "CAPS", &style_button, &style_button_active);
+    // lv_obj_set_pos(label_caps, 187, 90);
 }
 
 void init_screen_volume(void) {

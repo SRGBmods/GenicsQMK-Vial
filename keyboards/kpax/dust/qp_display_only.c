@@ -1,7 +1,6 @@
-// Copyright 2023 zzeneg (@zzeneg)
+// Copyright 2023 OakNinja (@oakninja)
 // SPDX-License-Identifier: GPL-2.0-or-later
 
-#include "dust.h"
 #include "qp.h"
 #include "qp_comms.h"
 
@@ -49,29 +48,4 @@ void keyboard_post_init_kb(void) {
     qp_drawimage(lcd, 0, 0, logo_image);
 
     keyboard_post_init_user();
-}
-
-
-
-
-
-/* default encoder keys */
-bool encoder_update_kb(uint8_t index, bool clockwise) {
-    if (!encoder_update_user(index, clockwise)) {
-        return false;
-    }
-    if (index == 0) {
-        if (clockwise) {
-            tap_code_delay(KC_VOLU, 10);
-        } else {
-            tap_code_delay(KC_VOLD, 10);
-        }
-    } else if (index == 1) {
-        if (clockwise) {
-            tap_code_delay(KC_RIGHT, 10);
-        } else {
-            tap_code_delay(KC_LEFT, 10);
-        }
-    }
-    return true;
 }

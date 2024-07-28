@@ -2,7 +2,11 @@
 // SPDX-License-Identifier: GPL-2.0-or-later
 
 #pragma once
-
+// 屏幕配置
+#define LCD_WIDTH 320
+#define LCD_HEIGHT 240
+#define SPI_MODE 2
+#define ST7789
 // 基础点设置针脚配置
 #define POINTING_DEVICE_CS_PIN GP21
 #define POINTING_DEVICE_SCLK_PIN GP22
