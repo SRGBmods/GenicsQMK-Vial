@@ -147,8 +147,8 @@ void init_screen_home_custom(void) {
     // lv_obj_set_style_arc_width(ring, 4, LV_PART_INDICATOR | LV_STATE_DEFAULT);
 
     lv_obj_t *ui_mods = lv_obj_create(screen_home);
-    lv_obj_set_pos(ui_mods, 45, 180);
-    lv_obj_set_size(ui_mods, 170, 20);
+    lv_obj_set_pos(ui_mods, 40, 180);
+    lv_obj_set_size(ui_mods, 160, 20);
     lv_obj_set_scrollbar_mode(ui_mods, LV_SCROLLBAR_MODE_OFF);
     use_flex_row(ui_mods);
     // Write style for home_ui_mods, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
