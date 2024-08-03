@@ -7,7 +7,12 @@ QUANTUM_PAINTER_ENABLE = yes
 # QUANTUM_PAINTER_LVGL_INTEGRATION = yes
 QUANTUM_PAINTER_DRIVERS += st7789_spi# 引用lvgl文件
 ST7789 = true
-SRC += gfx/cat320x240.qgf.c
+SRC += gfx/cat320x240.qgf.c\
+       gfx/design320x172.qgf.c\
+	   gfx/design.qgf.c\
+	   gfx/design2.qgf.c\
+	   gfx/animation.qgf.c\
+
 # 打开rgb灯光
 # RGB_MATRIX_SUPPORTED = yes  # RGB matrix is supported and enabled by default
 RGB_MATRIX_ENABLE = yes
