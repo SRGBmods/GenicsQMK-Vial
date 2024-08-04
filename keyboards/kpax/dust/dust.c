@@ -48,10 +48,10 @@ void keyboard_post_init_kb(void) {
 
     // Paint catpaste/Katten Paste
     painter_image_handle_t logo_image = qp_load_image_mem(gfx_design);
-    painter_image_handle_t ani_image  = qp_load_image_mem(gfx_animation);
+    // painter_image_handle_t ani_image  = qp_load_image_mem(gfx_animation);
 
     qp_drawimage(lcd, 0, 0, logo_image);
-    qp_animate(lcd, 80, 0, ani_image);
+    // qp_animate(lcd, 80, 0, ani_image);
 
     keyboard_post_init_user();
 }
