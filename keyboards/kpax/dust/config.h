@@ -62,7 +62,7 @@
     { GP5, GP25 }
 // #define ENCODER_RESOLUTION 4
 #define ENCODER_RESOLUTIONS \
-    { 4, 8 }
+    { 4, 2 }
 
 // 震动配置
 #ifdef HAPTIC_ENABLE
