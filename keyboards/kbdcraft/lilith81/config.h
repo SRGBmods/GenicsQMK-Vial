@@ -1,4 +1,4 @@
-// Copyright 2023 FxStudio <FXS@fx-studio.cn>
+// Copyright 2024 FxStudio <FXS@fx-studio.cn>
 // SPDX-License-Identifier: GPL-2.0-or-later
 
 #pragma once

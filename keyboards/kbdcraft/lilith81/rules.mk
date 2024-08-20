@@ -1,4 +1,3 @@
-# This file intentionally left blank
 LTO_ENABLE = no
 OUSE_SHARED_EP = no
 # BOOTLOADER = tinyuf2
