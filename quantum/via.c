@@ -230,9 +230,9 @@ void get_unique_identifier(void) //Grab the unique identifier for each specific 
 void led_streaming(uint8_t *data) //Stream data from HID Packets to Keyboard.
 {
     uint8_t index = data[1];
-    uint8_t numberofleds = data[2];
+    uint8_t numberofleds = data[2]; 
     #if defined(RGBLIGHT_ENABLE)
-        if(index + numberofleds > RGBLED_NUM) {
+        if(index + numberofleds > RGBLIGHT_LED_COUNT) {
     #elif defined(RGB_MATRIX_ENABLE)
         if(index + numberofleds > RGB_MATRIX_LED_COUNT) {
     #endif
@@ -280,6 +280,9 @@ void led_streaming(uint8_t *data) //Stream data from HID Packets to Keyboard.
 void signalrgb_mode_enable(void)
 {
     #if defined(RGB_MATRIX_ENABLE)
+    rgb_matrix_mode_noeeprom(RGB_MATRIX_NONE); //Set RGB Matrix to none to allow a re-init.
+    rgb_matrix_disable_noeeprom();
+    rgb_matrix_enable_noeeprom();
     rgb_matrix_mode_noeeprom(RGB_MATRIX_SIGNALRGB); //Set RGB Matrix to SignalRGB Compatible Mode
     #endif
 }
@@ -297,7 +300,7 @@ void signalrgb_total_leds(void)//Grab total number of leds that a board has.
 {
     packet[0] = id_signalrgb_total_leds;
     #if defined(RGBLIGHT_ENABLE)
-    packet[1] = RGBLED_NUM;
+    packet[1] = RGBLIGHT_LED_COUNT;
     #elif defined(RGB_MATRIX_ENABLE)
     packet[1] = RGB_MATRIX_LED_COUNT;
     #endif
@@ -389,6 +392,7 @@ void raw_hid_receive(uint8_t *data, uint8_t length) {
             signalrgb_firmware_type();
             break;
         }
+        
         case id_get_protocol_version: {
             command_data[0] = VIA_PROTOCOL_VERSION >> 8;
             command_data[1] = VIA_PROTOCOL_VERSION & 0xFF;
