@@ -75,7 +75,7 @@ void init_screen_home_custom(void) {
     // use_flex_column(screen_home);
     // 增加图片
     lv_obj_t *img = lv_img_create(screen_home);
-    lv_img_set_src(img, &_ui_logo_alpha_240x240);
+    lv_img_set_src(img, &_ui_pikaqiu_alpha_240x240);
     lv_obj_clear_flag(img, LV_OBJ_FLAG_SCROLLABLE); /// Flags
     lv_obj_center(img);
 
@@ -115,7 +115,7 @@ void init_screen_home_custom(void) {
     // Write style for home_label_time, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
     lv_obj_set_style_border_width(label_time, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_style_radius(label_time, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_text_color(label_time, lv_color_hex(0x00ff8c), LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_text_color(label_time, lv_color_hex(0xb84800), LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_style_text_font(label_time, &lv_font_montserrat_36, LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_style_text_opa(label_time, 255, LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_style_text_letter_space(label_time, 2, LV_PART_MAIN | LV_STATE_DEFAULT);
@@ -154,7 +154,7 @@ void init_screen_home_custom(void) {
     // Write style for home_ui_mods, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
     lv_obj_set_style_border_width(ui_mods, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_style_border_opa(ui_mods, 255, LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_border_color(ui_mods, lv_color_hex(0x2195f6), LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_border_color(ui_mods, lv_color_hex(0xb84800), LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_style_border_side(ui_mods, LV_BORDER_SIDE_FULL, LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_style_radius(ui_mods, 10, LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_style_bg_opa(ui_mods, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
@@ -181,7 +181,7 @@ void init_screen_home_custom(void) {
     // Write style for home_label_1, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
     lv_obj_set_style_border_width(label_layer, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_style_radius(label_layer, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_text_color(label_layer, lv_color_hex(0xd4d7ff), LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_text_color(label_layer, lv_color_hex(0xb84800), LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_style_text_opa(label_layer, 255, LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_style_text_letter_space(label_layer, 2, LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_style_text_line_space(label_layer, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
