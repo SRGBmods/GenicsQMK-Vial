@@ -11,6 +11,7 @@ SRC += hid_display.c\
 		pic/_ui_logo_alpha_240x240.c \
 		pic/_ui_vol_alpha_240x240.c \
 		pic/_ui_pikaqiu_alpha_240x240.c \
+	    pic/_ui_pikaqiu_vol_alpha_240x240.c \
 		pic/_ui_twoman_alpha_240x240.c \
 		# pic/_my_logoalpha_alpha_150x150.c \
 		# pic/animation_small.c \

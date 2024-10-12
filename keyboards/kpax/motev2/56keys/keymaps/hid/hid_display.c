@@ -40,6 +40,7 @@ LV_IMG_DECLARE(_my_logoalpha_alpha_150x150);
 LV_IMG_DECLARE(_ui_logo_alpha_240x240);
 LV_IMG_DECLARE(_ui_vol_alpha_240x240);
 LV_IMG_DECLARE(_ui_pikaqiu_alpha_240x240);
+LV_IMG_DECLARE(_ui_pikaqiu_vol_alpha_240x240);
 LV_IMG_DECLARE(_ui_twoman_alpha_240x240);
 LV_IMG_DECLARE(animation_small);
 
@@ -233,7 +234,7 @@ void init_screen_volume(void) {
 
     lv_obj_t *vol_img_1 = lv_img_create(screen_volume);
     lv_obj_add_flag(vol_img_1, LV_OBJ_FLAG_CLICKABLE);
-    lv_img_set_src(vol_img_1, &_ui_vol_alpha_240x240);
+    lv_img_set_src(vol_img_1, &_ui_pikaqiu_vol_alpha_240x240);
     lv_img_set_pivot(vol_img_1, 50, 50);
     lv_img_set_angle(vol_img_1, 0);
     lv_obj_set_pos(vol_img_1, 0, 0);
