@@ -67,7 +67,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   // ╰──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────╯
                       KC_LALT,  KC_SPACE, KC_LGUI, KC_MUTE,      KC_MUTE,MO(6),  SYM_ENT, RALT_DEL,
   //                    ╰───────────────────────────────────╯ ╰───────────────────────────────────╯
-               MO(2),   MO(3),   MO(1),    MO(4),   MO(5),      KC_ENT,  KC_RGHT,  KC_DOWN, KC_LEFT, KC_UP
+               MO(2),   MO(3),   MO(1),    MO(4),   MO(5),      KC_ENT,  KC_RGHT,  KC_DOWN, KC_LEFT, KC_UP,
+                                 KC_1, KC_1, KC_1,              KC_1, KC_1, KC_1
     ),
 
     [_GAME] = LAYOUT(
@@ -83,6 +84,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                       LALT_EQL,  KC_SPC, LGUI_GRV, KC_BSPC,      KC_MUTE,KC_LALT,  SYM_ENT, KC_LALT,
   //                    ╰───────────────────────────────────╯ ╰───────────────────────────────────╯
                MO(1),   MO(3),   MO(2),    MO(4),   MO(5),      KC_ENT,  KC_RGHT,  KC_DOWN, KC_LEFT, KC_UP
+                                                KC_1, KC_1, KC_1,              KC_1, KC_1, KC_1
+
     ),
 
     [_NAV] = LAYOUT(
@@ -98,6 +101,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                          DRAG_SCROLL, KC_BTN1, KC_BTN2, _______,    _______, _______, _______, _______,
   //                    ╰───────────────────────────────────╯ ╰───────────────────────────────────╯
     _______,  _______,    _______,    _______,    _______,                 _______,  _______,    _______,    _______,   _______
+                                     KC_1, KC_1, KC_1,              KC_1, KC_1, KC_1,
+
     ),
 
     [_NUMBER] = LAYOUT(
@@ -113,6 +118,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                       KC_LALT,  KC_SPC, KC_LALT, KC_BSPC,      KC_MUTE,KC_LALT,  SYM_ENT, KC_LALT,
   //                    ╰───────────────────────────────────╯ ╰───────────────────────────────────╯
                MO(1),   MO(3),   MO(2),    MO(4),   MO(5),      KC_ENT,  KC_RGHT,  KC_DOWN, KC_LEFT, KC_UP
+                                                KC_1, KC_1, KC_1,              KC_1, KC_1, KC_1,
+
     ),
 
     [_SYMBOL] = LAYOUT(
@@ -128,6 +135,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                          _______, _______, _______, _______,    _______, _______, _______, _______,
   //                    ╰───────────────────────────────────╯ ╰───────────────────────────────────╯
     _______,  _______,    _______,    _______,    _______,                 _______,  _______,    _______,    _______,   _______
+                                     KC_1, KC_1, KC_1,              KC_1, KC_1, KC_1,
+
     ),
 
     [_FUNC] = LAYOUT(
@@ -143,6 +152,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                          _______, _______, _______, _______,    _______, _______, _______, _______,
   //                    ╰───────────────────────────────────╯ ╰───────────────────────────────────╯
     _______,  _______,    _______,    _______,    _______,                 _______,  _______,    _______,    _______,   _______
+                                     KC_1, KC_1, KC_1,              KC_1, KC_1, KC_1,
+
 
     ),
 
@@ -159,6 +170,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                          _______, _______, _______, _______,     _______,   _______, _______, _______,
   //                    ╰───────────────────────────────────╯ ╰───────────────────────────────────╯
     _______,  _______,    _______,    _______,    _______,                 _______,  _______,    _______,    _______,   _______
+                                     KC_1, KC_1, KC_1,              KC_1, KC_1, KC_1,
+
     )
     // clang-format on
 };
