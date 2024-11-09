@@ -83,8 +83,8 @@
     "url": "https://github.com/",
     "usb": {
         "device_version": "1.0.0",
-        "pid": "0x0844",
-        "vid": "0xFEED"
+        "pid": "0x1988",
+        "vid": "0x1981"
     },
     "ws2812": {
         "driver": "vendor",
