@@ -53,16 +53,16 @@
 /* common touchpad config */
 #define POINTING_DEVICE_RIGHT // touchpad is right by default
 #define POINTING_DEVICE_CS_PIN GP21
-#ifdef POINTING_DEVICE_DRIVER_azoteq_iqs5xx
-#    define AZOTEQ_IQS5XX_TPS43
-#    define AZOTEQ_IQS5XX_ROTATION_270
-#else
-#    define CIRQUE_PINNACLE_DIAMETER_MM 40
+// #ifdef POINTING_DEVICE_DRIVER_azoteq_iqs5xx
+// #    define AZOTEQ_IQS5XX_TPS43
+// #    define AZOTEQ_IQS5XX_ROTATION_270
+// #else
+// #    define CIRQUE_PINNACLE_DIAMETER_MM 40
 // #    define CIRQUE_PINNACLE_ATTENUATION EXTREG__TRACK_ADCCONFIG__ADC_ATTENUATE_2X // enable for curved overlay
-#    ifdef POINTING_DEVICE_RIGHT
+// #    ifdef POINTING_DEVICE_RIGHT
 // #        define POINTING_DEVICE_ROTATION_180
-#    endif
-#endif
+// #    endif
+// #endif
 
 /* common LCD config */
 #define LCD_CS_PIN GP21
@@ -130,4 +130,3 @@
 // 定义wpm周期
 #define WPM_SAMPLE_SECONDS 5
 #define WPM_SAMPLE_PERIODS 25
-

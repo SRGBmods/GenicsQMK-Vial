@@ -6,7 +6,7 @@
 // azoteq触控板配置选项
 #define AZOTEQ_IQS5XX_TPS43
 #define AZOTEQ_IQS5XX_ROTATION_90
-#define POINTING_DEVICE_INVERT_Y
+// #define POINTING_DEVICE_INVERT_Y
 // 设备除数，越小越快
 
 // 点设备的任务更新时间
