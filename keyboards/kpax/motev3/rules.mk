@@ -28,5 +28,9 @@ VIAL_INSECURE = yes
 # 打开鼠标键
 MOUSEKEY_ENABLE = yes
 WPM_ENABLE = yes
+# 打开signalrgb支持
+SIGNALRGB_SUPPORT_ENABLE = yes
+
+
 
 
