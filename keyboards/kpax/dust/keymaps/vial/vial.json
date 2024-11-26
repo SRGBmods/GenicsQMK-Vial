@@ -1,0 +1,173 @@
+{
+    "vendorId": "0x1988",
+    "productId": "0x1981",
+    "lighting": "vialrgb",
+    "customKeycodes": [
+        {
+            "name": "DPI_UP",
+            "title": "DPI_UP",
+            "shortName": "DPI_MOD"
+        },
+        {
+            "name": "DPI_DOWN",
+            "title": "DPI_DOWN",
+            "shortName": "DPI_RMOD"
+        },
+        {
+            "name": "SLOW_DPI_UP",
+            "title": "SLOW_DPI_UP",
+            "shortName": "S_D_MOD"
+        },
+        {
+            "name": "SLOW_DPI_DOWN",
+            "title": "SLOW_DPI_DOWN",
+            "shortName": "S_D_RMOD"
+        },
+        {
+            "name": "SNIPING_MODE",
+            "title": "SNIPING_MODE",
+            "shortName": "SNIPING"
+        },
+        {
+            "name": "SNIPING_TOG",
+            "title": "SNIPING_TOG",
+            "shortName": "SNP_TOG"
+        },
+        {
+            "name": "DRGSCRL_MODE",
+            "title": "DRGSCRL_MODE",
+            "shortName": "DRGSCRL"
+        },
+        {
+            "name": "DRGSCRL_TOG",
+            "title": "DRGSCRL_TOG",
+            "shortName": "DRG_TOG"
+        }
+    ],
+    "matrix": {
+        "rows": 4,
+        "cols": 6
+    },
+    "layouts": {
+        "keymap": [
+            ["0,0", "0,1", "0,2", "0,3", "0,4"],
+            ["1,0", "1,1", "1,2", "1,3", "1,4"],
+            [
+                {
+                    "y": 0.10000000000000009,
+                    "x": 4,
+                    "h": 0.8
+                },
+                "3,3",
+                {
+                    "x": 0.09999999999999964,
+                    "w": 0.8,
+                    "h": 0.8
+                },
+                "0,0\n\n\n\n\n\n\n\n\ne",
+                {
+                    "x": 0.10000000000000053,
+                    "w": 0.8,
+                    "h": 0.8
+                },
+                "0,1\n\n\n\n\n\n\n\n\ne"
+            ],
+            [
+                {
+                    "y": -0.10000000000000009,
+                    "x": 4,
+                    "h": 0.8
+                },
+                "3,4",
+                {
+                    "x": 0.09999999999999964,
+                    "w": 0.8,
+                    "h": 0.8
+                },
+                "1,0\n\n\n\n\n\n\n\n\ne",
+                {
+                    "x": 0.10000000000000053,
+                    "w": 0.8,
+                    "h": 0.8
+                },
+                "1,1\n\n\n\n\n\n\n\n\ne"
+            ],
+            [
+                {
+                    "y": -0.75,
+                    "x": 2.5,
+                    "w": 0.8,
+                    "h": 0.8
+                },
+                "0,5"
+            ],
+            [
+                {
+                    "y": -0.25,
+                    "x": 4.1,
+                    "w": 0.8,
+                    "h": 0.8
+                },
+                "2,1"
+            ],
+            [
+                {
+                    "y": -0.5,
+                    "x": 1,
+                    "w": 0.8,
+                    "h": 0.8
+                },
+                "3,1"
+            ],
+            [
+                {
+                    "y": -0.75,
+                    "x": 4
+                },
+                "2,4"
+            ],
+            [
+                {
+                    "y": -0.9000000000000004,
+                    "x": 3.2,
+                    "w": 0.8,
+                    "h": 0.8
+                },
+                "2,2",
+                {
+                    "x": 1,
+                    "w": 0.8,
+                    "h": 0.8
+                },
+                "2,0"
+            ],
+            [
+                {
+                    "y": -0.5499999999999998,
+                    "x": 1.3,
+                    "w": 0.8,
+                    "h": 0.8
+                },
+                "3,2"
+            ],
+            [
+                {
+                    "y": -0.7999999999999998,
+                    "x": 2.1,
+                    "w": 0.8,
+                    "h": 0.8
+                },
+                "3,0"
+            ],
+            [
+                {
+                    "y": -0.75,
+                    "x": 4.1,
+                    "w": 0.8,
+                    "h": 0.8
+                },
+                "2,3"
+            ]
+        ]
+    }
+}
