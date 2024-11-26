@@ -74,7 +74,7 @@ const Keyboard = {
 	Right : {
 		devicename: "Right Side",
 		ledids: [
-			12, 13, 14, 15, //4
+			50, 51, 52, 53, //4
 			16, 17, 18, 19, //4
 			20, 21, 22, 23, //4
 		],
