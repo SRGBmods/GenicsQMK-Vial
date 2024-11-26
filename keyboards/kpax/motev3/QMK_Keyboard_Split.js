@@ -1,8 +1,8 @@
-export function Name() { return "QMK Keyboard"; }
-export function Version() { return "1.1.9"; }
-export function VendorId() { return 0x0000; }
-export function ProductId() { return 0x0000; }
-export function Publisher() { return "WhirlwindFX"; }
+export function Name() { return "MOTE-V3"; }
+export function Version() { return "1.0"; }
+export function VendorId() { return 0x1981; }
+export function ProductId() { return 0x1988; }
+export function Publisher() { return "KPAX"; }
 export function Documentation(){ return "qmk/srgbmods-qmk-firmware"; }
 export function DeviceType() { return "keyboard"; }
 export function ConflictingProcesses() { return ["VIA.exe"]; }
@@ -42,22 +42,33 @@ const Keyboard = {
 	Left : {
 		devicename: "Left Side",
 		ledids: [
-			0, 1, 2, 3,		//4
-			4, 5, 6, 7,		//4
-			8, 9, 10, 11, 	//4
+			0, 1, 2, 3,	4, 5,
+            6, 7, 8, 9, 10, 11,
+			12,13,14,15,16,17,
+            18,19,20,21,22,23,
+            24,25,26,27,
+            28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,
 		],
 		lednames: [
-			"Left 1", "Left 2", "Left 3", "Left 4",		//4
-			"Left 5", "Left 6", "Left 7", "Left 8",		//4
-			"Left 9", "Left 10", "Left 11", "Left 12",	//4
+			"Left 1", "Left 2", "Left 3", "Left 4",	"Left 5", "Left 6", 	//4
+			"Left 7", "Left 8",	"Left 9", "Left 10", "Left 11", "Left 12",	//4
+			"Left 13", "Left 14", "Left 15", "Left 16",	"Left 17", "Left 18",
+            "Left 19", "Left 20","Left 21","Left 22","Left 23","Left 24",
+            "Left 25", "Left 26","Left 27","Left 28",
+            "Left 29", "Left 30","Left 31","Left 32","Left 33","Left 34","Left 35","Left 36","Left 37","Left 38","Left 39","Left 40","Left 41","Left 42","Left 43","Left 44","Left 45","Left 46","Left 47","Left 48","Left 49","Left 50",
+
 		],
 		ledpos:	[
-			[0, 0], [1, 0], [2, 0], [3, 0],	//4
-			[0, 1], [1, 1], [2, 1], [3, 1], //4
-			[0, 2], [1, 2], [2, 2], [3, 2], //4
+			[0, 0], [1, 0], [2, 0], [3, 0],[4, 0],[5, 0],	//4
+			[0, 1], [1, 1], [2, 1], [3, 1],[4, 1],[5, 1], //4
+			[0, 2], [1, 2], [2, 2], [3, 2],[4, 2],[5, 2], //4
+            [0, 3], [1, 3], [2, 3], [3, 3],[4, 3],[5, 3], //4
+			                               [4, 4],[5, 4],[6, 4],[6, 3],
+            [4, 4],[4, 4],[4, 4],[4, 4],[4, 4],[4, 4],[4, 4],[4, 4],[4, 4],[4, 4],[4, 4],[4, 4],[4, 4],[4, 4],[4, 4],[4, 4],[4, 4],[4, 4],[4, 4],[4, 4],[4, 4],[4, 4],                            //4
+
 		],
-		width: 4,
-		height: 3,
+		width: 7,
+		height: 5,
 		image: Image()
 	},
 	Right : {
