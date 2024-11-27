@@ -1,5 +1,5 @@
 export function Name() { return "MOTE-V3"; }
-export function Version() { return "1.0"; }
+export function Version() { return "1.1.9"; }
 export function VendorId() { return 0x1981; }
 export function ProductId() { return 0x1988; }
 export function Publisher() { return "KPAX"; }
@@ -8,7 +8,7 @@ export function DeviceType() { return "keyboard"; }
 export function ConflictingProcesses() { return ["VIA.exe"]; }
 export function Size() { return [1, 1]; }
 export function DefaultPosition(){return [10, 100]; }
-export function DefaultScale(){return 8.0;}
+export function DefaultScale(){return 1.0;}
 /* global
 shutdownMode:readonly
 shutdownColor:readonly
@@ -46,7 +46,7 @@ const Keyboard = {
             6, 7, 8, 9, 10, 11,
 			12,13,14,15,16,17,
             18,19,20,21,22,23,
-            24,25,26,27,
+                        24,25,26,27,
             28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,
 		],
 		lednames: [
@@ -59,12 +59,12 @@ const Keyboard = {
 
 		],
 		ledpos:	[
-			[0, 0], [1, 0], [2, 0], [3, 0],[4, 0],[5, 0],	//4
-			[0, 1], [1, 1], [2, 1], [3, 1],[4, 1],[5, 1], //4
-			[0, 2], [1, 2], [2, 2], [3, 2],[4, 2],[5, 2], //4
-            [0, 3], [1, 3], [2, 3], [3, 3],[4, 3],[5, 3], //4
+			[0, 0], [1, 0], [2, 0], [3, 0],[4, 0],[5, 0],
+			[0, 1], [1, 1], [2, 1], [3, 1],[4, 1],[5, 1],
+			[0, 2], [1, 2], [2, 2], [3, 2],[4, 2],[5, 2],
+            [0, 3], [1, 3], [2, 3], [3, 3],[4, 3],[5, 3],
 			                               [4, 4],[5, 4],[6, 4],[6, 3],
-            [4, 4],[4, 4],[4, 4],[4, 4],[4, 4],[4, 4],[4, 4],[4, 4],[4, 4],[4, 4],[4, 4],[4, 4],[4, 4],[4, 4],[4, 4],[4, 4],[4, 4],[4, 4],[4, 4],[4, 4],[4, 4],[4, 4],                            //4
+            [4, 4],[4, 4],[4, 4],[4, 4],[4, 4],[4, 4],[4, 4],[4, 4],[4, 4],[4, 4],[4, 4],[4, 4],[4, 4],[4, 4],[4, 4],[4, 4],[4, 4],[4, 4],[4, 4],[4, 4],[4, 4],[4, 4],
 
 		],
 		width: 7,
@@ -74,22 +74,32 @@ const Keyboard = {
 	Right : {
 		devicename: "Right Side",
 		ledids: [
-			50, 51, 52, 53, //4
-			16, 17, 18, 19, //4
-			20, 21, 22, 23, //4
+			  55,54,53,52,51,50,
+			  61,60,59,58,57,56,
+			  67,66,65,64,63,62,
+              73,72,71,70,69,68,
+        77,76,75,74,
+        78, 79, 80, 81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,
+
 		],
 		lednames: [
-			"Left 1", "Left 2", "Left 3", "Left 4",		//4
-			"Left 5", "Left 6", "Left 7", "Left 8",		//4
-			"Left 9", "Left 10", "Left 11", "Left 12",	//4
+			"right 6","right 5","right 4", "right 3", "right 2", "right 1",
+			"right 12","right 11","right 10", "right 9", "right 8", "right 7",
+			"right 18","right 17","right 16", "right 15", "right 14", "right 13",
+            "right 24","right 23","right 22", "right 21", "right 20", "right 19",
+            "right 28", "right 27", "right 26", "right 25",
+            "right 29","right 30","right 31", "right 32", "right 33", "right 34","right 35","right 36","right 37","right 38","right 39","right 40","right 41","right 42","right 43","right 44","right 45","right 46","right 47","right 48","right 49","right 50",
 		],
 		ledpos:	[
-			[0, 0], [1, 0], [2, 0], [3, 0],	//4
-			[0, 1], [1, 1], [2, 1], [3, 1],	//4
-			[0, 2], [1, 2], [2, 2], [3, 2],	//4
+			[0, 0], [1, 0], [2, 0], [3, 0],[4, 0],[5, 0],
+			[0, 1], [1, 1], [2, 1], [3, 1],[4, 1],[5, 1],
+			[0, 2], [1, 2], [2, 2], [3, 2],[4, 2],[5, 2],
+            [0, 3], [1, 3], [2, 3], [3, 3],[4, 3],[5, 3],
+			                               [4, 4],[5, 4],[6, 4],[6, 3],
+            [4, 4],[4, 4],[4, 4],[4, 4],[4, 4],[4, 4],[4, 4],[4, 4],[4, 4],[4, 4],[4, 4],[4, 4],[4, 4],[4, 4],[4, 4],[4, 4],[4, 4],[4, 4],[4, 4],[4, 4],[4, 4],[4, 4],
 		],
-		width: 4,
-		height: 3,
+		width: 7,
+		height: 5,
 		image: Image()
 	}
 };
