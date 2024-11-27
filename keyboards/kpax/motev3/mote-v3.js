@@ -50,12 +50,12 @@ const Keyboard = {
             28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,
 		],
 		lednames: [
-			"Left 1", "Left 2", "Left 3", "Left 4",	"Left 5", "Left 6", 	//4
-			"Left 7", "Left 8",	"Left 9", "Left 10", "Left 11", "Left 12",	//4
-			"Left 13", "Left 14", "Left 15", "Left 16",	"Left 17", "Left 18",
-            "Left 19", "Left 20","Left 21","Left 22","Left 23","Left 24",
-            "Left 25", "Left 26","Left 27","Left 28",
-            "Left 29", "Left 30","Left 31","Left 32","Left 33","Left 34","Left 35","Left 36","Left 37","Left 38","Left 39","Left 40","Left 41","Left 42","Left 43","Left 44","Left 45","Left 46","Left 47","Left 48","Left 49","Left 50",
+			"Esc",   "1",  "2", "3", "4", "5",
+			"Tab",   "Q",  "W", "E", "R", "T",
+			"Shift", "A",  "S", "D", "F", "G",
+            "Ctrl",  "Z",  "X", "C", "V", "B",
+                                   "Left Alt", "Space","Apps","AudioMute",
+            "ug1", "ug2","ug3","ug4","ug5","ug6","ug7","ug8","ug9","ug10","ug11","ug12","ug13","ug14","ug15","ug16","ug17","ug18","ug19","ug20","ug21","ug22",
 
 		],
 		ledpos:	[
